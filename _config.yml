@@ -1,0 +1,13 @@
+# Site settings
+title: Cheatsheets
+description: Concise, easy-to-reference cheatsheets for various programming languages and technologies
+# baseurl: "" # The subpath of your site, e.g. /blog
+# url: "" # The base hostname & protocol for your site, e.g. http://example.com
+
+# Build settings
+theme: jekyll-theme-minimal # Choose your desired Jekyll theme
+plugins:
+  - jekyll-feed
+
+# GitHub Pages settings
+# remote_theme: "username/repo" # Replace with the GitHub username and repository name of your desired theme
