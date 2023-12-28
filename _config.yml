@@ -8,10 +8,9 @@ description: Concise, easy-to-reference cheatsheets for various programming lang
 theme: jekyll-theme-minimal # Choose your desired Jekyll theme
 plugins:
   - jekyll-feed
-  - jekyll-remote-theme # add this line to the plugins list if you already have one
+  - jekyll-remote-theme
   - jekyll-seo-tag
 
 # GitHub Pages settings
-# remote_theme: "username/repo" # Replace with the GitHub username and repository name of your desired theme
 # remote_theme: pages-themes/midnight@v0.2.0
-remote_theme: pages-themes/hacker@v0.2.0
+# remote_theme: pages-themes/hacker@v0.2.0
