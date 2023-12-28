@@ -13,4 +13,5 @@ plugins:
 
 # GitHub Pages settings
 # remote_theme: "username/repo" # Replace with the GitHub username and repository name of your desired theme
-remote_theme: pages-themes/midnight@v0.2.0
+# remote_theme: pages-themes/midnight@v0.2.0
+remote_theme: pages-themes/hacker@v0.2.0
