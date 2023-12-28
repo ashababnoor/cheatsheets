@@ -13,10 +13,10 @@ The Conventional Commits specification offers a simple framework for structuring
 ```
 
 1. **Type:** Describes the nature of the change (e.g., `feat` for a new feature, `fix` for a bug fix).
-2. **Scope [optional]:** Optionally specifies the affected part of the codebase.
+2. **Scope** *[optional]***:** Optionally specifies the affected part of the codebase.
 3. **Description:** Briefly summarizes the changes made.
-4. **Body [optional]:** Provides more detailed information about the changes.
-5. **Footer [optional]:** Contains additional details like references to issues or breaking changes.
+4. **Body** *[optional]***:** Provides more detailed information about the changes.
+5. **Footer** *[optional]***:** Contains additional details like references to issues or breaking changes.
 
 
 ## Type
@@ -37,7 +37,7 @@ Following are the different commit types
 - **`test`**: Adding or modifying tests.
 - **`chore`**: Miscellaneous tasks that don't affect code, like build configuration, etc.
 
-### Additional or Project-Specific Types:
+### Additional or Project-Specific Types
 
 #### **4. Performance and Dependencies:**
 - **`perf`**: Commits related to performance improvements.
