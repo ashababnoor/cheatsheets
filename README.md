@@ -5,7 +5,7 @@ Welcome to this repository of concise, easy-to-reference cheatsheets for various
 
 ## Available Cheatsheets
 
-- [Conventional Commits](https://ashababnoor.github.io/cheatsheets/cheatsheets/conventional-commits.md)
+- [Conventional Commits](https://ashababnoor.github.io/cheatsheets/cheatsheets/conventional-commits)
 
 
 ## Contributing
