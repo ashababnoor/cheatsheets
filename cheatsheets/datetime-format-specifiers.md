@@ -1,4 +1,4 @@
-# Python strftime Format Specifiers
+# Python (and More) strftime Format Specifiers
 
 | Specifier | Description |
 |-----------|-------------|
@@ -26,3 +26,22 @@
 | `%x` | Locale’s appropriate date representation. |
 | `%X` | Locale’s appropriate time representation. |
 | `%%` | A literal '%' character. |
+
+
+The format specifiers provided are specific to Python's `strftime` function, which is part of the `datetime` module in Python.
+
+However, similar format specifiers are also used in other languages that have C-style `strftime` functions, such as C, C++, and Ruby as well as shell scripting languages such as Bash and Zsh. The exact specifiers and their meanings can vary between languages, so it's important to check the documentation for the specific language you're using.
+
+For example:
+
+- In C and C++, you can use the `strftime` function in the `ctime` library.
+- In Ruby, you can use the `strftime` method of the `Time` class.
+- In Bash or Zsh, you can use the `date` command.
+
+```bash
+!/bin/bash
+# Current date and time in the format: YYYY-MM-DD HH:MM:SS
+date '+%Y-%m-%d %H:%M:%S'
+```
+
+In contrast, languages like JavaScript and Java use different methods and format specifiers for date and time formatting. For instance, JavaScript uses the `Date` object and its methods like `toLocaleDateString`, while Java uses classes like `SimpleDateFormat` or `DateTimeFormatter` for date and time formatting.
