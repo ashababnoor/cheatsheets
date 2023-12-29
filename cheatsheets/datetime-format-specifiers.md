@@ -39,7 +39,8 @@ For example:
 - In Bash or Zsh, you can use the `date` command.
 
 ```bash
-!/bin/bash
+#!/bin/bash
+
 # Current date and time in the format: YYYY-MM-DD HH:MM:SS
 date '+%Y-%m-%d %H:%M:%S'
 ```
