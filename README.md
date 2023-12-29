@@ -5,7 +5,8 @@ Welcome to this repository of concise, easy-to-reference cheatsheets for various
 
 ## Available Cheatsheets
 
-- [Conventional Commits](https://ashababnoor.github.io/cheatsheets/cheatsheets/conventional-commits)
+- [Conventional Commits](cheatsheets/conventional-commits)
+- [Datetime Format Specifiers](cheatsheets/datetime-format-specifiers)
 
 
 ## Contributing
