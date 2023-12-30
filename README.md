@@ -8,6 +8,7 @@ Welcome to this repository of concise, easy-to-reference cheatsheets for various
 - [Conventional Commits](cheatsheets/conventional-commits)
 - [Datetime Format Specifiers](cheatsheets/datetime-format-specifiers)
 - [Git Commands](cheatsheets/git-commands)
+- [Markdown Syntax](cheatsheets/markdown-syntax)
 
 
 ## Contributing
