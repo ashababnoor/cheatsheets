@@ -1,4 +1,4 @@
-# Conventional Commits
+# Conventional Commits Cheatsheet
 
 The Conventional Commits specification offers a simple framework for structuring commit messages.
 

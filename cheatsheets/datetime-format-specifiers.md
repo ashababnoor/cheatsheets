@@ -1,4 +1,4 @@
-# Python (and More) strftime Format Specifiers
+# Python (and More) strftime Format Specifiers Cheatsheet
 
 | Specifier | Description |
 |-----------|-------------|
