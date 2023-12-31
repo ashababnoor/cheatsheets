@@ -6,10 +6,10 @@ Welcome to this repository of concise, easy-to-reference cheatsheets for various
 ## Available Cheatsheets
 
 - [Conventional Commits](cheatsheets/conventional-commits)
-- [Datetime Format Specifiers](cheatsheets/datetime-format-specifiers)
+- [Python Datetime Format Specifiers](cheatsheets/datetime-format-specifiers)
 - [Git Commands](cheatsheets/git-commands)
 - [Markdown Syntax](cheatsheets/markdown-syntax)
-
+- [HTTP Status Codes](cheatsheets/http-status-codes)
 
 ## Contributing
 
