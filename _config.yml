@@ -5,7 +5,8 @@ description: Concise, easy-to-reference cheatsheets for various programming lang
 # url: "" # The base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
-theme: jekyll-theme-minimal # Choose your desired Jekyll theme
+# theme: jekyll-theme-minimal
+theme: minima
 plugins:
   - jekyll-feed
   - jekyll-remote-theme
@@ -14,4 +15,4 @@ plugins:
 # GitHub Pages settings
 # remote_theme: pages-themes/midnight@v0.2.0
 # remote_theme: pages-themes/hacker@v0.2.0
-remote_theme: pages-themes/architect@v0.2.0
+# remote_theme: pages-themes/architect@v0.2.0
