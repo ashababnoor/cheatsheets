@@ -58,7 +58,3 @@ This cheatsheet provides a list of useful Linux terminal commands with examples.
 | `apt-get install <package>` | Install a new package | `sudo apt-get install vim` |
 | `apt-get remove <package>` | Remove a package | `sudo apt-get remove vim` |
 
-Next steps could include:
-- Save this content in a Markdown file in your `cheatsheets` directory.
-- Add a link to this cheatsheet in your README.md.
-- Push the changes to the remote repository.
