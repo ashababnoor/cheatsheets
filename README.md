@@ -10,6 +10,7 @@ Welcome to this repository of concise, easy-to-reference cheatsheets for various
 - [Git Commands](cheatsheets/git-commands)
 - [Markdown Syntax](cheatsheets/markdown-syntax)
 - [HTTP Status Codes](cheatsheets/http-status-codes)
+- [Linux Terminal Commands](cheatsheets/linux-terminal-commands)
 
 ## Contributing
 
