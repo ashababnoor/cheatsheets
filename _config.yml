@@ -1,12 +1,13 @@
 # Site settings
 title: Cheatsheets
 description: Concise, easy-to-reference cheatsheets for various programming languages and technologies
-# baseurl: "" # The subpath of your site, e.g. /blog
-# url: "" # The base hostname & protocol for your site, e.g. http://example.com
+author:
+  name: Shabab Noor
+  email: ashababnoor@gmail.com
 
 # Build settings
 # theme: jekyll-theme-minimal
-theme: minima
+# theme: minima
 plugins:
   - jekyll-feed
   - jekyll-remote-theme
@@ -16,6 +17,7 @@ plugins:
 # remote_theme: pages-themes/midnight@v0.2.0
 # remote_theme: pages-themes/hacker@v0.2.0
 # remote_theme: pages-themes/architect@v0.2.0
+remote_theme: pages-themes/cayman@v0.2.0
 
 header_pages:
   - README.md
