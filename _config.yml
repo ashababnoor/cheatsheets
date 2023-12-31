@@ -16,3 +16,9 @@ plugins:
 # remote_theme: pages-themes/midnight@v0.2.0
 # remote_theme: pages-themes/hacker@v0.2.0
 # remote_theme: pages-themes/architect@v0.2.0
+
+minima:
+  social_links:
+    - platform: twitter
+      user_url: "https://www.twitter.com/ashababnoor"
+      title:  My profile at X (formerly Twitter)
