@@ -17,8 +17,14 @@ plugins:
 # remote_theme: pages-themes/hacker@v0.2.0
 # remote_theme: pages-themes/architect@v0.2.0
 
+header_pages:
+  - README.md
+
 minima:
+  # Generate social links in footer.
   social_links:
-    - platform: twitter
-      user_url: "https://www.twitter.com/ashababnoor"
-      title:  My profile at X (formerly Twitter)
+   - { platform: github,         user_url: "https://github.com/ashababnoor/cheatsheet" }
+   - { platform: google_scholar, user_url: "https://scholar.google.com/citations?user=b6chKnEAAAAJ" }
+   - { platform: linkedin,       user_url: "https://www.linkedin.com/in/ashababnoor" }
+   - { platform: twitter,        user_url: "https://twitter.com/ashababnoor" }
+   - { platform: x,              user_url: "https://x.com/ashababnoor" }
