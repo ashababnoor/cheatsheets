@@ -112,8 +112,7 @@ Format: ![Alt Text](url)
 ```markdown
 As Kanye West said:
 
-> We're living the future so
-> the present is our past.
+> I'm livin' in the future so the present is my past
 
 > This is a blockquote
 >> This is a nested blockquote
@@ -122,8 +121,7 @@ As Kanye West said:
 **Output**  
 As Kanye West said:
 
-> We're living the future so  
-> the present is our past.
+> I'm livin' in the future so the present is my past
 
 > This is a blockquote
 >> This is a nested blockquote
@@ -167,18 +165,18 @@ function fancyAlert(arg) {
 
 **Input**
 ```markdown
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| First Header | Second Header |
+|--------------|---------------|
+| Content Cell | Content Cell  |
+| Content Cell | Content Cell  |
 ```
 
-**Output**  
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+**Output**   
 
+| First Header | Second Header |
+|--------------|---------------|
+| Content Cell | Content Cell  |
+| Content Cell | Content Cell  |
 
 ## Task Lists
 
@@ -191,10 +189,10 @@ function fancyAlert(arg) {
 ```
 
 **Output**  
-- [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
-- [ ] list syntax required (any unordered or ordered list supported)
-- [x] this is a complete item
-- [ ] this is an incomplete item
+- [x]  @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
+- [ ]  list syntax required (any unordered or ordered list supported)
+- [x]  this is a complete item
+- [ ]  this is an incomplete item
 
 
 ## Strikethrough
@@ -204,11 +202,11 @@ function fancyAlert(arg) {
 ~~this is a strikethrough text~~
 ```
 
-**Output**
+**Output**  
 ~~this is a strikethrough text~~
 
 
 ## Reference
 Learn more about Markdown syntax here
-1. [Basic Syntax \| Markdown Guide](https://www.markdownguide.org/basic-syntax/)
-2. [Extended Syntax \| Markdown Guide](https://www.markdownguide.org/extended-syntax/)
+1. [Basic Syntax - Markdown Guide](https://www.markdownguide.org/basic-syntax/)
+2. [Extended Syntax - Markdown Guide](https://www.markdownguide.org/extended-syntax/)
