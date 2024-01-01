@@ -206,3 +206,9 @@ function fancyAlert(arg) {
 
 **Output**
 ~~this is a strikethrough text~~
+
+
+## Reference
+Learn more about Markdown syntax here
+1. [Basic Syntax \| Markdown Guide](https://www.markdownguide.org/basic-syntax/)
+2. [Extended Syntax \| Markdown Guide](https://www.markdownguide.org/extended-syntax/)
