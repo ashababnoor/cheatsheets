@@ -60,3 +60,7 @@ This cheatsheet provides a list of useful Git commands for both beginners and ad
 | `git revert <commit>` | Revert some existing commits |
 | `git fetch` | Download objects and refs from another repository |
 | `git tag <tag>` | Create, list, delete or verify a tag object signed with GPG |
+
+## Reference
+
+Learn more about Git commands here: [Git - Reference](https://git-scm.com/docs)
