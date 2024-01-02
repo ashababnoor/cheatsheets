@@ -202,6 +202,79 @@ Visual Representation of FULL OUTER JOIN:
 ```
 
 
+## Subquery
+
+Subqueries in SQL are nested queries used within other queries. They can be placed within the WHERE, FROM, HAVING, or SELECT clause to retrieve data for further analysis or filtering. Here are examples of subqueries in different contexts:
+
+### Subqueries in WHERE Clause:
+
+Using Subquery for Filtering:
+
+```sql
+SELECT product_name, price
+FROM products
+WHERE price > (SELECT AVG(price) FROM products);
+```
+
+### Subqueries in FROM Clause:
+
+Using Subquery as a Derived Table:
+
+```sql
+SELECT AVG(sub.total_sales) AS avg_sales
+FROM (
+    SELECT customer_id, SUM(amount) AS total_sales
+    FROM orders
+    GROUP BY customer_id
+) AS sub;
+```
+
+### Subqueries in SELECT Clause:
+
+Using Subquery to Retrieve Values:
+
+```sql
+SELECT product_name, (SELECT AVG(price) FROM products) AS avg_price
+FROM products;
+```
+
+### Subqueries in HAVING Clause:
+
+Using Subquery for Aggregated Filtering:
+
+```sql
+SELECT department, AVG(salary) AS avg_salary
+FROM employees
+GROUP BY department
+HAVING AVG(salary) > (SELECT AVG(salary) FROM employees);
+```
+
+Subqueries provide a powerful way to manipulate and filter data within SQL queries. They allow for more complex queries by using the result of one query within another. Subqueries can be used in various clauses and perform different tasks, offering flexibility in querying and analyzing data.
+
+
+# WITH statement
+
+The `WITH` statement, also known as Common Table Expressions (CTE), allows you to define temporary result sets within a SQL query. These temporary result sets can then be referenced within the main query. Here's an example:
+
+```sql
+WITH department_sales AS (
+    SELECT department, SUM(sales_amount) AS total_sales
+    FROM sales
+    GROUP BY department
+)
+SELECT department, total_sales
+FROM department_sales
+WHERE total_sales > 10000;
+```
+
+In this example:
+
+- The `WITH` clause defines a temporary table called `department_sales` that calculates the total sales for each department using the `SUM()` function.
+- The main query then references this temporary table to filter departments with total sales exceeding 10000.
+
+The `WITH` statement improves query readability by breaking it into logical sections and allows for reuse of subqueries or derived tables within a query.
+
+
 ## Functions in SQL
 
 In SQL, there are two primary categories of functions: General (or Scalar) Functions and Aggregate Functions.
