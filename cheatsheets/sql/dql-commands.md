@@ -74,15 +74,133 @@ SELECT <column>, <aggregate_function>(<column>) FROM <table> GROUP BY <column> H
 
 ## JOINS
 
+JOIN in SQL is used to combine rows from two or more tables based on a related column between them.
+
+Different types of JOINs in SQL include:
+
+1. INNER JOIN: Retrieves records with matching values in both tables based on a specified condition.
+
+2. LEFT JOIN (or LEFT OUTER JOIN): Retrieves all records from the left table and matching records from the right table based on a specified condition. If there's no match in the right table, NULL values are filled in.
+
+3. RIGHT JOIN (or RIGHT OUTER JOIN): Retrieves all records from the right table and matching records from the left table based on a specified condition. If there's no match in the left table, NULL values are filled in.
+
+4. FULL OUTER JOIN: Retrieves all records when there is a match in either the left or right table. It combines the results of both LEFT and RIGHT JOINs.
+
+
+Consider two tables:
+
+**Table A (employees)**:
+
+| id | name    | department |
+|----|---------|------------|
+| 1  | John    | HR         |
+| 2  | Jane    | Finance    |
+| 3  | Alice   | Marketing  |
+
+**Table B (salaries)**:
+
+| id | employee_id | salary |
+|----|-------------|--------|
+| 1  | 1           | 60000  |
+| 2  | 3           | 55000  |
+| 3  | 2           | 62000  |
+
+
+### INNER JOIN
+
 ```sql
-SELECT <columns> FROM <table1> INNER JOIN <table2> ON <condition>;
+SELECT <columns> 
+FROM <table1> 
+INNER JOIN <table2> ON <condition>;
 ```
 
 - **Description**: Retrieves records with matching values in both tables.
-- **Example**: 
-  ```sql
-  SELECT orders.order_id, customers.name FROM orders INNER JOIN customers ON orders.customer_id = customers.customer_id;
-  ```
+
+**Visual Example**  
+Visual Representation of INNER JOIN:
+
+```
++----+------+-----------+-------------+--------+
+| id | name | department| employee_id | salary |
++----+------+-----------+-------------+--------+
+| 1  | John | HR        | 1           | 60000  |
+| 2  | Jane | Finance   | 2           | 62000  |
+| 3  | Alice| Marketing | 3           | 55000  |
++----+------+-----------+-------------+--------+
+```
+
+## LEFT JOIN
+
+```sql
+SELECT <columns> 
+FROM <table1> 
+LEFT JOIN <table2> ON <condition>;
+```
+
+- **Description**: Retrieves all records from the left table and matching records from the right table.
+
+**Visual Example**  
+Visual Representation of LEFT JOIN:
+
+```
++----+------+-----------+-------------+--------+
+| id | name | department| employee_id | salary |
++----+------+-----------+-------------+--------+
+| 1  | John | HR        | 1           | 60000  |
+| 2  | Jane | Finance   | 2           | 62000  |
+| 3  | Alice| Marketing | 3           | 55000  |
+| 4  | Mark | Sales     | NULL        | NULL   |
++----+------+-----------+-------------+--------+
+```
+
+## RIGHT JOIN
+
+```sql
+SELECT <columns> 
+FROM <table1> 
+RIGHT JOIN <table2> ON <condition>;
+```
+
+- **Description**: Retrieves all records from the right table and matching records from the left table.
+
+**Visual Example**  
+Visual Representation of RIGHT JOIN:
+
+```
++-----+------+-----------+-------------+--------+
+| id  | name | department| employee_id | salary |
++-----+------+-----------+-------------+--------+
+| 1   | John | HR        | 1           | 60000  |
+| 2   | Jane | Finance   | 2           | 62000  |
+| 3   | Alice| Marketing | 3           | 55000  |
+| NULL| NULL | NULL      | 4           | 70000  |
++-----+------+-----------+-------------+--------+
+```
+
+## FULL OUTER JOIN
+
+```sql
+SELECT <columns> 
+FROM <table1> 
+FULL OUTER JOIN <table2> ON <condition>;
+```
+
+- **Description**: Retrieves all records when there is a match in either the left or right table.
+
+**Visual Example**  
+Visual Representation of FULL OUTER JOIN:
+
+```
++-----+------+-----------+-------------+--------+
+| id  | name | department| employee_id | salary |
++-----+------+-----------+-------------+--------+
+| 1   | John | HR        | 1           | 60000  |
+| 2   | Jane | Finance   | 2           | 62000  |
+| 3   | Alice| Marketing | 3           | 55000  |
+| NULL| NULL | NULL      | 4           | 70000  |
++-----+------+-----------+-------------+--------+
+```
+
 
 ## String Functions
 
