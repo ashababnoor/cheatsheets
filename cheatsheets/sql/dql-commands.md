@@ -129,7 +129,7 @@ Visual Representation of INNER JOIN:
 +----+------+-----------+-------------+--------+
 ```
 
-## LEFT JOIN
+### LEFT JOIN
 
 ```sql
 SELECT <columns> 
@@ -153,7 +153,7 @@ Visual Representation of LEFT JOIN:
 +----+------+-----------+-------------+--------+
 ```
 
-## RIGHT JOIN
+### RIGHT JOIN
 
 ```sql
 SELECT <columns> 
@@ -177,7 +177,7 @@ Visual Representation of RIGHT JOIN:
 +-----+------+-----------+-------------+--------+
 ```
 
-## FULL OUTER JOIN
+### FULL OUTER JOIN
 
 ```sql
 SELECT <columns> 
@@ -202,25 +202,127 @@ Visual Representation of FULL OUTER JOIN:
 ```
 
 
-## String Functions
+## Functions in SQL
 
-- **Description**: Manipulate strings within queries.
-- **Examples**:
-  - `CONCAT(str1, str2)`: Concatenates strings.
-  - `SUBSTRING(string, start, length)`: Retrieves part of a string.
-  - `UPPER(string)` / `LOWER(string)`: Converts string to uppercase/lowercase.
+In SQL, there are two primary categories of functions: General (or Scalar) Functions and Aggregate Functions.
 
-## Numeric Functions
+### General (Scalar) Functions:
 
-- **Description**: Perform calculations on numeric data.
-- **Examples**:
-  - `ROUND(number, decimals)`: Rounds a number to a specified number of decimal places.
-  - `ABS(number)`: Returns the absolute value of a number.
-  - `SUM(column)`: Calculates the sum of values in a column.
+These functions operate on a single row at a time and return a single result per row.
 
-## Date Functions
+#### String Functions:
 
-- **Description**: Manipulate and retrieve date and time data.
-- **Examples**:
-  - `GETDATE()`: Retrieves the current date and time.
-  - `DATEADD(unit, value, date)`: Adds/subtracts a specified time interval to/from a date.
+- **`CONCAT(str1, str2)`**: Concatenates two strings.
+  ```sql
+  SELECT CONCAT(first_name, ' ', last_name) AS full_name FROM employees;
+  ```
+
+- **`SUBSTRING(string, start, length)`**: Retrieves a substring from a string.
+  ```sql
+  SELECT SUBSTRING(product_name, 1, 3) AS short_name FROM products;
+  ```
+
+- **`UPPER(string)` / `LOWER(string)`**: Converts a string to uppercase/lowercase.
+  ```sql
+  SELECT UPPER(city) AS city_upper FROM customers;
+  ```
+
+#### Numeric Functions:
+
+- **`ROUND(number, decimals)`**: Rounds a number to a specified number of decimal places.
+  ```sql
+  SELECT ROUND(salary, 2) AS rounded_salary FROM employees;
+  ```
+
+- **`ABS(number)`**: Returns the absolute value of a number.
+  ```sql
+  SELECT ABS(profit_loss) AS absolute_profit_loss FROM financial_data;
+  ```
+
+#### Date Functions:
+
+- **`GETDATE()`**: Retrieves the current date and time.
+  ```sql
+  SELECT GETDATE() AS current_datetime;
+  ```
+
+- **`DATEADD(unit, value, date)`**: Adds/subtracts a specified time interval to/from a date.
+  ```sql
+  SELECT DATEADD(day, 7, order_date) AS delivery_date FROM orders;
+  ```
+
+### Aggregate Functions:
+
+These functions operate on multiple rows of a table and return a single value based on the group of rows.
+
+#### Aggregate Functions:
+
+- **`COUNT(column)`**: Counts the number of rows or non-null values in a column.
+  ```sql
+  SELECT COUNT(product_id) AS total_products FROM products;
+  ```
+
+- **`SUM(column)`**: Calculates the sum of values in a column.
+  ```sql
+  SELECT SUM(sales_amount) AS total_sales FROM sales_data;
+  ```
+
+- **`AVG(column)`**: Calculates the average value of a column.
+  ```sql
+  SELECT AVG(price) AS average_price FROM products;
+  ```
+
+- **`MIN(column)` / `MAX(column)`**: Retrieves the minimum/maximum value in a column.
+  ```sql
+  SELECT MIN(salary) AS min_salary FROM employees;
+  SELECT MAX(age) AS max_age FROM users;
+  ```
+
+Aggregate functions often accompany a `GROUP BY` clause to calculate values for specific groups within a dataset. Here are some examples of aggregate functions with the `GROUP BY` clause:
+
+#### Aggregate Functions with GROUP BY
+
+##### `COUNT()` with `GROUP BY`:
+
+Counts the number of occurrences in a specific column for each group.
+
+```sql
+SELECT department, COUNT(*) AS num_employees
+FROM employees
+GROUP BY department;
+```
+
+##### `SUM()` with `GROUP BY`:
+
+Calculates the sum of a column for each group.
+
+```sql
+SELECT department, SUM(salary) AS total_salary
+FROM employees
+GROUP BY department;
+```
+
+##### `AVG()` with `GROUP BY`:
+
+Finds the average value of a column for each group.
+
+```sql
+SELECT department, AVG(age) AS avg_age
+FROM users
+GROUP BY department;
+```
+
+##### `MIN()` and `MAX()` with `GROUP BY`:
+
+Retrieves the minimum and maximum values of a column for each group.
+
+```sql
+SELECT category, MIN(price) AS min_price, MAX(price) AS max_price
+FROM products
+GROUP BY category;
+```
+
+When using aggregate functions with `GROUP BY`, the results are aggregated based on the groups defined by the `GROUP BY` clause. Each row in the output represents a unique group along with the aggregated value(s) calculated for that group.
+
+
+These functions serve different purposes: general functions operate on individual rows, modifying or transforming data, while aggregate functions perform calculations on groups of rows to derive summary information.
