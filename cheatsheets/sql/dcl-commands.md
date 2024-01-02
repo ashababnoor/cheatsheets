@@ -31,7 +31,7 @@ REVOKE <permissions> ON <object> FROM <user>;
 - **Access Control**: DCL commands ensure security by managing access privileges and permissions within a database system.
 
 - **Object-Level Permissions**: These commands operate at the object level, allowing control over who can perform specific actions (such as SELECT, INSERT, UPDATE, DELETE) on database objects like tables, views, procedures, etc.
-  =
+
 - **User Management**: Grants and revokes permissions from specific users or groups, providing fine-grained control over the actions permitted within the database.
 
 - **Granular Control**: Allows administrators to grant or restrict access based on the principle of least privilege, ensuring users only have the necessary permissions to perform their tasks.
