@@ -26,7 +26,7 @@ REVOKE <permissions> ON <object> FROM <user>;
   REVOKE DELETE ON customers FROM 'user2';
   ```
 
-## First-Time Info:
+## Useful Information:
 
 - **Access Control**: DCL commands ensure security by managing access privileges and permissions within a database system.
 
