@@ -32,3 +32,8 @@ minima:
    - { platform: linkedin,       user_url: "https://www.linkedin.com/in/ashababnoor" }
    - { platform: twitter,        user_url: "https://twitter.com/ashababnoor" }
    - { platform: x,              user_url: "https://x.com/ashababnoor" }
+
+
+markdown: kramdown
+kramdown:
+  math_engine: mathjax
