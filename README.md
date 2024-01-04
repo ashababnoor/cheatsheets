@@ -17,6 +17,7 @@ Welcome to this repository of concise, easy-to-reference cheatsheets for various
     - [SQL DQL Commands](cheatsheets/sql/dql-commands)
     - [SQL DCL Commands](cheatsheets/sql/dcl-commands)
 - [Python One-liners](cheatsheets/python-one-liners)
+- [Calculus Rules & Formulas](cheatsheets/calculus)
 
 
 ## Contributing
