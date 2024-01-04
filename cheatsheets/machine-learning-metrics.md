@@ -24,7 +24,7 @@ This cheatsheet provides a list of useful Machine Learning metrics.
 
 ### F1 Score
 
-- **Formula**: \( 2 \times \frac{{\text{Precision} \times \text{Recall}}}{{\text{Precision} + \text{Recall}}} \)
+- **Formula**: \( 2 \times \frac{{Precision \times Recall}}{{Precision + Recall}} \)
 - **Description**: Harmonic mean of precision and recall.
 - **Usage**: Balanced metric between precision and recall.
 
