@@ -19,6 +19,7 @@ Welcome to this repository of concise, easy-to-reference cheatsheets for various
 - [Python One-liners](cheatsheets/python-one-liners)
 - [Calculus Rules & Formulas](cheatsheets/calculus)
 - [Machine Learning Metrics](cheatsheets/machine-learning-metrics)
+- [Gmail Search Syntax](cheatsheets/gmail-search-syntax)
 
 
 ## Contributing
