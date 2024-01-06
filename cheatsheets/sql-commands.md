@@ -14,6 +14,8 @@ This cheatsheet provides a list of useful SQL commands.
 | `TRUNCATE TABLE <table>;` | Delete all rows from a table | `TRUNCATE TABLE employees;` |
 | `RENAME TABLE <old_name> TO <new_name>;` | Rename a table | `RENAME TABLE employees TO staff;` |
 
+For details: [SQL DDL Commands Cheatsheet](cheatsheets/sql/ddl-commands)
+
 ## Data Manipulation Language (DML)
 
 | Command | Description | Example |
@@ -23,6 +25,8 @@ This cheatsheet provides a list of useful SQL commands.
 | `DELETE FROM <table> WHERE <condition>;` | Delete rows from a table | `DELETE FROM employees WHERE id=1;` |
 | `MERGE INTO <table> USING <source_table> ON <condition> WHEN MATCHED THEN UPDATE SET <column>=<value> WHEN NOT MATCHED THEN INSERT (<columns>) VALUES (<values>);` | Perform merge operations | `MERGE INTO employees USING temp_employees ON employees.id = temp_employees.id WHEN MATCHED THEN UPDATE SET employees.name = temp_employees.name WHEN NOT MATCHED THEN INSERT (id, name) VALUES (temp_employees.id, temp_employees.name);` |
 | `INSERT INTO <table> SELECT <columns> FROM <source_table> WHERE <condition>;` | Insert data from another table | `INSERT INTO employees SELECT id, name FROM temp_employees WHERE status='active';` |
+
+For details: [SQL DDM Commands Cheatsheet](cheatsheets/sql/dml-commands)
 
 ## Data Query Language (DQL)
 
@@ -36,6 +40,8 @@ This cheatsheet provides a list of useful SQL commands.
 | `SELECT * FROM <table> LIMIT n OFFSET m;` | Retrieve limited rows with an offset | `SELECT * FROM employees LIMIT 10 OFFSET 20;` |
 | `SELECT * FROM <table> WHERE <column> LIKE 'pattern';` | Filter rows using patterns | `SELECT * FROM employees WHERE name LIKE 'J%';` |
 
+For details: [SQL DQL Commands Cheatsheet](cheatsheets/sql/dql-commands)
+
 ## Data Control Language (DCL)
 
 | Command | Description | Example |
@@ -46,3 +52,5 @@ This cheatsheet provides a list of useful SQL commands.
 | `DROP USER <user>;` | Delete a user | `DROP USER 'john';` |
 | `GRANT <role> TO <user>;` | Grant a role to a user | `GRANT admin TO 'john';` |
 | `REVOKE <role> FROM <user>;` | Revoke a role from a user | `REVOKE admin FROM 'john';` |
+
+For details: [SQL DCL Commands Cheatsheet](cheatsheets/sql/dcl-commands)
