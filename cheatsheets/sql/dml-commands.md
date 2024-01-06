@@ -1,4 +1,4 @@
-# SQL DML Commands Cheatsheet
+# SQL Data Manipulation Language (DML) Commands Cheatsheet
 
 ## INSERT INTO
 
