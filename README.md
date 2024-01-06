@@ -20,6 +20,7 @@ Welcome to this repository of concise, easy-to-reference cheatsheets for various
 - [Calculus Rules & Formulas](cheatsheets/calculus)
 - [Machine Learning Metrics](cheatsheets/machine-learning-metrics)
 - [Gmail Search Syntax](cheatsheets/gmail-search-syntax)
+- [Google Search Syntax](cheatsheets/google-search-syntax)
 
 
 ## Contributing
