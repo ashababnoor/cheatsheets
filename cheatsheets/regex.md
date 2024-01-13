@@ -23,12 +23,37 @@ This cheatsheet provides a list of common regular expressions patterns for speci
 
 ## Common Use-Cases
 
-| Pattern | Description |
-|---------|-------------|
-| `^\d{10}$` | Matches a 10-digit phone number |
-| `^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$` | Matches an email address |
-| `^(http\|https)://[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$` | Matches a URL |
-| `^\d{5}$` | Matches a 5-digit ZIP code |
-| `^[a-zA-Z0-9]{8,}$` | Matches a password with at least 8 alphanumeric characters |
-| `^\d{2}/\d{2}/\d{4}$` | Matches a date in MM/DD/YYYY format |
-| `^[a-zA-Z]{2,}$` | Matches a name with only alphabetic characters |
+### Match 10-digit phone number
+```
+^\d{10}$
+```
+
+### Match an email address
+```
+^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
+```
+
+### Match a URL
+```
+^(http\|https)://[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
+```
+
+### Match a 5-digit ZIP code
+```
+^\d{5}$
+```
+
+### Match password with at least 8 alphaneumeric characters
+```
+^[a-zA-Z0-9]{8,}$
+```
+
+### Match a date in DD/MM/YYYY format
+```
+^\d{2}/\d{2}/\d{4}$
+```
+
+### Match a name with only alphabetic characters 
+```
+^[a-zA-Z]{2,}$
+```
