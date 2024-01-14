@@ -13,14 +13,14 @@ Welcome to this repository of concise, easy-to-reference cheatsheets for various
 - [Linux Terminal Commands](cheatsheets/linux-terminal-commands)
 - [SQL Commands](cheatsheets/sql-commands)
   
-  - <details> <summary>More</summary>
+<details> <summary>More</summary>
     
-    - [SQL DDL Commands](cheatsheets/sql/ddl-commands)
-    - [SQL DML Commands](cheatsheets/sql/dml-commands)
-    - [SQL DQL Commands](cheatsheets/sql/dql-commands)
-    - [SQL DCL Commands](cheatsheets/sql/dcl-commands)
+- [SQL DDL Commands](cheatsheets/sql/ddl-commands)
+- [SQL DML Commands](cheatsheets/sql/dml-commands)
+- [SQL DQL Commands](cheatsheets/sql/dql-commands)
+- [SQL DCL Commands](cheatsheets/sql/dcl-commands)
     
-    </details>
+</details>
 
 - [Python One-liners](cheatsheets/python-one-liners)
 - [Calculus Rules & Formulas](cheatsheets/calculus)
