@@ -12,16 +12,10 @@ Welcome to this repository of concise, easy-to-reference cheatsheets for various
 - [HTTP Status Codes](cheatsheets/http-status-codes)
 - [Linux Terminal Commands](cheatsheets/linux-terminal-commands)
 - [SQL Commands](cheatsheets/sql-commands)
-  
-<details> <summary>More</summary>
-    
-- [SQL DDL Commands](cheatsheets/sql/ddl-commands)
-- [SQL DML Commands](cheatsheets/sql/dml-commands)
-- [SQL DQL Commands](cheatsheets/sql/dql-commands)
-- [SQL DCL Commands](cheatsheets/sql/dcl-commands)
-    
-</details>
-
+    - [SQL DDL Commands](cheatsheets/sql/ddl-commands)
+    - [SQL DML Commands](cheatsheets/sql/dml-commands)
+    - [SQL DQL Commands](cheatsheets/sql/dql-commands)
+    - [SQL DCL Commands](cheatsheets/sql/dcl-commands)
 - [Python One-liners](cheatsheets/python-one-liners)
 - [Calculus Rules & Formulas](cheatsheets/calculus)
 - [Machine Learning Metrics](cheatsheets/machine-learning-metrics)
