@@ -23,6 +23,8 @@ Welcome to this repository of concise, easy-to-reference cheatsheets for various
 - [Google Search Syntax](cheatsheets/google-search-syntax)
 - [Docker Commands](cheatsheets/docker-commands)
 - [Regular Expressions (Regex)](cheatsheets/regex)
+- [Data Structures](cheatsheets/data-structures)
+- [Algorithms](cheatsheets/algorithms)
 
 
 ## Contributing
