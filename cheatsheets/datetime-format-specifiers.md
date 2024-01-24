@@ -1,31 +1,31 @@
 # Python (and More) strftime Format Specifiers Cheatsheet
 
-| Specifier | Description |
-|-----------|-------------|
-| `%a` | Weekday as locale’s abbreviated name. |
-| `%A` | Weekday as locale’s full name. |
-| `%w` | Weekday as a decimal number, where 0 is Sunday and 6 is Saturday. |
-| `%d` | Day of the month as a zero-padded decimal number. |
-| `%b` | Month as locale’s abbreviated name. |
-| `%B` | Month as locale’s full name. |
-| `%m` | Month as a zero-padded decimal number. |
-| `%y` | Year without century as a zero-padded decimal number. |
-| `%Y` | Year with century as a decimal number. |
-| `%H` | Hour (24-hour clock) as a zero-padded decimal number. |
-| `%I` | Hour (12-hour clock) as a zero-padded decimal number. |
-| `%p` | Locale’s equivalent of either AM or PM. |
-| `%M` | Minute as a zero-padded decimal number. |
-| `%S` | Second as a zero-padded decimal number. |
-| `%f` | Microsecond as a decimal number, zero-padded on the left. |
-| `%z` | UTC offset in the form +HHMM or -HHMM. |
-| `%Z` | Time zone name. |
-| `%j` | Day of the year as a zero-padded decimal number. |
-| `%U` | Week number of the year (Sunday as the first day of the week). |
-| `%W` | Week number of the year (Monday as the first day of the week). |
-| `%c` | Locale’s appropriate date and time representation. |
-| `%x` | Locale’s appropriate date representation. |
-| `%X` | Locale’s appropriate time representation. |
-| `%%` | A literal '%' character. |
+| Specifier | Example | Description |
+|-----------|---------|-------------|
+| `%a` | Mon | Weekday as locale’s abbreviated name. |
+| `%A` | Monday | Weekday as locale’s full name. |
+| `%w` | 1 | Weekday as a decimal number, where 0 is Sunday and 6 is Saturday. |
+| `%d` | 05 | Day of the month as a zero-padded decimal number. |
+| `%b` | Jan | Month as locale’s abbreviated name. |
+| `%B` | January | Month as locale’s full name. |
+| `%m` | 01 | Month as a zero-padded decimal number. |
+| `%y` | 21 | Year without century as a zero-padded decimal number. |
+| `%Y` | 2021 | Year with century as a decimal number. |
+| `%H` | 13 | Hour (24-hour clock) as a zero-padded decimal number. |
+| `%I` | 01 | Hour (12-hour clock) as a zero-padded decimal number. |
+| `%p` | PM | Locale’s equivalent of either AM or PM. |
+| `%M` | 30 | Minute as a zero-padded decimal number. |
+| `%S` | 45 | Second as a zero-padded decimal number. |
+| `%f` | 000123 | Microsecond as a decimal number, zero-padded on the left. |
+| `%z` | +0530 | UTC offset in the form +HHMM or -HHMM. |
+| `%Z` | EST | Time zone name. |
+| `%j` | 365 | Day of the year as a zero-padded decimal number. |
+| `%U` | 52 | Week number of the year (Sunday as the first day of the week). |
+| `%W` | 52 | Week number of the year (Monday as the first day of the week). |
+| `%c` | Mon Sep  4 09:50:06 2017 | Locale’s appropriate date and time representation. |
+| `%x` | 09/04/17 | Locale’s appropriate date representation. |
+| `%X` | 09:50:06 | Locale’s appropriate time representation. |
+| `%%` | % | A literal '%' character. |
 
 
 The format specifiers provided are specific to Python's `strftime` function, which is part of the `datetime` module in Python.
