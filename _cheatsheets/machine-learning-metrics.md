@@ -11,25 +11,25 @@ This cheatsheet provides a list of useful Machine Learning metrics.
 
 ### Accuracy
 
-- **Formula**: $$ \frac{{TP + TN}}{{TP + TN + FP + FN}} $$
+- **Formula**: $$ \frac{TP + TN}{TP + TN + FP + FN} $$
 - **Description**: Proportion of correctly classified samples.
 - **Usage**: Overall model performance for balanced datasets.
 
 ### Precision
 
-- **Formula**: $$ \frac{{TP}}{{TP + FP}} $$
+- **Formula**: $$ \frac{TP}{TP + FP} $$
 - **Description**: Proportion of correctly predicted positive observations among total predicted positives.
 - **Usage**: Emphasizes minimizing false positives.
 
 ### Recall (Sensitivity/True Positive Rate)
 
-- **Formula**: $$ \frac{{TP}}{{TP + FN}} $$
+- **Formula**: $$ \frac{TP}{TP + FN} $$
 - **Description**: Proportion of correctly predicted positive observations among actual positives.
 - **Usage**: Emphasizes minimizing false negatives.
 
 ### F1 Score
 
-- **Formula**: $$ 2 \times \frac{{Precision \times Recall}}{{Precision + Recall}} $$
+- **Formula**: $$ 2 \times \frac{Precision \times Recall}{Precision + Recall} $$
 - **Description**: Harmonic mean of precision and recall.
 - **Usage**: Balanced metric between precision and recall.
 
@@ -47,7 +47,7 @@ This cheatsheet provides a list of useful Machine Learning metrics.
 
 ### Mean Absolute Error (MAE)
 
-- **Formula**: $$ \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i| $$
+- **Formula**: $$ \frac{1}{n} \sum_{i=1}^{n} \lvert y_i - \hat{y}_i \rvert $$
 - **Description**: Average of absolute differences between predicted and actual values.
 - **Usage**: Measures average model prediction error.
 

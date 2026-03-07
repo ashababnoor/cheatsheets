@@ -1,8 +1,9 @@
 # Site settings
 title: Cheatsheets
 description: Concise, easy-to-reference cheatsheets for various programming languages and technologies
+baseurl: /cheatsheets
 author:
-  name: Shabab Noor
+  name: Ahmed Shabab Noor
   email: ashababnoor@gmail.com
 
 permalink: /404.md
@@ -27,4 +28,4 @@ defaults:
 
 markdown: kramdown
 kramdown:
-  math_engine: katex
+  math_engine: null

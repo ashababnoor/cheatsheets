@@ -36,6 +36,12 @@ secrets.yml
 secrets.json
 credentials.json
 
+# Ignore Jekyll build and local dev files
+_site/
+.jekyll-cache/
+.ruby-version
+Gemfile.lock
+
 # Ignore operating system files
 .DS_Store
 Thumbs.db
