@@ -71,13 +71,13 @@ graph LR
     A --> ABc["B' | A — P(B'|A)"]
     Ac --> AcB["B | A' — P(B|A')"]
     Ac --> AcBc["B' | A' — P(B'|A')"]
-    style S fill:#58a6ff,color:#fff,stroke:none
-    style A fill:#3fb950,color:#fff,stroke:none
-    style Ac fill:#f85149,color:#fff,stroke:none
-    style AB fill:#3fb950,color:#000,stroke:none
-    style ABc fill:#3fb950,color:#000,stroke:none
-    style AcB fill:#f85149,color:#000,stroke:none
-    style AcBc fill:#f85149,color:#000,stroke:none
+    style S fill:#2563eb,color:#fff,stroke:none
+    style A fill:#16a34a,color:#fff,stroke:none
+    style Ac fill:#dc2626,color:#fff,stroke:none
+    style AB fill:#22c55e,color:#1f2328,stroke:none
+    style ABc fill:#22c55e,color:#1f2328,stroke:none
+    style AcB fill:#f87171,color:#1f2328,stroke:none
+    style AcBc fill:#f87171,color:#1f2328,stroke:none
 ```
 
 > To find $$ P(A \mid B) $$: follow the branch through A to B, then divide by total probability of B across all branches.
@@ -118,11 +118,11 @@ $$ P(B) = \sum_{i} P(B \mid A_i) \cdot P(A_i) $$
 ```mermaid
 graph LR
     N1["-1<br/>Perfect negative"] ~~~ N5["-0.5<br/>Moderate negative"] ~~~ Z["0<br/>No correlation"] ~~~ P5["+0.5<br/>Moderate positive"] ~~~ P1["+1<br/>Perfect positive"]
-    style N1 fill:#f85149,color:#fff,stroke:none
-    style N5 fill:#f8814966,color:#fff,stroke:none
-    style Z fill:#30363d,color:#fff,stroke:none
-    style P5 fill:#3fb95066,color:#fff,stroke:none
-    style P1 fill:#3fb950,color:#fff,stroke:none
+    style N1 fill:#dc2626,color:#fff,stroke:none
+    style N5 fill:#f87171,color:#1f2328,stroke:none
+    style Z fill:#6b7280,color:#fff,stroke:none
+    style P5 fill:#4ade80,color:#1f2328,stroke:none
+    style P1 fill:#16a34a,color:#fff,stroke:none
 ```
 
 ## Common Distributions
@@ -154,13 +154,13 @@ The **68-95-99.7 rule** (empirical rule):
 block-beta
     columns 7
     L3["-3σ"] L2["-2σ"] L1["-1σ"] M["μ"] R1["+1σ"] R2["+2σ"] R3["+3σ"]
-    style L3 fill:#30363d,color:#9198a1,stroke:none
-    style L2 fill:#58a6ff33,color:#58a6ff,stroke:none
-    style L1 fill:#58a6ff88,color:#fff,stroke:none
-    style M fill:#58a6ff,color:#fff,stroke:none
-    style R1 fill:#58a6ff88,color:#fff,stroke:none
-    style R2 fill:#58a6ff33,color:#58a6ff,stroke:none
-    style R3 fill:#30363d,color:#9198a1,stroke:none
+    style L3 fill:#6b7280,color:#fff,stroke:none
+    style L2 fill:#93c5fd,color:#1f2328,stroke:none
+    style L1 fill:#3b82f6,color:#fff,stroke:none
+    style M fill:#1d4ed8,color:#fff,stroke:none
+    style R1 fill:#3b82f6,color:#fff,stroke:none
+    style R2 fill:#93c5fd,color:#1f2328,stroke:none
+    style R3 fill:#6b7280,color:#fff,stroke:none
 ```
 
 | Range | Coverage |
@@ -211,12 +211,17 @@ flowchart TD
     Samples -->|3+| ANOVA["ANOVA (F-test)"]
     Prop --> ZProp["Z-test for<br/>proportions"]
     Fit --> Chi["Chi-squared test"]
-    style Q fill:#58a6ff,color:#fff,stroke:none
-    style Z fill:#3fb950,color:#fff,stroke:none
-    style T fill:#3fb950,color:#fff,stroke:none
-    style ANOVA fill:#3fb950,color:#fff,stroke:none
-    style ZProp fill:#3fb950,color:#fff,stroke:none
-    style Chi fill:#3fb950,color:#fff,stroke:none
+    style Q fill:#2563eb,color:#fff,stroke:none
+    style Means fill:#7c3aed,color:#fff,stroke:none
+    style Prop fill:#7c3aed,color:#fff,stroke:none
+    style Fit fill:#7c3aed,color:#fff,stroke:none
+    style KnownSig fill:#6b7280,color:#fff,stroke:none
+    style Samples fill:#6b7280,color:#fff,stroke:none
+    style Z fill:#16a34a,color:#fff,stroke:none
+    style T fill:#16a34a,color:#fff,stroke:none
+    style ANOVA fill:#16a34a,color:#fff,stroke:none
+    style ZProp fill:#16a34a,color:#fff,stroke:none
+    style Chi fill:#16a34a,color:#fff,stroke:none
 ```
 
 ### Common Tests
