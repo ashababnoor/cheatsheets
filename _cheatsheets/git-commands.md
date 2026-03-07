@@ -1,5 +1,7 @@
 ---
 title: "Git Commands"
+category: "Tools & DevOps"
+icon: "🔀"
 ---
 # Git Commands Cheatsheet
 

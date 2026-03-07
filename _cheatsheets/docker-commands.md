@@ -1,5 +1,7 @@
 ---
 title: "Docker Commands"
+category: "Tools & DevOps"
+icon: "🐳"
 ---
 # Docker Commands Cheatsheet
 

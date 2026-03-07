@@ -11,30 +11,42 @@ layout: default
     </div>
   </div>
 
-  <div class="cheatsheet-grid" id="cheatsheet-grid">
-    {% assign sheets = site.cheatsheets | sort: 'title' %}
-    {% for sheet in sheets %}
-    {% unless sheet.url contains '/sql/' %}
-    <a href="{{ sheet.url | relative_url }}" class="cheatsheet-card" data-title="{{ sheet.title | downcase }}">
-      <h3>{{ sheet.title | default: sheet.slug | replace: '-', ' ' | capitalize }}</h3>
-      {% if sheet.description %}
-      <p>{{ sheet.description }}</p>
-      {% endif %}
-    </a>
-    {% endunless %}
-    {% endfor %}
-  </div>
+  {% assign categories = "Tools & DevOps,Languages & Code,Web & Formats,Search,CS Fundamentals,Math & Science" | split: "," %}
+  {% for cat in categories %}
+    {% assign sheets = site.cheatsheets | where: "category", cat | sort: "title" %}
+    {% if sheets.size > 0 %}
+    <section class="card-group" data-category="{{ cat | downcase }}">
+      <h2 class="group-title">{{ cat }}</h2>
+      <div class="cheatsheet-grid">
+        {% for sheet in sheets %}
+        {% unless sheet.url contains '/sql/' %}
+        <a href="{{ sheet.url | relative_url }}" class="cheatsheet-card" data-title="{{ sheet.title | downcase }}">
+          <span class="card-icon">{{ sheet.icon }}</span>
+          <span class="card-title">{{ sheet.title }}</span>
+        </a>
+        {% endunless %}
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+  {% endfor %}
 </div>
 
 <script>
   (function() {
     var input = document.getElementById('search-input');
     var cards = document.querySelectorAll('.cheatsheet-card');
+    var groups = document.querySelectorAll('.card-group');
     input.addEventListener('input', function() {
       var q = this.value.toLowerCase();
-      cards.forEach(function(card) {
-        var title = card.getAttribute('data-title') || '';
-        card.style.display = title.indexOf(q) !== -1 ? '' : 'none';
+      groups.forEach(function(group) {
+        var visible = 0;
+        group.querySelectorAll('.cheatsheet-card').forEach(function(card) {
+          var match = (card.getAttribute('data-title') || '').indexOf(q) !== -1;
+          card.style.display = match ? '' : 'none';
+          if (match) visible++;
+        });
+        group.style.display = visible ? '' : 'none';
       });
     });
   })();

@@ -1,5 +1,7 @@
 ---
 title: "Markdown Syntax"
+category: "Web & Formats"
+icon: "📄"
 ---
 # Markdown Syntax Cheatsheet
 

@@ -1,5 +1,7 @@
 ---
 title: "Conventional Commits"
+category: "Languages & Code"
+icon: "📝"
 ---
 # Conventional Commits Cheatsheet
 

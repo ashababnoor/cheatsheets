@@ -405,21 +405,38 @@ a:hover {
   box-shadow: 0 0 0 3px var(--accent-subtle);
 }
 
+/* ===== Card Groups ===== */
+.card-group {
+  margin-bottom: 2rem;
+}
+
+.group-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
 /* ===== Cheatsheet Grid ===== */
 .cheatsheet-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1rem;
-  margin-top: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 0.6rem;
 }
 
 .cheatsheet-card {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
   background: var(--bg-secondary);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.25rem 1.5rem;
-  transition: all 0.2s;
+  border-radius: 6px;
+  padding: 0.6rem 0.85rem;
+  transition: all 0.15s;
   text-decoration: none;
 }
 
@@ -427,21 +444,23 @@ a:hover {
   border-color: var(--accent);
   background: var(--bg-hover);
   text-decoration: none;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
-.cheatsheet-card h3 {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 0.25rem;
+.card-icon {
+  font-size: 1.15rem;
+  line-height: 1;
+  flex-shrink: 0;
 }
 
-.cheatsheet-card p {
+.card-title {
   font-size: 0.85rem;
-  color: var(--text-secondary);
-  margin: 0;
+  font-weight: 500;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* ===== Footer ===== */
@@ -495,7 +514,7 @@ a:hover {
   }
 
   .cheatsheet-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   }
 
   .page-content h1 {

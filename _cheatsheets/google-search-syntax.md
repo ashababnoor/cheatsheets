@@ -1,5 +1,7 @@
 ---
 title: "Google Search Syntax"
+category: "Search"
+icon: "🔎"
 ---
 # Google Search Syntax and Operators Cheatsheet
 

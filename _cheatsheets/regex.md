@@ -1,5 +1,7 @@
 ---
-title: "Regular Expressions (Regex)"
+title: "Regular Expressions"
+category: "Web & Formats"
+icon: "🔍"
 ---
 # Regular Expressions (Regex) Cheatsheet
 

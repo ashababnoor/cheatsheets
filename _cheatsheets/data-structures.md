@@ -1,5 +1,7 @@
 ---
 title: "Data Structures"
+category: "CS Fundamentals"
+icon: "🏗️"
 ---
 # Data Structures Cheatsheet
 

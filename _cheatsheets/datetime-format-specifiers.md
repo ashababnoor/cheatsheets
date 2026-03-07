@@ -1,5 +1,7 @@
 ---
 title: "Datetime Format Specifiers"
+category: "Web & Formats"
+icon: "📅"
 ---
 # Python (and More) strftime Format Specifiers Cheatsheet
 

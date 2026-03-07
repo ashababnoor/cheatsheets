@@ -1,5 +1,7 @@
 ---
 title: "Clean Code Practices"
+category: "Languages & Code"
+icon: "✨"
 ---
 # Clean Code Practices Cheatsheet
 

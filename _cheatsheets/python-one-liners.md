@@ -1,5 +1,7 @@
 ---
 title: "Python One-Liners"
+category: "Languages & Code"
+icon: "🐍"
 ---
 # Python One-Liners Cheatsheet
 

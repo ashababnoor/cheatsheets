@@ -1,5 +1,7 @@
 ---
 title: "Gmail Search Syntax"
+category: "Search"
+icon: "📧"
 ---
 # Gmail Search Syntax Cheatsheet
 

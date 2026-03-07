@@ -1,5 +1,7 @@
 ---
-title: "Machine Learning Metrics"
+title: "ML Metrics"
+category: "Math & Science"
+icon: "🤖"
 ---
 # Machine Learning Metrics Cheatsheet
 

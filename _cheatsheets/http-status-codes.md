@@ -1,5 +1,7 @@
 ---
 title: "HTTP Status Codes"
+category: "Web & Formats"
+icon: "🌐"
 ---
 # HTTP Status Codes Cheatsheet
 

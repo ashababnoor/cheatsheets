@@ -1,5 +1,7 @@
 ---
 title: "SQL Commands"
+category: "Languages & Code"
+icon: "🗄️"
 ---
 # SQL Commands Cheatsheet
 

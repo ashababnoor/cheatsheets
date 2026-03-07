@@ -1,5 +1,7 @@
 ---
 title: "Linux Terminal Commands"
+category: "Tools & DevOps"
+icon: "🐧"
 ---
 # Linux Terminal Commands Cheatsheet
 

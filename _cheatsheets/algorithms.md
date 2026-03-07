@@ -1,5 +1,7 @@
 ---
 title: "Algorithms"
+category: "CS Fundamentals"
+icon: "⚙️"
 ---
 # Algorithms Cheatsheet
 

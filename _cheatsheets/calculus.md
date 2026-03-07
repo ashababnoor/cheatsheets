@@ -1,5 +1,7 @@
 ---
 title: "Calculus"
+category: "Math & Science"
+icon: "📐"
 ---
 # Calculus Cheatsheet
 

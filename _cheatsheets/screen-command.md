@@ -1,5 +1,7 @@
 ---
 title: "Screen Command"
+category: "Tools & DevOps"
+icon: "🖥️"
 ---
 # `screen` — Terminal Multiplexing Cheatsheet
 
