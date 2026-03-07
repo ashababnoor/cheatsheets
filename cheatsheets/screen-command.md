@@ -27,151 +27,110 @@ sudo dnf install screen
 # or on older CentOS: sudo yum install screen
 ```
 
-Quick notes: modern Linux distros sometimes include `screen` by default. An alternative multiplexers are `tmux` and `byobu`.
+Quick notes: modern Linux distros sometimes include `screen` by default. Alternative multiplexers include `tmux` and `byobu`.
 
-## Terminology / contract
-- Prefix/key: the default screen command prefix is `Ctrl-a` (written as `C-a`). You press `C-a`, then the command key. You can remap this in `.screenrc`.
-- Session: a running group of windows managed by screen. You can have multiple sessions.
-- Window: a shell (or program) inside a session. Each window has a numeric index and optional name.
-- Region: a split area of the display showing a window.
-
-Success criteria: create, list, attach/detach, name sessions, create/switch windows, split screen, use copy mode, log output.
+## Terminology / concepts
+- **Prefix key**: the default screen command prefix is `Ctrl-a` (written as `C-a`). You press `C-a`, then the command key. You can remap this in `.screenrc`.
+- **Session**: a running group of windows managed by screen. You can have multiple sessions.
+- **Window**: a shell (or program) inside a session. Each window has a numeric index and optional name.
+- **Region**: a split area of the display showing a window.
 
 ## Quick reference (most-used commands)
-- Start a new session (unnamed):
 
-```bash
-screen
-```
+| Action | Command |
+|--------|---------|
+| Start a new session (unnamed) | `screen` |
+| Start a named session | `screen -S work` |
+| List sessions | `screen -ls` |
+| Attach to a session | `screen -r work` |
+| Force reattach (detach other first) | `screen -d -r work` |
+| Multi-display attach (without detaching other) | `screen -x work` |
+| Clean up dead sessions | `screen -wipe` |
+| Reattach most recent session | `screen -RR` |
+| Kill a session from outside | `screen -S work -X quit` |
+| Send a command to a session (e.g., `ls` in window 0) | `screen -S work -p 0 -X stuff $'ls\n'` |
+| Start a detached session running a command | `screen -dmS backup bash -c 'tar -czf /tmp/home.tar.gz ~'` |
 
-- Start a new session and name it `work`:
+## Key bindings inside screen
 
-```bash
-screen -S work
-```
+All key bindings use the prefix key `C-a` followed by the command key.
 
-- List screen sessions:
+### General
 
-```bash
-screen -ls
-# or: screen --list
-```
+| Key | Action |
+|-----|--------|
+| `C-a` `?` | Show all key bindings (help) |
+| `C-a` `d` | Detach from current session |
+| `C-a` `D D` | Power detach (detach and logout) |
+| `C-a` `x` | Lock the screen session |
+| `C-a` `:` | Enter command mode |
 
-- Attach to a session (reattach):
+### Windows
 
-```bash
-screen -r work
-```
+| Key | Action |
+|-----|--------|
+| `C-a` `c` | Create a new window |
+| `C-a` `A` | Rename current window (type name, then Enter) |
+| `C-a` `k` | Kill current window (confirm with `y`) |
+| `C-a` `n` | Switch to next window |
+| `C-a` `p` | Switch to previous window |
+| `C-a` `<number>` | Switch to window by number (e.g., `C-a` `2`) |
+| `C-a` `"` | List windows (interactive selector) |
+| `C-a` `w` | Show window list in status line |
+| `C-a` `'` | Select window by name or number prompt |
+| `C-a` `:number <n>` | Move current window to index `<n>` |
 
-- Reattach even if already attached elsewhere (force):
+### Splitting the display (regions)
 
-```bash
-screen -d -r work
-```
+| Key | Action |
+|-----|--------|
+| `C-a` `S` | Split horizontally |
+| `C-a` `\|` | Split vertically (screen 4.x+) |
+| `C-a` `TAB` | Switch focus to next region |
+| `C-a` `X` | Remove current region |
+| `C-a` `Q` | Remove all regions except the current one |
+| `C-a` `:resize <n>` | Resize current region to `<n>` lines |
+| `C-a` `:fit` | Fit region to current terminal size |
+| `C-a` `c` | Open a window in the current region |
 
-- Detach from current session (while inside screen):
+### Copy/scrollback mode
 
-Press: `C-a` `d`
+| Key | Action |
+|-----|--------|
+| `C-a` `[` | Enter copy/scrollback mode |
+| Arrow keys / `h j k l` | Navigate (vi-style, depending on config) |
+| `PageUp` / `PageDown` | Scroll pages |
+| `Space` | Start/end selection |
+| `C-a` `]` | Paste copied text into current window |
 
-- Create a new window (inside screen):
+Tip: Increase scrollback buffer in `.screenrc` with `defscrollback 5000`.
 
-Press: `C-a` `c`
+### Logging
 
-- Switch to next/previous window:
+| Key / Command | Action |
+|---------------|--------|
+| `C-a` `H` | Toggle logging for the current window |
+| `screen -S work -X log on` | Enable logging from outside |
+| `screen -S work -X logfile /path/to/log.txt` | Set log file path from outside |
+| `screen -S work -X log off` | Disable logging from outside |
 
-`C-a` `n` (next)
-`C-a` `p` (previous)
-
-- Switch to a specific window number (e.g., 2):
-
-`C-a` `2`
-
-- Rename current window (inside):
-
-`C-a` `A` (then type name and Enter)
-
-- Kill current window (inside):
-
-`C-a` `k` (confirm with y)
-
-- Kill a session from outside:
-
-```bash
-screen -S work -X quit
-```
-
-- Send a command to a session (run `ls` in window 0):
-
-```bash
-screen -S work -p 0 -X stuff $'ls\n'
-```
-
-## Windows, numbering, and navigation
-- Create window: `C-a` `c`
-- List windows (screen display): `C-a` `"` (double-quote)
-- Switch by number: `C-a` `<number>`
-- Next/prev: `C-a` `n` / `C-a` `p`
-- Move window to another number index: C-a : number  (use screen's command line)
-
-## Splitting the display (regions)
-Not all screen builds support advanced split features; these are the common commands:
-- Create vertical/horizontal split (older screen uses "split"):
-
-`C-a` `S`  (split horizontally into two regions)
-`C-a` `|`  (split vertically in some builds—rare)
-
-- Switch focus region:
-
-`C-a` `TAB`
-
-- Create a window in the current region:
-
-`C-a` `c`
-
-- Remove a region:
-
-`C-a` `X` (capital X) — removes the current region
-
-Note: Many users prefer `tmux` for splitting because its split syntax is more consistent. Still, screen can do the job for simple layouts.
-
-## Copy/scrollback mode (scrolling & copying text)
-- Enter copy/scrollback mode: `C-a` `[`
-- Move with arrow keys, PageUp/PageDown, or vi keys (k/j/h/l) depending on build and settings.
-- Start selection: Space
-- Move cursor to end of selection: Space (or Enter in some setups)
-- Paste selection into current window: `C-a` `]`
-
-Tip: You can configure a larger scrollback buffer in `.screenrc` (see below).
-
-## Logging and session output
-- Start logging for the current window (inside screen):
-
-`C-a` `H`
-
-This toggles logging to a file named `screenlog.0`, `screenlog.1`, etc. To specify a filename from outside:
-
-```bash
-screen -S work -X log on
-screen -S work -X logfile /path/to/logfile.txt
-```
-
-- Turn logging off:
-
-`C-a` `H`  (toggle) or
-
-```bash
-screen -S work -X log off
-```
+Log files are named `screenlog.0`, `screenlog.1`, etc. by default.
 
 ## Disconnect vs terminate
-- Detach (leave processes running): `C-a` `d`
-- Quit screen (terminate session and all windows): from outside
 
-```bash
-screen -S work -X quit
-```
+| Action | How |
+|--------|-----|
+| Detach (leave processes running) | `C-a` `d` |
+| Power detach (detach + logout) | `C-a` `D D` |
+| Quit session from inside | `C-a` `:quit` |
+| Quit session from outside | `screen -S work -X quit` |
 
-or inside screen: `C-a` `:quit`
+## Environment variables
+
+| Variable | Description |
+|----------|-------------|
+| `$STY` | Name of the current screen session (empty if not inside screen) |
+| `$WINDOW` | Number of the current window (useful for scripting and prompts) |
 
 ## Example workflows
 - Start a persistent session and run a long command:
@@ -184,9 +143,7 @@ screen -S longjob
 screen -r longjob
 ```
 
-- Share a session with another user (they need permission to your tty or use multiuser):
-
-Enable multiuser and addacl (requires `.screenrc` or commands):
+- Share a session with another user (multiuser mode):
 
 ```bash
 # as owner inside screen
@@ -195,11 +152,23 @@ C-a :acladd friendusername
 ```
 Then the other user can attach to the session by name if permissions allow.
 
-- Run a background command in a screen from the outside and detach immediately:
+- Run a background command in a screen and detach immediately:
 
 ```bash
 screen -dmS backup bash -c 'tar -czf /tmp/home.tar.gz /home/you'
 # -d -m: start detached, -S name
+```
+
+- Send a literal Ctrl-C to a running window:
+
+```bash
+screen -S work -p 0 -X stuff $'\003'
+```
+
+- Run a command in a new named window:
+
+```bash
+screen -S myproj -X screen -t build bash -c 'make build; exec bash'
 ```
 
 ## Sample .screenrc
@@ -241,53 +210,31 @@ Create directory for logs (if you use the logfile above):
 mkdir -p ~/screenlogs
 ```
 
-## Advanced tips and scripts
-- Reattaching to the most recently detached session:
-
-```bash
-screen -RR
-# -RR tries to reattach, and if multiple sessions exist, creates one
-```
-
-- Attach to a session and bring it to the foreground if it's attached elsewhere:
-
-```bash
-screen -d -r <sessionname>
-```
-
-- Send a literal Ctrl-C or other control sequence to a window:
-
-Use `stuff` and escape sequences. For example, send Ctrl-C:
-
-```bash
-screen -S work -p 0 -X stuff $'\003'
-```
-
-- Scripting example: run a command in a new window and keep window named:
-
-```bash
-screen -S myproj -X screen -t build bash -c 'make build; exec bash'
-```
-
 ## Troubleshooting
-- Can't reattach: check `screen -ls` for session states (`Detached`, `Attached`, `Dead`). If a session says `Attached` and you need it, use `screen -d -r <id>` to detach it from the other terminal.
 
-- Permission denied when sharing: ensure correct permissions for the pts device or use `multiuser` + `acladd` inside screen.
+| Problem | Solution |
+|---------|----------|
+| Can't reattach | Run `screen -ls` to check session state. If `Attached`, use `screen -d -r <id>` to steal it. |
+| Dead sessions lingering | Run `screen -wipe` to clean them up. |
+| Permission denied when sharing | Ensure correct pts permissions or use `multiuser` + `acladd` inside screen. |
+| Copy mode navigation unresponsive | Try `export TERM=xterm-256color` or check `termcap` entries. |
+| Session name collisions | Always use unique names with `-S` to avoid attaching to the wrong session. |
 
-- Copy mode navigation doesn't respond: some terminals require `termcap` entries or proper `TERM` value. Try `export TERM=xterm-256color` or use alternate keys.
+## TL;DR
 
-- Session name collisions: always choose unique session names with -S to avoid attaching to the wrong session.
-
-## Short cheat list (TL;DR)
-- Start named session: `screen -S name`
-- List: `screen -ls`
-- Attach: `screen -r name`
-- Detach (inside): `C-a` `d`
-- New window: `C-a` `c`
-- List windows: `C-a` `"`~
-- Copy mode: `C-a` `[`
-- Toggle logging: `C-a` `H`
-- Kill session: `screen -S name -X quit`
+| Action | Command |
+|--------|---------|
+| Start named session | `screen -S name` |
+| List sessions | `screen -ls` |
+| Attach | `screen -r name` |
+| Detach (inside) | `C-a` `d` |
+| New window | `C-a` `c` |
+| List windows | `C-a` `"` |
+| Show help | `C-a` `?` |
+| Copy mode | `C-a` `[` |
+| Toggle logging | `C-a` `H` |
+| Kill session | `screen -S name -X quit` |
+| Clean up dead sessions | `screen -wipe` |
 
 ## Further reading
 - `man screen`
