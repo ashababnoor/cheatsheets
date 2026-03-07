@@ -50,3 +50,16 @@ Welcome to this repository of concise, easy-to-reference cheatsheets for various
 ## Contributing
 
 We welcome contributions! If you would like to add a new cheatsheet or improve an existing one, please feel free to make a pull request
+
+
+## Running Locally
+
+```bash
+# Install dependencies
+bundle install
+
+# Serve the site with live reload
+bundle exec jekyll serve --livereload --baseurl ""
+```
+
+The site will be available at `http://localhost:4000/`.
