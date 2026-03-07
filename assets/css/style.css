@@ -351,6 +351,17 @@ a:hover {
   min-width: 200px;
 }
 
+/* ===== Mermaid Diagrams ===== */
+.mermaid {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  overflow-x: auto;
+}
+
 /* ===== Blockquotes ===== */
 .page-content blockquote {
   border-left: 3px solid var(--accent);
