@@ -29,13 +29,13 @@
       {{ content }}
     {% else %}
       <div class="page-layout">
+        <article class="page-content">
+          {{ content }}
+        </article>
         <aside class="toc-sidebar" id="toc-sidebar">
           <div class="toc-header">On this page</div>
           <nav id="toc-nav"></nav>
         </aside>
-        <article class="page-content">
-          {{ content }}
-        </article>
       </div>
     {% endif %}
   </main>
