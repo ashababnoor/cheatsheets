@@ -7,6 +7,11 @@ author:
 
 permalink: /404.md
 
+collections:
+  cheatsheets:
+    output: true
+    permalink: /:path
+
 # Build settings
 # theme: jekyll-theme-minimal
 # theme: minima

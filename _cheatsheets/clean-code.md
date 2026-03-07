@@ -1,3 +1,5 @@
+---
+---
 # Clean Code Practices Cheatsheet
 
 This cheatsheet provides a list of best practices for writing clean code.

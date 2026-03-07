@@ -1,3 +1,5 @@
+---
+---
 # Gmail Search Syntax Cheatsheet
 
 This cheatsheet includes a useful list of Gmail search syntax.

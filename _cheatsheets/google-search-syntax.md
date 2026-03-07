@@ -1,3 +1,5 @@
+---
+---
 # Google Search Syntax and Operators Cheatsheet
 
 This cheatsheet provides a list of useful Google search syntax and operators
