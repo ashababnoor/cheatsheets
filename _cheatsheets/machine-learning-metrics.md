@@ -2,6 +2,7 @@
 title: "ML Metrics"
 category: "Math & Science"
 icon: "🤖"
+order: 3
 ---
 # Machine Learning Metrics Cheatsheet
 

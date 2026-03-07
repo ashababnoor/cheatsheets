@@ -13,7 +13,7 @@ layout: default
 
   {% assign categories = "Tools & DevOps,Languages & Code,Web & Formats,Search,CS Fundamentals,Math & Science" | split: "," %}
   {% for cat in categories %}
-    {% assign sheets = site.cheatsheets | where: "category", cat | sort: "title" %}
+    {% assign sheets = site.cheatsheets | where: "category", cat | sort: "order" %}
     {% if sheets.size > 0 %}
     <section class="card-group" data-category="{{ cat | downcase }}">
       <h2 class="group-title">{{ cat }}</h2>

@@ -2,6 +2,7 @@
 title: "Calculus"
 category: "Math & Science"
 icon: "📐"
+order: 1
 ---
 # Calculus Cheatsheet
 
