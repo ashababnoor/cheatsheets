@@ -1,4 +1,5 @@
 ---
+title: "Machine Learning Metrics"
 ---
 # Machine Learning Metrics Cheatsheet
 

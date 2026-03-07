@@ -1,4 +1,5 @@
 ---
+title: "Conventional Commits"
 ---
 # Conventional Commits Cheatsheet
 

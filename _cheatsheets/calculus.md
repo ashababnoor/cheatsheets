@@ -1,4 +1,5 @@
 ---
+title: "Calculus"
 ---
 # Calculus Cheatsheet
 

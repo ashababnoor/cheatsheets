@@ -1,4 +1,5 @@
 ---
+title: "Google Search Syntax"
 ---
 # Google Search Syntax and Operators Cheatsheet
 

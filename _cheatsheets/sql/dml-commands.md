@@ -1,4 +1,5 @@
 ---
+title: "SQL DML Commands"
 ---
 # SQL Data Manipulation Language (DML) Commands Cheatsheet
 

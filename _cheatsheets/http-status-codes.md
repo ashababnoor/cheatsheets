@@ -1,4 +1,5 @@
 ---
+title: "HTTP Status Codes"
 ---
 # HTTP Status Codes Cheatsheet
 

@@ -1,4 +1,5 @@
 ---
+title: "SQL DQL Commands"
 ---
 # SQL Data Query Language (DQL) Commands & Functions Cheatsheet
 

@@ -1,4 +1,5 @@
 ---
+title: "SQL Commands"
 ---
 # SQL Commands Cheatsheet
 

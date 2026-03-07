@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title and page.title != site.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="{{ '/' | relative_url }}" class="site-logo">
+        <span class="logo-icon">&gt;_</span>
+        <span class="logo-text">{{ site.title }}</span>
+      </a>
+      <nav class="site-nav">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <a href="https://github.com/ashababnoor/cheatsheets" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-main">
+    {% if page.layout == 'home' %}
+      {{ content }}
+    {% else %}
+      <div class="page-layout">
+        <aside class="toc-sidebar" id="toc-sidebar">
+          <div class="toc-header">On this page</div>
+          <nav id="toc-nav"></nav>
+        </aside>
+        <article class="page-content">
+          {{ content }}
+        </article>
+      </div>
+    {% endif %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}. Built with Jekyll.</p>
+    </div>
+  </footer>
+
+  {% unless page.layout == 'home' %}
+  <script>
+    (function() {
+      const article = document.querySelector('.page-content');
+      const tocNav = document.getElementById('toc-nav');
+      const tocSidebar = document.getElementById('toc-sidebar');
+      if (!article || !tocNav) return;
+
+      const headings = article.querySelectorAll('h2, h3');
+      if (headings.length < 2) {
+        tocSidebar.style.display = 'none';
+        document.querySelector('.page-layout').classList.add('no-toc');
+        return;
+      }
+
+      const list = document.createElement('ul');
+      headings.forEach(function(h, i) {
+        if (!h.id) h.id = 'section-' + i;
+        const li = document.createElement('li');
+        li.className = h.tagName === 'H3' ? 'toc-h3' : 'toc-h2';
+        const a = document.createElement('a');
+        a.href = '#' + h.id;
+        a.textContent = h.textContent;
+        li.appendChild(a);
+        list.appendChild(li);
+      });
+      tocNav.appendChild(list);
+
+      // Highlight active heading on scroll
+      const links = tocNav.querySelectorAll('a');
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            links.forEach(function(l) { l.classList.remove('active'); });
+            const active = tocNav.querySelector('a[href="#' + entry.target.id + '"]');
+            if (active) active.classList.add('active');
+          }
+        });
+      }, { rootMargin: '0px 0px -70% 0px', threshold: 0 });
+
+      headings.forEach(function(h) { observer.observe(h); });
+    })();
+  </script>
+  {% endunless %}
+</body>
+</html>

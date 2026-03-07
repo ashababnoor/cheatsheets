@@ -1,4 +1,5 @@
 ---
+title: "SQL DCL Commands"
 ---
 # SQL Data Control Language (DCL) Commands Cheatsheet
 

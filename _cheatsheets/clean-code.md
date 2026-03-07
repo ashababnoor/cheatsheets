@@ -1,4 +1,5 @@
 ---
+title: "Clean Code Practices"
 ---
 # Clean Code Practices Cheatsheet
 

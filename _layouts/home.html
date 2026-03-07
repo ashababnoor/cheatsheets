@@ -1,0 +1,41 @@
+---
+layout: default
+---
+
+<div class="home">
+  <div class="home-hero">
+    <h1>Cheatsheets</h1>
+    <p class="home-subtitle">{{ site.description }}</p>
+    <div class="search-box">
+      <input type="text" id="search-input" placeholder="Search cheatsheets..." autocomplete="off">
+    </div>
+  </div>
+
+  <div class="cheatsheet-grid" id="cheatsheet-grid">
+    {% assign sheets = site.cheatsheets | sort: 'title' %}
+    {% for sheet in sheets %}
+    {% unless sheet.url contains '/sql/' %}
+    <a href="{{ sheet.url | relative_url }}" class="cheatsheet-card" data-title="{{ sheet.title | downcase }}">
+      <h3>{{ sheet.title | default: sheet.slug | replace: '-', ' ' | capitalize }}</h3>
+      {% if sheet.description %}
+      <p>{{ sheet.description }}</p>
+      {% endif %}
+    </a>
+    {% endunless %}
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+  (function() {
+    var input = document.getElementById('search-input');
+    var cards = document.querySelectorAll('.cheatsheet-card');
+    input.addEventListener('input', function() {
+      var q = this.value.toLowerCase();
+      cards.forEach(function(card) {
+        var title = card.getAttribute('data-title') || '';
+        card.style.display = title.indexOf(q) !== -1 ? '' : 'none';
+      });
+    });
+  })();
+</script>

@@ -1,4 +1,5 @@
 ---
+title: "Git Commands"
 ---
 # Git Commands Cheatsheet
 

@@ -1,4 +1,5 @@
 ---
+title: "Python One-Liners"
 ---
 # Python One-Liners Cheatsheet
 

@@ -1,4 +1,5 @@
 ---
+title: "Linux Terminal Commands"
 ---
 # Linux Terminal Commands Cheatsheet
 

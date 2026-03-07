@@ -1,4 +1,5 @@
 ---
+title: "Markdown Syntax"
 ---
 # Markdown Syntax Cheatsheet
 

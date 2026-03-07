@@ -1,4 +1,5 @@
 ---
+title: "Screen Command"
 ---
 # `screen` — Terminal Multiplexing Cheatsheet
 

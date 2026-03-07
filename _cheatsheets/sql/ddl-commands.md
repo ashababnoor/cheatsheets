@@ -1,4 +1,5 @@
 ---
+title: "SQL DDL Commands"
 ---
 # SQL Data Definition Language (DDL) Commands Cheatsheet
 

@@ -1,4 +1,5 @@
 ---
+title: "Data Structures"
 ---
 # Data Structures Cheatsheet
 

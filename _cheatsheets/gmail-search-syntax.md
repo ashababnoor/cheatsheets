@@ -1,4 +1,5 @@
 ---
+title: "Gmail Search Syntax"
 ---
 # Gmail Search Syntax Cheatsheet
 

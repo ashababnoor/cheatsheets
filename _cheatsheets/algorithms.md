@@ -1,4 +1,5 @@
 ---
+title: "Algorithms"
 ---
 # Algorithms Cheatsheet
 
