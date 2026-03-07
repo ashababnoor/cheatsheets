@@ -5,27 +5,46 @@ Welcome to this repository of concise, easy-to-reference cheatsheets for various
 
 ## Available Cheatsheets
 
-- [Conventional Commits](conventional-commits)
-- [Python Datetime Format Specifiers](datetime-format-specifiers)
-- [Git Commands](git-commands)
-- [Markdown Syntax](markdown-syntax)
-- [HTTP Status Codes](http-status-codes)
-- [Linux Terminal Commands](linux-terminal-commands)
+**Languages & Code**
+- [Python](python)
+- [JavaScript](javascript)
+- [CSS](css)
 - [SQL Commands](sql-commands)
     - [SQL DDL Commands](sql/ddl-commands)
     - [SQL DML Commands](sql/dml-commands)
     - [SQL DQL Commands](sql/dql-commands)
     - [SQL DCL Commands](sql/dcl-commands)
-- [Python One-liners](python-one-liners)
-- [Calculus Rules & Formulas](calculus)
-- [Machine Learning Metrics](machine-learning-metrics)
-- [Gmail Search Syntax](gmail-search-syntax)
-- [Google Search Syntax](google-search-syntax)
+- [Python One-Liners](python-one-liners)
+- [Clean Code Practices](clean-code)
+- [Conventional Commits](conventional-commits)
+
+**Tools & DevOps**
+- [Git Commands](git-commands)
 - [Docker Commands](docker-commands)
+- [Linux Terminal Commands](linux-terminal-commands)
+- [Bash Scripting](bash-scripting)
+- [Vim](vim)
+- [Screen Command](screen-command)
+
+**Web & Formats**
+- [HTTP Status Codes](http-status-codes)
+- [Markdown Syntax](markdown-syntax)
 - [Regular Expressions (Regex)](regex)
+- [Datetime Format Specifiers](datetime-format-specifiers)
+
+**CS Fundamentals**
 - [Data Structures](data-structures)
 - [Algorithms](algorithms)
-- [Screen Command](screen-command)
+- [Design Patterns](design-patterns)
+- [Networking Basics](networking-basics)
+
+**Search**
+- [Gmail Search Syntax](gmail-search-syntax)
+- [Google Search Syntax](google-search-syntax)
+
+**Math & Science**
+- [Calculus](calculus)
+- [Machine Learning Metrics](machine-learning-metrics)
 
 
 ## Contributing
