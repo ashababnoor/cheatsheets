@@ -12,19 +12,45 @@ Essential formulas and concepts for probability theory and statistics.
 
 ### Set Operations
 
-```mermaid
-graph LR
-    subgraph "P(A ∪ B)"
-        direction LR
-        A1["A only"] --- AB1["A ∩ B"] --- B1["B only"]
-    end
-    style A1 fill:#58a6ff,color:#fff,stroke:none
-    style AB1 fill:#d2a8ff,color:#fff,stroke:none
-    style B1 fill:#3fb950,color:#fff,stroke:none
-```
+<div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; margin-bottom: 1rem;">
 
-> **Union**: $$ P(A \cup B) $$ = Blue + Purple + Green
-> **Intersection**: $$ P(A \cap B) $$ = Purple only
+<figure style="text-align: center; margin: 0;">
+<svg width="180" height="120" viewBox="0 0 180 120" xmlns="http://www.w3.org/2000/svg">
+  <rect width="180" height="120" rx="8" fill="var(--bg-secondary)" stroke="var(--border)"/>
+  <circle cx="68" cy="60" r="38" fill="#58a6ff" opacity="0.45"/>
+  <circle cx="112" cy="60" r="38" fill="#3fb950" opacity="0.45"/>
+  <text x="55" y="64" font-size="14" font-weight="600" fill="var(--text-primary)" font-family="var(--font-sans)">A</text>
+  <text x="118" y="64" font-size="14" font-weight="600" fill="var(--text-primary)" font-family="var(--font-sans)">B</text>
+</svg>
+<figcaption style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.25rem;"><strong>A ∪ B</strong> — Union (all shaded)</figcaption>
+</figure>
+
+<figure style="text-align: center; margin: 0;">
+<svg width="180" height="120" viewBox="0 0 180 120" xmlns="http://www.w3.org/2000/svg">
+  <rect width="180" height="120" rx="8" fill="var(--bg-secondary)" stroke="var(--border)"/>
+  <defs>
+    <clipPath id="clipB"><circle cx="112" cy="60" r="38"/></clipPath>
+  </defs>
+  <circle cx="68" cy="60" r="38" fill="none" stroke="var(--text-muted)" stroke-width="1.5"/>
+  <circle cx="112" cy="60" r="38" fill="none" stroke="var(--text-muted)" stroke-width="1.5"/>
+  <circle cx="68" cy="60" r="38" fill="#d2a8ff" opacity="0.6" clip-path="url(#clipB)"/>
+  <text x="55" y="64" font-size="14" font-weight="600" fill="var(--text-primary)" font-family="var(--font-sans)">A</text>
+  <text x="118" y="64" font-size="14" font-weight="600" fill="var(--text-primary)" font-family="var(--font-sans)">B</text>
+</svg>
+<figcaption style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.25rem;"><strong>A ∩ B</strong> — Intersection (overlap)</figcaption>
+</figure>
+
+<figure style="text-align: center; margin: 0;">
+<svg width="180" height="120" viewBox="0 0 180 120" xmlns="http://www.w3.org/2000/svg">
+  <rect width="180" height="120" rx="8" fill="#f8514933" stroke="var(--border)"/>
+  <circle cx="90" cy="60" r="38" fill="var(--bg-secondary)" stroke="var(--text-muted)" stroke-width="1.5"/>
+  <text x="83" y="64" font-size="14" font-weight="600" fill="var(--text-primary)" font-family="var(--font-sans)">A</text>
+  <text x="148" y="20" font-size="12" font-weight="600" fill="var(--text-secondary)" font-family="var(--font-sans)">Aᶜ</text>
+</svg>
+<figcaption style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.25rem;"><strong>Aᶜ</strong> — Complement (red area)</figcaption>
+</figure>
+
+</div>
 
 ### Fundamental Rules
 
