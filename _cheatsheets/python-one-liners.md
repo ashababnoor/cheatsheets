@@ -5,79 +5,298 @@ icon: "🐍"
 ---
 # Python One-Liners Cheatsheet
 
-## Count Unique Words in a String
+## Strings
 
+### Reverse a String
 ```python
-unique_words_count = len(set("Hello, this is a sample text".split()))
+reversed_str = "hello world"[::-1]
 ```
-**Explanation:** Splits the string into words, converts it to a set to get unique words, and calculates the count.
+Reverses the characters in a string using slice notation.
 
-## Print a List in Reverse Order
-
+### Palindrome Check
 ```python
-reversed_list = [1, 2, 3, 4][::-1]
+is_palindrome = lambda s: s.lower().replace(" ", "") == s.lower().replace(" ", "")[::-1]
 ```
-**Explanation:** Uses slicing with step -1 to reverse the order of elements in the list.
+Checks whether a string reads the same forwards and backwards, ignoring case and spaces.
 
-## Flatten a List of Lists
-
+### Count Words
 ```python
-flattened_list = [item for sublist in [[1, 2], [3, 4], [5, 6]] for item in sublist]
+word_count = len("Hello, this is a sample text".split())
 ```
-**Explanation:** Utilizes list comprehension to flatten a list of lists into a single list.
+Splits on whitespace and counts the resulting words.
 
-## Check Palindrome
-
+### Title Case
 ```python
-is_palindrome = lambda s: s == s[::-1]
+titled = " ".join(w.capitalize() for w in "hello world from python".split())
 ```
-**Explanation:** Defines a lambda function to check if a string is a palindrome.
+Capitalizes the first letter of every word in a string.
 
-## Transpose a Matrix
-
+### Remove Duplicate Characters
 ```python
-matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-transposed = [list(row) for row in zip(*matrix)]
+unique_chars = "".join(dict.fromkeys("abracadabra"))
 ```
-**Explanation:** Uses `zip` with `*` unpacking to transpose a matrix.
+Removes duplicate characters while preserving the original order.
 
-## Generate Prime Numbers
-
+### Anagram Check
 ```python
-primes = [i for i in range(2, 101) if all(i % j != 0 for j in range(2, int(i ** 0.5) + 1))]
+is_anagram = lambda a, b: sorted(a.lower()) == sorted(b.lower())
 ```
-**Explanation:** Uses list comprehension and a primality check to generate prime numbers up to 100.
+Returns `True` if two strings are anagrams of each other.
 
-## Find Unique Characters in a String
-
+### Caesar Cipher
 ```python
-unique_chars = ''.join(sorted(set("hello")))
+caesar = lambda s, k: "".join(chr((ord(c) - 97 + k) % 26 + 97) if c.isalpha() else c for c in s.lower())
 ```
-**Explanation:** Converts the string to a set to get unique characters, sorts them, and joins back into a string.
+Shifts each letter in a lowercase string by `k` positions in the alphabet.
 
-## Calculate Factorials
-
+### Most Common Character
 ```python
-import math
-factorials = [math.factorial(i) for i in range(1, 6)]
+most_common = max("abracadabra", key="abracadabra".count)
 ```
-**Explanation:** Uses `math.factorial` within a list comprehension to calculate factorials.
+Finds the character that appears most frequently in a string.
 
-## Read File and Count Lines
+## Lists
 
+### Flatten a List of Lists
 ```python
-line_count = sum(1 for line in open('file.txt'))
+flat = [item for sublist in [[1, 2], [3, 4], [5, 6]] for item in sublist]
 ```
-**Explanation:** Uses a generator expression to count lines in a file.
+Flattens one level of nesting from a list of lists into a single list.
 
-## Execute Shell Commands
-
+### Remove Duplicates (Preserve Order)
 ```python
-import os
-output = os.popen('ls').read()
+unique = list(dict.fromkeys([1, 3, 2, 3, 1, 4, 2]))
 ```
-**Explanation:** Uses `os.popen` to execute a shell command ('ls' in this case) and reads the output.
+Removes duplicate values from a list while keeping the original order.
 
----
+### Transpose a Matrix
+```python
+transposed = [list(row) for row in zip(*[[1, 2, 3], [4, 5, 6], [7, 8, 9]])]
+```
+Transposes rows and columns of a matrix using `zip` with unpacking.
 
-These Python one-liners showcase various functionalities and concise approaches to achieve specific tasks efficiently. Each line performs a specific operation or solves a problem within a single line of Python code, along with an explanatory note for clarity.
+### Chunk a List
+```python
+chunks = lambda lst, n: [lst[i:i+n] for i in range(0, len(lst), n)]
+```
+Splits a list into sublists of size `n`.
+
+### Interleave Two Lists
+```python
+interleaved = [x for pair in zip([1, 2, 3], ["a", "b", "c"]) for x in pair]
+```
+Merges two lists by alternating their elements.
+
+### Rotate a List
+```python
+rotated = lambda lst, k: lst[k:] + lst[:k]
+```
+Rotates a list by `k` positions to the left.
+
+### Partition by Predicate
+```python
+partition = lambda lst, fn: ([x for x in lst if fn(x)], [x for x in lst if not fn(x)])
+```
+Splits a list into two lists based on whether each element satisfies a predicate.
+
+### Running Sum
+```python
+running = [sum(lst[:i+1]) for i, _ in enumerate(lst := [1, 2, 3, 4, 5])]
+```
+Computes the cumulative sum at each position in the list.
+
+## Dictionaries
+
+### Merge Dictionaries
+```python
+merged = {**{"a": 1, "b": 2}, **{"b": 3, "c": 4}}
+```
+Merges two dictionaries; later values overwrite earlier ones for duplicate keys.
+
+### Invert a Dictionary
+```python
+inverted = {v: k for k, v in {"a": 1, "b": 2, "c": 3}.items()}
+```
+Swaps keys and values in a dictionary.
+
+### Filter by Value
+```python
+filtered = {k: v for k, v in {"a": 1, "b": 5, "c": 3}.items() if v > 2}
+```
+Keeps only key-value pairs where the value meets a condition.
+
+### Group By
+```python
+group_by = lambda lst, fn: {k: [x for x in lst if fn(x) == k] for k in set(map(fn, lst))}
+```
+Groups list elements into a dictionary keyed by the result of a function.
+
+### Frequency Count
+```python
+freq = {x: lst.count(x) for x in (lst := ["a", "b", "a", "c", "b", "a"])}
+```
+Counts occurrences of each element in a list.
+
+### Sort by Value
+```python
+sorted_dict = dict(sorted({"a": 3, "b": 1, "c": 2}.items(), key=lambda x: x[1]))
+```
+Returns a new dictionary sorted by its values in ascending order.
+
+## Math & Numbers
+
+### Factorial
+```python
+factorial = lambda n: __import__("math").factorial(n)
+```
+Computes the factorial of `n` using the standard library.
+
+### Fibonacci Sequence
+```python
+fib = lambda n: [((f := [0, 1]) and [f.append(f[-1]+f[-2]) or f[-1] for _ in range(n-2)]) and f[:n] or f[:n]][0]
+```
+Generates the first `n` Fibonacci numbers.
+
+### Generate Primes (Sieve)
+```python
+primes = [i for i in range(2, 101) if all(i % j != 0 for j in range(2, int(i**0.5) + 1))]
+```
+Generates all prime numbers up to 100 using trial division.
+
+### GCD of Two Numbers
+```python
+gcd = lambda a, b: a if b == 0 else gcd(b, a % b)
+```
+Computes the greatest common divisor using the Euclidean algorithm.
+
+### Primality Check
+```python
+is_prime = lambda n: n > 1 and all(n % i for i in range(2, int(n**0.5) + 1))
+```
+Returns `True` if `n` is a prime number.
+
+### Digit Sum
+```python
+digit_sum = lambda n: sum(int(d) for d in str(abs(n)))
+```
+Sums all the digits of a number.
+
+### Base Conversion
+```python
+to_base = lambda n, b: "" if n == 0 else to_base(n // b, b) + "0123456789abcdef"[n % b]
+```
+Converts an integer `n` to a string in base `b` (up to 16).
+
+### Power Set
+```python
+power_set = lambda s: [[s[j] for j in range(len(s)) if i >> j & 1] for i in range(2**len(s))]
+```
+Generates all subsets of a list.
+
+## File I/O
+
+### Read File to String
+```python
+content = open("file.txt").read()
+```
+Reads the entire contents of a file into a single string.
+
+### Read Lines into List
+```python
+lines = open("file.txt").read().splitlines()
+```
+Reads a file and returns a list of lines without newline characters.
+
+### Write List to File
+```python
+open("out.txt", "w").writelines(line + "\n" for line in ["one", "two", "three"])
+```
+Writes each element of a list as a separate line in a file.
+
+### Count Lines in File
+```python
+line_count = sum(1 for _ in open("file.txt"))
+```
+Counts the number of lines in a file using a generator expression.
+
+### Find String in Files
+```python
+matches = [(f, i) for f in __import__("glob").glob("*.txt") for i, l in enumerate(open(f)) if "query" in l]
+```
+Searches for a string across all `.txt` files, returning filenames and matching line numbers.
+
+## Functional
+
+### Map
+```python
+squared = list(map(lambda x: x**2, [1, 2, 3, 4, 5]))
+```
+Applies a function to every element in a list.
+
+### Filter
+```python
+evens = list(filter(lambda x: x % 2 == 0, range(1, 11)))
+```
+Keeps only elements that satisfy a predicate.
+
+### Reduce
+```python
+product = __import__("functools").reduce(lambda a, b: a * b, [1, 2, 3, 4, 5])
+```
+Reduces a list to a single value by applying a function cumulatively.
+
+### Zip to Dict
+```python
+zipped = dict(zip(["a", "b", "c"], [1, 2, 3]))
+```
+Pairs elements from two lists into a dictionary.
+
+### Enumerate to Dict
+```python
+indexed = {i: v for i, v in enumerate(["a", "b", "c"])}
+```
+Creates a dictionary mapping indices to list values.
+
+### Any / All
+```python
+has_neg, all_pos = any(x < 0 for x in nums), all(x > 0 for x in nums)
+```
+Checks if any or all elements satisfy a condition (short-circuits for performance).
+
+## Misc
+
+### Swap Variables
+```python
+a, b = b, a
+```
+Swaps two variables without a temporary variable using tuple unpacking.
+
+### Ternary Expression
+```python
+result = "even" if x % 2 == 0 else "odd"
+```
+Inline conditional that picks a value based on a condition.
+
+### Walrus Operator
+```python
+filtered = [y for x in data if (y := f(x)) is not None]
+```
+Uses `:=` to assign and test a value inside a comprehension.
+
+### Quick Timeit
+```python
+__import__("timeit").timeit(lambda: sum(range(1000)), number=10000)
+```
+Benchmarks an expression by running it 10,000 times and returning total seconds.
+
+### Flatten Arbitrarily Nested List
+```python
+flatten = lambda x: [a for i in x for a in (flatten(i) if isinstance(i, list) else [i])]
+```
+Recursively flattens a list with any depth of nesting.
+
+### Matrix Multiply
+```python
+mat_mul = lambda A, B: [[sum(a*b for a, b in zip(row, col)) for col in zip(*B)] for row in A]
+```
+Multiplies two matrices using nested list comprehensions and `zip`.

@@ -5,101 +5,138 @@ icon: "📧"
 ---
 # Gmail Search Syntax Cheatsheet
 
-This cheatsheet includes a useful list of Gmail search syntax.
+A comprehensive reference for all Gmail search operators, combining techniques, and practical examples.
 
-## Basic Search Operators
+## Sender & Recipient Operators
 
-### 1. `from:`
+| Operator | Description | Example |
+|----------|-------------|---------|
+| `from:` | Emails from a specific sender | `from:john@example.com` |
+| `to:` | Emails sent to a specific recipient | `to:jane@example.com` |
+| `cc:` | Emails where a specific address was CC'd | `cc:boss@example.com` |
+| `bcc:` | Emails where a specific address was BCC'd | `bcc:hr@example.com` |
+| `deliveredto:` | Emails delivered to a specific address | `deliveredto:me@example.com` |
+| `list:` | Messages from a mailing list | `list:info@newsletter.example.com` |
 
-- **Usage**: Find emails from a specific sender.
-- **Example**: `from:john@example.com`
+## Subject & Content Operators
 
-### 2. `to:`
+| Operator | Description | Example |
+|----------|-------------|---------|
+| `subject:` | Words in the subject line | `subject:meeting agenda` |
+| `"phrase"` | Exact phrase match | `"quarterly report"` |
+| `AROUND` | Words near each other (within n words) | `budget AROUND 5 approval` |
 
-- **Usage**: Find emails sent to a specific recipient.
-- **Example**: `to:jane@example.com`
+## Label & Category Operators
 
-### 3. `subject:`
+| Operator | Description | Example |
+|----------|-------------|---------|
+| `label:` | Emails with a specific label | `label:work` |
+| `category:primary` | Primary inbox category | `category:primary` |
+| `category:social` | Social category | `category:social` |
+| `category:promotions` | Promotions category | `category:promotions` |
+| `category:updates` | Updates category | `category:updates` |
+| `category:forums` | Forums category | `category:forums` |
 
-- **Usage**: Search for specific words in the email subject.
-- **Example**: `subject:meeting`
+## Attachment Operators
 
-### 4. `label:`
+| Operator | Description | Example |
+|----------|-------------|---------|
+| `has:attachment` | Emails with any attachment | `has:attachment` |
+| `has:drive` | Emails with Google Drive attachments | `has:drive` |
+| `has:document` | Emails with Google Docs attachments | `has:document` |
+| `has:spreadsheet` | Emails with Google Sheets attachments | `has:spreadsheet` |
+| `has:presentation` | Emails with Google Slides attachments | `has:presentation` |
+| `has:youtube` | Emails with YouTube links | `has:youtube` |
+| `filename:` | Emails with a specific file type or name | `filename:pdf` |
+| `filename:` | Specific filename | `filename:report.xlsx` |
 
-- **Usage**: Find emails with a specific label.
-- **Example**: `label:work`
+## Location Operators
 
-### 5. `after:` and `before:`
+| Operator | Description | Example |
+|----------|-------------|---------|
+| `in:inbox` | Emails in the inbox | `in:inbox` |
+| `in:sent` | Emails in sent mail | `in:sent` |
+| `in:drafts` | Emails in drafts | `in:drafts` |
+| `in:trash` | Emails in trash | `in:trash` |
+| `in:spam` | Emails in spam | `in:spam` |
+| `in:anywhere` | Search all mail including spam and trash | `in:anywhere invoice` |
+| `in:chats` | Search chat messages | `in:chats` |
 
-- **Usage**: Filter emails by date range.
-- **Example**: `after:2023/01/01 before:2023/12/31`
+## Status Operators
 
-### 6. `has:attachment`
+| Operator | Description | Example |
+|----------|-------------|---------|
+| `is:read` | Read emails | `is:read` |
+| `is:unread` | Unread emails | `is:unread` |
+| `is:starred` | Starred emails | `is:starred` |
+| `is:important` | Emails marked as important | `is:important` |
+| `is:snoozed` | Snoozed emails | `is:snoozed` |
+| `is:muted` | Muted conversations | `is:muted` |
+| `has:userlabels` | Emails with user-created labels | `has:userlabels` |
+| `has:nouserlabels` | Emails without user-created labels | `has:nouserlabels` |
+| `has:yellow-star` | Emails with a specific star type | `has:yellow-star` |
 
-- **Usage**: Find emails with attachments.
-- **Example**: `has:attachment`
+## Date Operators
 
-## Advanced Search Operators
+| Operator | Description | Example |
+|----------|-------------|---------|
+| `before:` | Emails before a date | `before:2024/06/01` |
+| `after:` | Emails after a date | `after:2024/01/01` |
+| `older_than:` | Emails older than a time period | `older_than:1y` |
+| `newer_than:` | Emails newer than a time period | `newer_than:2d` |
 
-### 1. `filename:`
+Time period units for `older_than:` and `newer_than:`:
 
-- **Usage**: Search for specific file attachments.
-- **Example**: `filename:pdf`
+| Unit | Meaning | Example |
+|------|---------|---------|
+| `d` | Days | `newer_than:7d` |
+| `m` | Months | `older_than:3m` |
+| `y` | Years | `older_than:1y` |
 
-### 2. `is:unread`
+## Size Operators
 
-- **Usage**: Find unread emails.
-- **Example**: `is:unread`
+| Operator | Description | Example |
+|----------|-------------|---------|
+| `size:` | Emails larger than a size in bytes | `size:5000000` |
+| `larger:` | Emails larger than a specified size | `larger:10M` |
+| `smaller:` | Emails smaller than a specified size | `smaller:1M` |
 
-### 3. `in:anywhere`
+Size units: `K` (kilobytes), `M` (megabytes).
 
-- **Usage**: Search in all email fields (subject, body, attachments).
-- **Example**: `in:anywhere keyword`
+## Boolean & Grouping Operators
 
-### 4. `is:starred`, `is:important`, `is:snoozed`
+| Operator | Description | Example |
+|----------|-------------|---------|
+| `OR` | Match either condition | `from:alice OR from:bob` |
+| `AND` | Match both conditions (implicit default) | `from:alice AND subject:report` |
+| `-` | Exclude a term or operator | `-category:promotions` |
+| `""` | Exact phrase match | `"board meeting minutes"` |
+| `()` | Group operators together | `(from:alice OR from:bob) subject:report` |
 
-- **Usage**: Filter emails based on their status.
-- **Example**: `is:starred`
+## Message ID Operator
 
-## Special Characters
+| Operator | Description | Example |
+|----------|-------------|---------|
+| `rfc822msgid:` | Find by unique message ID | `rfc822msgid:<abc123@mail.example.com>` |
 
-### 1. `-`
+## Example Searches
 
-- **Usage**: Exclude certain terms or emails from search results.
-- **Example**: `-newsletter`
+Practical combined queries for common scenarios:
 
-### 2. `OR`
-
-- **Usage**: Search for emails matching one of multiple criteria.
-- **Example**: `from:john@example.com OR from:jane@example.com`
-
-## Tricks and Tips
-
-### 1. Searching by Date Range
-
-- **Example**: `after:2023/01/01 before:2023/12/31`
-- **Usage**: Filter emails based on specific date intervals.
-
-### 2. Searching by Size
-
-- **Example**: `size:10MB`
-- **Usage**: Find emails based on attachment size.
-
-### 3. Combination of Operators
-
-- **Example**: `from:john@example.com subject:meeting after:2023/01/01`
-- **Usage**: Combine multiple operators for precise searches.
-
-### 4. Wildcard Searches
-
-- **Example**: `from:@example.com`
-- **Usage**: Use `@` as a wildcard to search for emails from a domain.
-
-### 5. Searching by Message ID
-
-- **Example**: `rfc822msgid:<message_id>`
-- **Usage**: Locate emails using their unique message ID.
-
----
-
-This Gmail search syntax cheatsheet covers a wide range of search operators, special characters, and tips to efficiently search for emails within Gmail.
+| Goal | Query |
+|------|-------|
+| Large attachments from last year | `has:attachment larger:5M after:2025/01/01 before:2026/01/01` |
+| Unread emails from your boss | `from:boss@company.com is:unread` |
+| PDFs in any folder | `in:anywhere filename:pdf` |
+| Newsletters to clean up | `category:promotions older_than:3m` |
+| Find a specific invoice | `subject:invoice "INV-2024" has:attachment` |
+| Emails between two people about a project | `(from:alice OR to:alice) (from:bob OR to:bob) subject:project` |
+| Starred emails with Drive links | `is:starred has:drive` |
+| Recent large emails | `newer_than:7d larger:2M` |
+| Exclude mailing lists from search | `budget report -list:` |
+| Sent emails with attachments this month | `in:sent has:attachment newer_than:30d` |
+| Exact phrase in subject | `subject:"Q4 financial review"` |
+| Emails near a keyword pair | `deadline AROUND 3 extension` |
+| All unread important mail | `is:important is:unread` |
+| Chat messages with a contact | `in:chats from:colleague@example.com` |
+| Emails delivered to an alias | `deliveredto:alias@example.com -category:promotions` |

@@ -5,101 +5,105 @@ icon: "🔎"
 ---
 # Google Search Syntax and Operators Cheatsheet
 
-This cheatsheet provides a list of useful Google search syntax and operators
+A comprehensive reference for all Google search operators, advanced techniques, and practical examples.
 
 ## Basic Operators
 
-### 1. `site:`
+| Operator | Description | Example |
+|----------|-------------|---------|
+| `""` | Exact phrase match | `"machine learning"` |
+| `-` | Exclude a term from results | `python programming -snake` |
+| `OR` | Match either term | `python OR java tutorial` |
+| `AND` | Require both terms (default behavior) | `python AND flask` |
+| `*` | Wildcard, matches any word | `"the * of the rings"` |
+| `..` | Number range | `camera $200..$500` |
+| `()` | Group operators | `(python OR java) tutorial` |
 
-- **Usage**: Limit search to a specific website or domain.
-- **Example**: `site:wikipedia.org Albert Einstein`
+## Site & URL Operators
 
-### 2. `intitle:`
+| Operator | Description | Example |
+|----------|-------------|---------|
+| `site:` | Limit results to a specific site or domain | `site:github.com python flask` |
+| `inurl:` | Find pages with a keyword in the URL | `inurl:admin login` |
+| `allinurl:` | All keywords must appear in the URL | `allinurl:python flask tutorial` |
+| `related:` | Find sites similar to a given domain | `related:nytimes.com` |
+| `cache:` | View Google's cached version of a page | `cache:example.com` |
 
-- **Usage**: Find pages with specific words in the title.
-- **Example**: `intitle:Python tutorial`
+## Title & Text Operators
 
-### 3. `inurl:`
+| Operator | Description | Example |
+|----------|-------------|---------|
+| `intitle:` | Find pages with a word in the title | `intitle:python tutorial` |
+| `allintitle:` | All keywords must appear in the title | `allintitle:python flask api` |
+| `intext:` | Find pages with a word in the body text | `intext:configuration guide` |
+| `allintext:` | All keywords must appear in the body text | `allintext:docker compose setup` |
 
-- **Usage**: Search for keywords in the URL.
-- **Example**: `inurl:forum JavaScript`
+## File & Content Operators
 
-### 4. `related:`
+| Operator | Description | Example |
+|----------|-------------|---------|
+| `filetype:` | Search for specific file types | `filetype:pdf python handbook` |
+| `ext:` | Alias for `filetype:` | `ext:csv sales data` |
+| `imagesize:` | Find images of a specific size (WxH) | `imagesize:1920x1080 wallpaper` |
 
-- **Usage**: Find sites related to a specified domain.
-- **Example**: `related:nytimes.com`
+## Date Operators
 
-### 5. `define:`
+| Operator | Description | Example |
+|----------|-------------|---------|
+| `before:` | Results published before a date | `before:2024-01-01 python tutorial` |
+| `after:` | Results published after a date | `after:2025-01-01 AI news` |
 
-- **Usage**: Get a definition of a word or phrase.
-- **Example**: `define:neuroscience`
+Date format: `YYYY-MM-DD`.
 
-## Advanced Operators
+## Proximity Operator
 
-### 1. `filetype:`
-
-- **Usage**: Search for specific file types.
-- **Example**: `filetype:pdf Python handbook`
-
-### 2. `daterange:`
-
-- **Usage**: Filter results within a specific date range.
-- **Example**: `daterange:2019-01-01..2020-12-31 Python tutorials`
-
-### 3. `*`
-
-- **Usage**: Acts as a wildcard to replace words in a search.
-- **Example**: `The * is strong with this one`
-
-### 4. `-`
-
-- **Usage**: Exclude specific words from search results.
-- **Example**: `Python programming -snake`
+| Operator | Description | Example |
+|----------|-------------|---------|
+| `AROUND(n)` | Two terms must appear within n words of each other | `python AROUND(3) tutorial` |
 
 ## Specialized Searches
 
-### 1. `book:`
-
-- **Usage**: Search for book titles and reviews.
-- **Example**: `book:Harry Potter`
-
-### 2. `movie:`
-
-- **Usage**: Find movie titles, showtimes, and reviews.
-- **Example**: `movie:Inception`
-
-### 3. `weather:`
-
-- **Usage**: Get weather forecasts for specific locations.
-- **Example**: `weather:New York`
-
-### 4. `stocks:`
-
-- **Usage**: Get stock market information.
-- **Example**: `stocks:AAPL`
+| Operator | Description | Example |
+|----------|-------------|---------|
+| `define:` | Get a definition of a word | `define:ephemeral` |
+| `weather:` | Get weather for a location | `weather:Tokyo` |
+| `stocks:` | Get stock information | `stocks:GOOGL` |
+| `map:` | Show map results for a location | `map:Central Park` |
+| `movie:` | Find movie showtimes and info | `movie:Inception` |
+| `source:` | Search within a specific news source (Google News) | `source:reuters AI regulation` |
+| `in` | Unit and currency conversions | `100 USD in EUR` |
 
 ## Google Search Tips
 
-### 1. Using Quotes for Exact Matches
+| Tip | Example | Description |
+|-----|---------|-------------|
+| Calculator | `sqrt(144) + 15 * 2` | Perform math directly in search |
+| Currency conversion | `100 USD to EUR` | Convert between currencies |
+| Unit conversion | `50 meters to feet` | Convert between units |
+| Timer | `timer 10 minutes` | Set a countdown timer |
+| Color picker | `color picker` | Opens an interactive color picker |
+| Sunrise/Sunset | `sunrise Tokyo` | Get sunrise or sunset times |
+| Translate | `translate hello to Japanese` | Quick translations |
+| Track packages | Paste a tracking number | Shows delivery status |
 
-- **Example**: `"machine learning"`
-- **Usage**: Search for an exact phrase or match.
+## Example Searches
 
-### 2. OR Operator
+Practical combined queries for common scenarios:
 
-- **Example**: `Python OR Java`
-- **Usage**: Search for pages that include either term.
-
-### 3. Calculator and Conversions
-
-- **Example**: `10 + 20`, `100 USD to EUR`
-- **Usage**: Perform calculations and currency conversions directly in the search bar.
-
-### 4. Unit Conversions
-
-- **Example**: `50 meters to feet`
-- **Usage**: Convert units quickly using Google Search.
-
----
-
-This Google search syntax and operators cheatsheet covers a wide range of search functionalities and tricks to refine and optimize your Google searches. Each operator and specialized search option includes examples and explanations for more effective and precise searches.
+| Goal | Query |
+|------|-------|
+| Find PDF cheatsheets on a topic | `filetype:pdf "git cheatsheet"` |
+| Research a topic on a specific site | `site:stackoverflow.com python async await` |
+| Find login pages (security testing) | `intitle:"login" inurl:admin site:example.com` |
+| Exclude Pinterest from image searches | `landscape wallpaper -site:pinterest.com` |
+| Find open directory listings | `intitle:"index of" filetype:mp4` |
+| Search for recent news from a source | `source:bbc "climate change" after:2025-06-01` |
+| Find exact error messages | `"TypeError: cannot unpack non-sequence"` |
+| Compare competing products | `(react OR vue OR angular) "state management" site:dev.to` |
+| Find CSV datasets | `filetype:csv "population data" after:2024-01-01` |
+| Wildcard phrase search | `"how to * a REST API in python"` |
+| Proximity search for related concepts | `kubernetes AROUND(5) "service mesh"` |
+| Find high-res images of a subject | `imagesize:3840x2160 "northern lights"` |
+| Number range for product pricing | `"mechanical keyboard" $50..$150` |
+| Find alternatives to a website | `related:notion.so` |
+| Exclude results from forums | `python decorators -site:reddit.com -site:quora.com` |
