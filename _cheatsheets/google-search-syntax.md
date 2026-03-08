@@ -1,5 +1,6 @@
 ---
 title: "Google Search Syntax"
+description: "Google search operators and advanced syntax — site search, filetype filters, exact match, and boolean operators."
 category: "Search"
 icon: "🔎"
 ---

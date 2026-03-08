@@ -1,5 +1,6 @@
 ---
 title: "CSS"
+description: "CSS cheatsheet — selectors, flexbox, grid, positioning, animations, and responsive design patterns."
 category: "Web & Formats"
 icon: "🎨"
 ---

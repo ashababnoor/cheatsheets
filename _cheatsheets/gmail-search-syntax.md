@@ -1,5 +1,6 @@
 ---
 title: "Gmail Search Syntax"
+description: "Gmail search operators and syntax — filter by sender, date, attachments, labels, and advanced search combinations."
 category: "Search"
 icon: "📧"
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Git Commands"
+description: "Git command reference — branching, merging, rebasing, stashing, remotes, and common workflows."
 category: "Tools & DevOps"
 icon: "🔀"
 ---

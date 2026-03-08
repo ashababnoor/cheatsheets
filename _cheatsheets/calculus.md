@@ -1,5 +1,6 @@
 ---
 title: "Calculus"
+description: "Calculus cheatsheet — limits, derivatives, integrals, series, and key theorems with formulas."
 category: "Math & Science"
 icon: "📐"
 order: 1

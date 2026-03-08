@@ -1,5 +1,6 @@
 ---
 title: "Docker Commands"
+description: "Docker command cheatsheet — containers, images, volumes, networks, docker-compose, and common workflows."
 category: "Tools & DevOps"
 icon: "🐳"
 ---
