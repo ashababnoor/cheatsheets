@@ -1,5 +1,6 @@
 ---
 title: "Probability & Statistics"
+description: "Probability and statistics reference — distributions, hypothesis testing, Bayes' theorem, and descriptive statistics."
 category: "Math & Science"
 icon: "🎲"
 order: 2

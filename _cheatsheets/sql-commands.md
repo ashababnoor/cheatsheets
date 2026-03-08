@@ -1,5 +1,6 @@
 ---
 title: "SQL Commands"
+description: "SQL command reference — SELECT, JOIN, subqueries, aggregations, indexes, and database management."
 category: "Languages & Code"
 icon: "🗄️"
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Vim"
+description: "Vim cheatsheet — modes, navigation, editing, search/replace, buffers, and essential commands."
 category: "Tools & DevOps"
 icon: "📟"
 ---

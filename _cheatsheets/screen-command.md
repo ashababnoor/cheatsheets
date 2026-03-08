@@ -1,5 +1,6 @@
 ---
 title: "Screen Command"
+description: "GNU Screen command cheatsheet — sessions, windows, splitting, detaching, and key bindings."
 category: "Tools & DevOps"
 icon: "🖥️"
 ---

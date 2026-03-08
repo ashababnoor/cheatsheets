@@ -1,5 +1,6 @@
 ---
 title: "Datetime Format Specifiers"
+description: "Reference for datetime format specifiers across languages — strftime codes, ISO 8601, and common date/time patterns."
 category: "Web & Formats"
 icon: "📅"
 ---

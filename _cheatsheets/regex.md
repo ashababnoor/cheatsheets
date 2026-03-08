@@ -1,5 +1,6 @@
 ---
 title: "Regular Expressions"
+description: "Regex cheatsheet — character classes, quantifiers, anchors, groups, lookaheads, and common patterns."
 category: "Web & Formats"
 icon: "🔍"
 ---

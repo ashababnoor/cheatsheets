@@ -1,5 +1,6 @@
 ---
 title: "Python"
+description: "Python cheatsheet — syntax, data types, functions, classes, file I/O, modules, and common standard library usage."
 category: "Languages & Code"
 icon: "🐍"
 ---
