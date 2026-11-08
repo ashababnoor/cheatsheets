@@ -2,7 +2,7 @@
 title: "Data Structures"
 description: "Quick reference for data structures — arrays, linked lists, trees, graphs, hash tables, stacks, queues, and their operations."
 category: "CS Fundamentals"
-icon: "🏗️"
+icon: "blocks"
 ---
 # Data Structures Cheatsheet
 

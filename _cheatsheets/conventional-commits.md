@@ -2,7 +2,7 @@
 title: "Conventional Commits"
 description: "Reference for the Conventional Commits specification — commit types, scopes, breaking changes, and message formatting."
 category: "Languages & Code"
-icon: "📝"
+icon: "git-commit-horizontal"
 ---
 # Conventional Commits Cheatsheet
 

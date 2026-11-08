@@ -2,7 +2,7 @@
 title: "Probability & Statistics"
 description: "Probability and statistics reference — distributions, hypothesis testing, Bayes' theorem, and descriptive statistics."
 category: "Math & Science"
-icon: "🎲"
+icon: "dices"
 order: 2
 ---
 # Probability & Statistics Cheatsheet

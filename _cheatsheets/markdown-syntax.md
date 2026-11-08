@@ -2,7 +2,7 @@
 title: "Markdown Syntax"
 description: "Markdown syntax reference — headings, lists, links, images, code blocks, tables, and GitHub-flavored extensions."
 category: "Web & Formats"
-icon: "📄"
+logo: "markdown"
 ---
 # Markdown Syntax Cheatsheet
 

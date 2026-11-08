@@ -2,7 +2,7 @@
 title: "Bash Scripting"
 description: "Cheatsheet for Bash scripting — variables, loops, conditionals, functions, and common shell patterns."
 category: "Tools & DevOps"
-icon: "📜"
+logo: "bash"
 ---
 
 ## Shebang & Basics

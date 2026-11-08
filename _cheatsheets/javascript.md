@@ -2,7 +2,7 @@
 title: "JavaScript"
 description: "JavaScript cheatsheet — syntax, DOM manipulation, ES6+ features, promises, array methods, and common patterns."
 category: "Languages & Code"
-icon: "⚡"
+logo: "javascript"
 ---
 
 ## Variables & Types

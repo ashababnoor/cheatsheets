@@ -2,7 +2,7 @@
 title: "HTTP Status Codes"
 description: "Complete HTTP status code reference — 1xx informational, 2xx success, 3xx redirection, 4xx client errors, and 5xx server errors."
 category: "Web & Formats"
-icon: "🌐"
+icon: "globe"
 ---
 # HTTP Status Codes Cheatsheet
 

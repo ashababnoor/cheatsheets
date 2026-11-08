@@ -2,7 +2,7 @@
 title: "Networking Basics"
 description: "Networking fundamentals cheatsheet — OSI model, TCP/IP, DNS, HTTP, ports, subnetting, and common protocols."
 category: "CS Fundamentals"
-icon: "🌐"
+icon: "network"
 ---
 # Networking Basics Cheatsheet
 

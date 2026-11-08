@@ -2,7 +2,7 @@
 title: "Linux Terminal Commands"
 description: "Essential Linux terminal commands — file management, permissions, processes, networking, and system administration."
 category: "Tools & DevOps"
-icon: "🐧"
+logo: "linux"
 ---
 # Linux Terminal Commands Cheatsheet
 

@@ -2,7 +2,7 @@
 title: "Algorithms"
 description: "Quick reference for common algorithms — sorting, searching, graph traversal, dynamic programming, and complexity analysis."
 category: "CS Fundamentals"
-icon: "⚙️"
+icon: "cog"
 ---
 # Algorithms Cheatsheet
 

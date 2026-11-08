@@ -2,7 +2,7 @@
 title: "Google Search Syntax"
 description: "Google search operators and advanced syntax — site search, filetype filters, exact match, and boolean operators."
 category: "Search"
-icon: "🔎"
+logo: "google"
 ---
 # Google Search Syntax and Operators Cheatsheet
 

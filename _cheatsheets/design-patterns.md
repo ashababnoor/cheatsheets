@@ -2,7 +2,7 @@
 title: "Design Patterns"
 description: "Overview of common design patterns — creational, structural, and behavioral patterns with use cases and examples."
 category: "CS Fundamentals"
-icon: "🏛️"
+icon: "landmark"
 ---
 
 ## Creational Patterns

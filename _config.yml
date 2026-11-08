@@ -14,6 +14,10 @@ collections:
     output: true
     permalink: /:path
 
+# The github-pages gem defaults to jekyll-theme-primer, whose style.scss compiles to
+# /assets/css/style.css and overwrites our own stylesheet on rebuilds. We ship our own layouts.
+theme: null
+
 # Build settings
 plugins:
   - jekyll-feed

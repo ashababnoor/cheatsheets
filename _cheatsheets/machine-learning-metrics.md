@@ -2,7 +2,7 @@
 title: "ML Metrics"
 description: "ML metrics cheatsheet — accuracy, precision, recall, F1 score, ROC-AUC, and evaluation techniques."
 category: "Math & Science"
-icon: "🤖"
+icon: "bot"
 order: 3
 ---
 # Machine Learning Metrics Cheatsheet

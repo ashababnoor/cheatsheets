@@ -2,7 +2,7 @@
 title: "Clean Code Practices"
 description: "Best practices for writing clean, readable, and maintainable code — naming, functions, formatting, and refactoring principles."
 category: "Languages & Code"
-icon: "✨"
+icon: "code-xml"
 ---
 # Clean Code Practices Cheatsheet
 

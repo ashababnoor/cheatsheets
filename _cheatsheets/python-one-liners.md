@@ -2,7 +2,7 @@
 title: "Python One-Liners"
 description: "Collection of useful Python one-liners — list comprehensions, file operations, string manipulation, and handy shortcuts."
 category: "Languages & Code"
-icon: "🐍"
+logo: "python"
 ---
 # Python One-Liners Cheatsheet
 
