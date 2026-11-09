@@ -8,6 +8,7 @@
     a.className = 'heading-anchor';
     a.href = '#' + h.id;
     a.textContent = '#';
+    a.setAttribute('data-tip', 'Copy link');
     a.setAttribute('aria-label', 'Copy link to "' + h.textContent.trim() + '"');
     var timer;
     a.addEventListener('click', function (e) {

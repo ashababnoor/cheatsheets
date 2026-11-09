@@ -25,7 +25,7 @@
   }
 
   var targets = article.querySelectorAll('td code');
-  targets.forEach(function (el) { el.classList.add('copyable'); el.title = 'Click to copy'; });
+  targets.forEach(function (el) { el.classList.add('copyable'); el.setAttribute('data-tip', 'Click to copy'); });
 
   article.addEventListener('click', function (e) {
     var el = e.target.closest('td code.copyable');

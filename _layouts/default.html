@@ -31,7 +31,7 @@
         <button type="button" class="search-trigger" data-search-open aria-label="Search cheatsheets" aria-keyshortcuts="/ Control+K Meta+K"><span>Search</span><kbd>/</kbd></button>
         <a href="{{ '/' | relative_url }}">Home</a>
         <a href="https://github.com/ashababnoor/cheatsheets" target="_blank" rel="noopener">GitHub</a>
-        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" data-tip="Toggle theme">
           <svg class="theme-icon theme-icon-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
             <path d="M20.55 14.8A9 9 0 1 1 9.2 3.45A8.5 8.5 0 0 0 20.55 14.8Z"/>
           </svg>
@@ -172,6 +172,7 @@
         btn.type = 'button';
         btn.className = 'copy-btn';
         btn.setAttribute('aria-label', 'Copy code');
+        btn.setAttribute('data-tip', 'Copy code');
         btn.innerHTML = COPY_ICON;
         var timer;
         btn.addEventListener('click', function() {
@@ -195,6 +196,7 @@
   <script defer src="{{ '/assets/js/heading-links.js' | relative_url }}"></script>
   <script defer src="{{ '/assets/js/copy-inline.js' | relative_url }}"></script>
   {% endunless %}
+  <script defer src="{{ '/assets/js/tooltip.js' | relative_url }}"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/minisearch@7.1.0/dist/umd/index.min.js"></script>
   <script defer src="{{ '/assets/js/search.js' | relative_url }}"></script>
   <script>
