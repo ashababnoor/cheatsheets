@@ -692,6 +692,18 @@ div.highlighter-rouge:hover .copy-btn,
   font-size: 0.85rem;
 }
 
+.footer-heart {
+  display: inline-flex;
+  vertical-align: -0.15em;
+  color: var(--red);
+}
+
+.footer-heart svg {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+}
+
 .footer-inner a {
   color: var(--text-muted);
   text-decoration: none;
