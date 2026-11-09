@@ -123,7 +123,7 @@ for key in "${!map[@]}"; do echo "$key=${map[$key]}"; done
 
 ## Conditionals
 
-### if / elif / else
+### `if` / `elif` / `else`
 
 ```bash
 if [[ "$a" == "yes" ]]; then
@@ -179,7 +179,7 @@ fi
 [[ ! "$a" ]]                # NOT
 ```
 
-### case / esac
+### `case` / `esac`
 
 ```bash
 case "$input" in
@@ -374,7 +374,7 @@ command_exists() { command -v "$1" &>/dev/null; }
 if command_exists git; then echo "git is installed"; fi
 ```
 
-### Parse CLI Arguments with getopts
+### Parse CLI Arguments with `getopts`
 
 ```bash
 while getopts ":v:o:h" opt; do
@@ -400,7 +400,7 @@ log INFO "Script started"
 log ERROR "Something failed"
 ```
 
-### Error Handling with trap
+### Error Handling with `trap`
 
 ```bash
 set -euo pipefail
@@ -410,7 +410,7 @@ on_error() {
 trap 'on_error $LINENO $?' ERR
 ```
 
-### Temp Files with mktemp
+### Temp Files with `mktemp`
 
 ```bash
 tmpfile=$(mktemp)              # Create temp file

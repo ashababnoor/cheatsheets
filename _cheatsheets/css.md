@@ -298,8 +298,8 @@ background: conic-gradient(from 0deg, red, yellow, green, blue, red);
 ### Opacity
 
 ```css
-opacity: 0.5;                  /* Entire element */
-background: rgba(0, 0, 0, 0.5); /* Background only */
+opacity: 0.5;                      /* Entire element */
+background: rgba(0, 0, 0, 0.5);  /* Background only */
 ```
 
 ---

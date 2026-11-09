@@ -27,8 +27,8 @@ A comprehensive reference for the Python programming language covering data type
 ### Type Checking
 
 ```python
-type(42)              # <class 'int'>
-isinstance(42, int)   # True
+type(42)                      # <class 'int'>
+isinstance(42, int)           # True
 isinstance(42, (int, float))  # True — checks multiple types
 ```
 
@@ -40,9 +40,9 @@ isinstance(42, (int, float))  # True — checks multiple types
 
 ```python
 name, age = "Alice", 30
-f"Name: {name}, Age: {age}"       # "Name: Alice, Age: 30"
-f"{3.14159:.2f}"                   # "3.14"
-f"{'hello':>10}"                   # "     hello"
+f"Name: {name}, Age: {age}"    # "Name: Alice, Age: 30"
+f"{3.14159:.2f}"               # "3.14"
+f"{'hello':>10}"               # "     hello"
 ```
 
 ### Common String Methods
@@ -115,15 +115,15 @@ nums[::2]    # [1, 3, 5]
 ### List Comprehensions
 
 ```python
-squares = [x**2 for x in range(5)]          # [0, 1, 4, 9, 16]
-evens = [x for x in range(10) if x % 2 == 0]  # [0, 2, 4, 6, 8]
+squares = [x**2 for x in range(5)]                # [0, 1, 4, 9, 16]
+evens = [x for x in range(10) if x % 2 == 0]      # [0, 2, 4, 6, 8]
 flat = [x for row in [[1,2],[3,4]] for x in row]  # [1, 2, 3, 4]
 ```
 
 ### Unpacking
 
 ```python
-a, b, *rest = [1, 2, 3, 4, 5]  # a=1, b=2, rest=[3,4,5]
+a, b, *rest = [1, 2, 3, 4, 5]   # a=1, b=2, rest=[3,4,5]
 first, *_, last = [1, 2, 3, 4]  # first=1, last=4
 ```
 
@@ -162,12 +162,12 @@ squares = {x: x**2 for x in range(5)}  # {0:0, 1:1, 2:4, 3:9, 4:16}
 flipped = {v: k for k, v in d.items()}
 ```
 
-### defaultdict & Counter
+### `defaultdict` & `Counter`
 
 ```python
 from collections import defaultdict, Counter
 dd = defaultdict(list)
-dd["key"].append(1)        # no KeyError — auto-creates list
+dd["key"].append(1)         # no KeyError — auto-creates list
 
 counts = Counter("banana")  # Counter({'a':3, 'n':2, 'b':1})
 counts.most_common(2)       # [('a',3), ('n',2)]
@@ -182,7 +182,7 @@ counts.most_common(2)       # [('a',3), ('n',2)]
 ```python
 s = {1, 2, 3}
 s = set([1, 2, 2, 3])  # {1, 2, 3}
-empty = set()           # not {} — that's an empty dict
+empty = set()          # not {} — that's an empty dict
 ```
 
 ### Set Methods
@@ -205,7 +205,7 @@ empty = set()           # not {} — that's an empty dict
 
 ```python
 evens = {x for x in range(10) if x % 2 == 0}  # {0, 2, 4, 6, 8}
-fs = frozenset([1, 2, 3])  # immutable set — can be used as dict key
+fs = frozenset([1, 2, 3])                     # immutable set — can be used as dict key
 ```
 
 ---
@@ -242,7 +242,7 @@ class Point(NamedTuple):
 
 ## Control Flow
 
-### if / elif / else
+### `if` / `elif` / `else`
 
 ```python
 if x > 0:
@@ -259,7 +259,7 @@ else:
 result = "even" if x % 2 == 0 else "odd"
 ```
 
-### match-case (Python 3.10+)
+### `match`-`case` (Python 3.10+)
 
 ```python
 match command:
@@ -271,7 +271,7 @@ match command:
         print("Unknown")
 ```
 
-### for / while
+### `for` / `while`
 
 ```python
 for item in [1, 2, 3]:
@@ -284,16 +284,16 @@ while condition:
     do_something()
 ```
 
-### break / continue / pass
+### `break` / `continue` / `pass`
 
 ```python
 for x in range(10):
-    if x == 5: break       # exit loop
+    if x == 5: break         # exit loop
     if x % 2 == 0: continue  # skip to next iteration
-    pass                    # placeholder — does nothing
+    pass                     # placeholder — does nothing
 ```
 
-### for...else / while...else
+### `for...else` / `while...else`
 
 ```python
 for x in items:
@@ -314,7 +314,7 @@ def greet(name: str, greeting: str = "Hello") -> str:
     return f"{greeting}, {name}!"
 ```
 
-### *args and **kwargs
+### `*args` and `**kwargs`
 
 ```python
 def func(*args, **kwargs):
@@ -353,7 +353,7 @@ def timer(func):
 def slow(): ...
 ```
 
-### Generators (yield)
+### Generators (`yield`)
 
 ```python
 def countdown(n):
@@ -364,7 +364,7 @@ def countdown(n):
 list(countdown(3))  # [3, 2, 1]
 ```
 
-### Walrus Operator (:=)
+### Walrus Operator (`:=`)
 
 ```python
 if (n := len(items)) > 10:
@@ -391,7 +391,7 @@ class Dog:
         return f"{self.name} says Woof!"
 ```
 
-### Inheritance & super()
+### Inheritance & `super()`
 
 ```python
 class Puppy(Dog):
@@ -417,16 +417,16 @@ class Circle:
         self._radius = value
 ```
 
-### @staticmethod & @classmethod
+### `@staticmethod` & `@classmethod`
 
 ```python
 class MyClass:
     @staticmethod
-    def utility():         # no access to cls or self
+    def utility():     # no access to cls or self
         return 42
 
     @classmethod
-    def create(cls):       # receives the class
+    def create(cls):   # receives the class
         return cls()
 ```
 
@@ -449,7 +449,7 @@ class MyClass:
 
 ## File I/O
 
-### open / with
+### `open` / `with`
 
 ```python
 with open("file.txt", "r") as f:
@@ -477,7 +477,7 @@ with open("file.txt") as f:
         print(line.strip())
 ```
 
-### pathlib Basics
+### `pathlib` Basics
 
 ```python
 from pathlib import Path
@@ -492,7 +492,7 @@ list(Path(".").glob("*.py"))  # list matching files
 
 ## Error Handling
 
-### try / except / else / finally
+### `try` / `except` / `else` / `finally`
 
 ```python
 try:
@@ -507,7 +507,7 @@ finally:
     print("Always runs")
 ```
 
-### raise & Custom Exceptions
+### `raise` & Custom Exceptions
 
 ```python
 raise ValueError("Invalid input")
@@ -539,7 +539,7 @@ class AppError(Exception):
 
 ## Common Standard Library
 
-### os
+### `os`
 
 ```python
 import os
@@ -547,7 +547,7 @@ os.listdir(".")              # list directory contents
 os.environ.get("HOME")       # get environment variable
 ```
 
-### sys
+### `sys`
 
 ```python
 import sys
@@ -555,7 +555,7 @@ sys.argv                     # command-line arguments
 sys.exit(1)                  # exit with status code
 ```
 
-### json
+### `json`
 
 ```python
 import json
@@ -563,7 +563,7 @@ data = json.loads('{"a": 1}')       # parse JSON string → dict
 json.dumps(data, indent=2)          # dict → JSON string
 ```
 
-### csv
+### `csv`
 
 ```python
 import csv
@@ -572,7 +572,7 @@ with open("data.csv") as f:
     for row in reader: print(row)
 ```
 
-### datetime
+### `datetime`
 
 ```python
 from datetime import datetime, timedelta
@@ -581,31 +581,31 @@ tomorrow = now + timedelta(days=1)
 now.strftime("%Y-%m-%d %H:%M:%S")
 ```
 
-### re (Regular Expressions)
+### `re` (Regular Expressions)
 
 ```python
 import re
-re.findall(r"\d+", "abc 123 def 456")   # ['123', '456']
-re.sub(r"\s+", "-", "hello world")       # "hello-world"
+re.findall(r"\d+", "abc 123 def 456")  # ['123', '456']
+re.sub(r"\s+", "-", "hello world")     # "hello-world"
 ```
 
-### collections
+### `collections`
 
 ```python
 from collections import defaultdict, Counter, deque
 d = deque([1, 2, 3])
-d.appendleft(0)              # deque([0, 1, 2, 3])
+d.appendleft(0)       # deque([0, 1, 2, 3])
 ```
 
-### itertools
+### `itertools`
 
 ```python
 from itertools import chain, product, combinations
-list(chain([1,2], [3,4]))           # [1, 2, 3, 4]
-list(combinations("ABC", 2))        # [('A','B'),('A','C'),('B','C')]
+list(chain([1,2], [3,4]))       # [1, 2, 3, 4]
+list(combinations("ABC", 2))    # [('A','B'),('A','C'),('B','C')]
 ```
 
-### functools
+### `functools`
 
 ```python
 from functools import lru_cache, reduce
@@ -613,7 +613,7 @@ from functools import lru_cache, reduce
 def fib(n): return n if n < 2 else fib(n-1) + fib(n-2)
 ```
 
-### pathlib
+### `pathlib`
 
 ```python
 from pathlib import Path
@@ -641,7 +641,7 @@ source .venv/bin/activate
 deactivate
 ```
 
-### pip & Requirements
+### `pip` & Requirements
 
 ```python
 pip install requests              # install a package

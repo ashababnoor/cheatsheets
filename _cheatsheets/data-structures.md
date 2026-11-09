@@ -60,8 +60,8 @@ Singly:   [12] -> [45] -> [32] -> [67] -> [40] -> null
 Doubly:   null <- [12] <-> [45] <-> [32] <-> [67] <-> [40] -> null
 
 Circular: [12] -> [45] -> [32] -> [67] -> [40] -+
-           ^                                      |
-           +--------------------------------------+
+           ^                                    |
+           +------------------------------------+
 ```
 
 ### Variants
@@ -146,7 +146,7 @@ A linear data structure following the **LIFO** (Last In, First Out) principle. O
 A linear data structure following the **FIFO** (First In, First Out) principle. Elements are added at the rear and removed from the front.
 
 ```plaintext
-  Dequeue                              Enqueue
+  Dequeue                      Enqueue
   <---- [12] [45] [32] [67] [40] <----
   Front                           Rear
 ```
@@ -187,7 +187,7 @@ A linear data structure following the **FIFO** (First In, First Out) principle. 
 A data structure that maps keys to values using a **hash function** to compute an index into an array of buckets.
 
 ```plaintext
-  Key       Hash Function     Bucket
+  Key     Hash Function       Bucket
   "one"   ---> h("one")   --> [0] -> (one, 1)
   "two"   ---> h("two")   --> [1] -> (two, 2)
   "three" ---> h("three") --> [2] -> (three, 3)
@@ -278,7 +278,7 @@ Min-Heap:            Max-Heap:
      /  \                 /  \
    20    30             67    45
   / \                  / \
- 40  50              12   32
+ 40  50               12  32
 
 Array: [10, 20, 30, 40, 50]    Array: [80, 67, 45, 12, 32]
 Parent of i: (i-1)/2           Children of i: 2i+1, 2i+2

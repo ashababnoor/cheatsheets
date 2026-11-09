@@ -278,6 +278,17 @@ a:hover {
   color: var(--text-secondary);
 }
 
+/* Code in headings: monospace only, no inline-code box */
+.page-content :is(h1, h2, h3, h4, h5, h6) code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  font-weight: 500;
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+}
+
 .page-content p {
   margin-bottom: 1rem;
   color: var(--text-primary);

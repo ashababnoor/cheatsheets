@@ -346,7 +346,7 @@ bus.emit("save", "doc.txt")
 **When to use**: When you need to switch between different algorithms at runtime (e.g., sorting, compression, pricing rules).
 
 ```python
-def quick_sort(data): return sorted(data)  # simplified
+def quick_sort(data): return sorted(data)   # simplified
 def bubble_sort(data): return sorted(data)  # simplified
 
 class Sorter:

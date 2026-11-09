@@ -14,8 +14,8 @@ A comprehensive reference for evaluation metrics across classification, regressi
 A confusion matrix summarizes the prediction results of a classification model.
 
 ```
-                  Predicted
-                  Positive    Negative
+                       Predicted
+                 Positive     Negative
               +------------+------------+
    Actual     |            |            |
    Positive   |     TP     |     FN     |

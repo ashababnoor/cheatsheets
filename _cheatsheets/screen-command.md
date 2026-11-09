@@ -9,7 +9,7 @@ icon: "monitor"
 A compact, practical reference for GNU Screen (the `screen` terminal multiplexer).
 
 
-## What is screen?
+## What is `screen`?
 `screen` lets you run multiple terminal sessions inside one physical terminal. You can detach sessions and reattach later, share sessions between users, create named windows, split the display, use copy/scrollback mode, and log output.
 
 Install
@@ -177,7 +177,7 @@ screen -S work -p 0 -X stuff $'\003'
 screen -S myproj -X screen -t build bash -c 'make build; exec bash'
 ```
 
-## Sample .screenrc
+## Sample `.screenrc`
 Drop this in `~/.screenrc` (small, sensible defaults):
 
 ```

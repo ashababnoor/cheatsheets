@@ -356,7 +356,7 @@ Supports full regex: `:%s/\v(\w+)/\1_suffix/g`
 
 ---
 
-## Configuration (.vimrc)
+## Configuration (`.vimrc`)
 
 ```vim
 set number              " Show line numbers

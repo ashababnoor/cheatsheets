@@ -349,8 +349,8 @@ Use colons in the separator row to control alignment.
 ```markdown
 | Left-aligned | Center-aligned | Right-aligned |
 |:-------------|:--------------:|--------------:|
-| left         |    center      |         right |
-| text         |    text        |          text |
+| left         |     center     |         right |
+| text         |      text      |          text |
 ```
 
 - `:---` or `---` aligns left (default).

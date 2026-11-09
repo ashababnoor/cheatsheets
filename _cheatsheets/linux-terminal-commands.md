@@ -304,7 +304,7 @@ A comprehensive reference for essential Linux terminal commands organized by cat
 
 ## Package Management
 
-### Debian/Ubuntu (apt)
+### Debian/Ubuntu (`apt`)
 
 | Command | Description |
 |---------|-------------|
@@ -318,7 +318,7 @@ A comprehensive reference for essential Linux terminal commands organized by cat
 | `apt show <pkg>` | Show package details |
 | `apt list --installed` | List installed packages |
 
-### RHEL/CentOS/Fedora (yum/dnf)
+### RHEL/CentOS/Fedora (`yum`/`dnf`)
 
 | Command | Description |
 |---------|-------------|

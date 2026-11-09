@@ -252,7 +252,7 @@ Refs: #2847"
 | **standard-version** | Automate versioning and changelog generation        | [github.com/conventional-changelog/standard-version](https://github.com/conventional-changelog/standard-version) |
 | **semantic-release** | Fully automated version management and publishing  | [semantic-release.gitbook.io](https://semantic-release.gitbook.io/) |
 
-### Quick setup: commitlint + husky
+### Quick setup: `commitlint` + `husky`
 
 ```bash
 # Install dependencies
@@ -269,7 +269,7 @@ npx husky init
 echo "npx --no -- commitlint --edit \$1" > .husky/commit-msg
 ```
 
-### Quick setup: commitizen
+### Quick setup: `commitizen`
 
 ```bash
 # Install commitizen globally

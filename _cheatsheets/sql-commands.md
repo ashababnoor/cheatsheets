@@ -242,7 +242,7 @@ WHERE id NOT IN (
 SELECT
   department,
   COUNT(*) AS total,
-  COUNT(*) FILTER (WHERE salary > 100000) AS high_earners,    -- PostgreSQL
+  COUNT(*) FILTER (WHERE salary > 100000) AS high_earners,              -- PostgreSQL
   SUM(CASE WHEN salary > 100000 THEN 1 ELSE 0 END) AS high_earners_alt  -- All databases
 FROM employees
 GROUP BY department;
