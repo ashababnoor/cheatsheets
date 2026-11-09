@@ -1,85 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  {% comment %} Link previews: jekyll-seo-tag has no image unless front matter sets one, so crawlers fall back to the favicon.
-     Use the generated card (scripts/generate-og-images.mjs) for this page, or the default card. {% endcomment %}
-  {% assign og_slug = page.path | remove: '_cheatsheets/' | remove: '.md' %}
-  {% assign og_path = '/assets/og/' | append: og_slug | append: '.png' %}
-  {% assign og_found = site.static_files | where: 'path', og_path | first %}
-  {% unless og_found %}{% assign og_path = '/assets/og/default.png' %}{% endunless %}
-  {% capture seo_tags %}{% seo %}{% endcapture %}
-  {{ seo_tags | replace: 'content="summary" />', 'content="summary_large_image" />' }}
-  <meta property="og:image" content="{{ og_path | absolute_url }}">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="{% if page.collection == 'cheatsheets' %}{{ page.title | escape }} cheatsheet{% else %}{{ site.title | escape }}{% endif %}">
-  <meta name="twitter:image" content="{{ og_path | absolute_url }}">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-  <script>
-    (function() {
-      var saved = null;
-      try { saved = localStorage.getItem('theme'); } catch (e) {}
-      var mq = window.matchMedia && matchMedia('(prefers-color-scheme: light)');
-      var t = saved || (mq && mq.matches ? 'light' : 'dark');
-      document.documentElement.setAttribute('data-theme', t);
-      // Without a saved choice, keep following the system setting.
-      if (!saved && mq && mq.addEventListener) {
-        mq.addEventListener('change', function(e) {
-          var s2 = null;
-          try { s2 = localStorage.getItem('theme'); } catch (err) {}
-          if (!s2) document.documentElement.setAttribute('data-theme', e.matches ? 'light' : 'dark');
-        });
-      }
-    })();
-  </script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css">
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.min.js"
-    onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+  {% include head.html %}
 </head>
 <body>
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="{{ '/' | relative_url }}" class="site-logo">
-        <img src="{{ '/favicon.svg' | relative_url }}" class="logo-icon" alt="" width="28" height="28">
-        <span class="logo-text">{{ site.title }}</span>
-      </a>
-      <nav class="site-nav">
-        <button type="button" class="search-trigger" data-search-open aria-label="Search cheatsheets" aria-keyshortcuts="/ Control+K Meta+K"><span>Search</span><kbd>/</kbd></button>
-        <a href="{{ '/' | relative_url }}" class="nav-home">Home</a>
-        <a href="https://github.com/ashababnoor/cheatsheets" class="nav-github" target="_blank" rel="noopener" aria-label="GitHub repository">
-          <span class="nav-github-text">GitHub</span>
-          <svg class="nav-github-icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
-        </a>
-        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" data-tip="Toggle theme">
-          <svg class="theme-icon theme-icon-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-            <path d="M20.55 14.8A9 9 0 1 1 9.2 3.45A8.5 8.5 0 0 0 20.55 14.8Z"/>
-          </svg>
-          <svg class="theme-icon theme-icon-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-            <circle cx="12" cy="12" r="4"/>
-            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
-          </svg>
-        </button>
-        {% if page.layout != 'home' and page.toc != false %}
-        <button type="button" class="toc-toggle" id="toc-toggle" aria-label="On this page" aria-expanded="false" aria-controls="toc-panel" hidden>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-        </button>
-        {% endif %}
-      </nav>
-    </div>
-  </header>
-  {% if page.layout != 'home' and page.toc != false %}
-  <nav class="toc-panel" id="toc-panel" aria-label="On this page" hidden>
-    <div class="toc-header">On this page</div>
-  </nav>
-  <div class="toc-backdrop" id="toc-backdrop" hidden></div>
-  {% endif %}
+  {% include header.html %}
 
   <main class="site-main">
     {% if page.layout == 'home' %}
@@ -101,17 +26,7 @@
     {% endif %}
   </main>
 
-  <div id="search-modal" class="search-modal" role="dialog" aria-modal="true" aria-label="Search cheatsheets" data-index="{{ '/search.json' | relative_url }}" hidden>
-    <div class="search-backdrop" data-search-close></div>
-    <div class="search-panel">
-      <div class="search-field">
-        <input id="search-modal-input" type="text" role="combobox" aria-expanded="true" aria-controls="search-results" aria-autocomplete="list" placeholder="Search every cheatsheet" autocomplete="off" autocapitalize="off" spellcheck="false">
-        <kbd>Esc</kbd>
-      </div>
-      <p id="search-status" class="search-status" role="status" aria-live="polite"></p>
-      <ul id="search-results" role="listbox" aria-label="Results"></ul>
-    </div>
-  </div>
+  {% include search-modal.html %}
 
   <footer class="site-footer">
     <div class="footer-inner">
@@ -120,165 +35,16 @@
   </footer>
 
   {% unless page.layout == 'home' %}
-  <script>
-    (function() {
-      const article = document.querySelector('.page-content');
-      const tocNav = document.getElementById('toc-nav');
-      const tocSidebar = document.getElementById('toc-sidebar');
-      if (!article || !tocNav) return;
-
-      const headings = article.querySelectorAll('h2, h3');
-      if (headings.length < 2) {
-        tocSidebar.style.display = 'none';
-        document.querySelector('.page-layout').classList.add('no-toc');
-        return;
-      }
-
-      const list = document.createElement('ul');
-      headings.forEach(function(h, i) {
-        if (!h.id) h.id = 'section-' + i;
-        const li = document.createElement('li');
-        li.className = h.tagName === 'H3' ? 'toc-h3' : 'toc-h2';
-        const a = document.createElement('a');
-        a.href = '#' + h.id;
-        a.textContent = h.textContent;
-        li.appendChild(a);
-        list.appendChild(li);
-      });
-      tocNav.appendChild(list);
-
-      // Mobile: the same list opens from the header's menu button.
-      const panel = document.getElementById('toc-panel');
-      const toggle = document.getElementById('toc-toggle');
-      const backdrop = document.getElementById('toc-backdrop');
-      if (panel && toggle) {
-        panel.appendChild(list.cloneNode(true));
-        toggle.hidden = false;
-        const setOpen = function(open) {
-          panel.hidden = !open;
-          backdrop.hidden = !open;
-          toggle.setAttribute('aria-expanded', String(open));
-        };
-        toggle.addEventListener('click', function() { setOpen(panel.hidden); });
-        panel.addEventListener('click', function(e) { if (e.target.closest('a')) setOpen(false); });
-        document.addEventListener('click', function(e) {
-          if (!panel.hidden && !panel.contains(e.target) && !toggle.contains(e.target)) setOpen(false);
-        });
-        document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && !panel.hidden) { setOpen(false); toggle.focus(); } });
-        window.matchMedia('(min-width: 901px)').addEventListener('change', function(e) { if (e.matches) setOpen(false); });
-      }
-
-      // Highlight active heading on scroll
-      const links = document.querySelectorAll('#toc-nav a, #toc-panel a');
-      const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            links.forEach(function(l) { l.classList.remove('active'); });
-            document.querySelectorAll('#toc-nav a[href="#' + entry.target.id + '"], #toc-panel a[href="#' + entry.target.id + '"]')
-              .forEach(function(a) { a.classList.add('active'); });
-          }
-        });
-      }, { rootMargin: '0px 0px -70% 0px', threshold: 0 });
-
-      headings.forEach(function(h) { observer.observe(h); });
-    })();
-  </script>
-  <script>
-    // Code blocks: line numbers on longer programming-language blocks, copy button on all.
-    (function() {
-      var LINE_NUMBER_LANGS = ['python', 'js', 'javascript', 'css', 'sql', 'html', 'bash', 'sh', 'json', 'go', 'graphql'];
-      var LINE_NUMBER_MIN_LINES = 4;
-      var COPY_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>';
-      var CHECK_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>';
-
-      function copyText(text) {
-        if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
-        return new Promise(function(resolve, reject) {
-          var ta = document.createElement('textarea');
-          ta.value = text;
-          ta.setAttribute('readonly', '');
-          ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0';
-          document.body.appendChild(ta);
-          ta.select();
-          try { document.execCommand('copy') ? resolve() : reject(); } catch (e) { reject(e); }
-          document.body.removeChild(ta);
-        });
-      }
-
-      document.querySelectorAll('.page-content div.highlighter-rouge').forEach(function(block) {
-        var match = block.className.match(/language-(\S+)/);
-        var lang = match ? match[1] : '';
-        if (lang === 'mermaid') return;
-        var pre = block.querySelector('pre');
-        var code = pre && pre.querySelector('code');
-        if (!code) return;
-
-        var text = code.textContent.replace(/\n$/, '');
-        var lines = text.split('\n');
-        var contentLines = lines.filter(function(l) { return l.trim() !== ''; }).length;
-
-        if (LINE_NUMBER_LANGS.indexOf(lang) !== -1 && contentLines >= LINE_NUMBER_MIN_LINES) {
-          var gutter = document.createElement('span');
-          gutter.className = 'line-numbers';
-          gutter.setAttribute('aria-hidden', 'true');
-          gutter.textContent = lines.map(function(_, i) { return i + 1; }).join('\n');
-          pre.insertBefore(gutter, code);
-          pre.classList.add('has-line-numbers');
-        }
-
-        var btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'copy-btn';
-        btn.setAttribute('aria-label', 'Copy code');
-        btn.setAttribute('data-tip', 'Copy code');
-        btn.innerHTML = COPY_ICON;
-        var timer;
-        btn.addEventListener('click', function() {
-          copyText(text).then(function() {
-            btn.innerHTML = CHECK_ICON;
-            btn.classList.add('copied');
-            btn.setAttribute('aria-label', 'Copied');
-            clearTimeout(timer);
-            timer = setTimeout(function() {
-              btn.innerHTML = COPY_ICON;
-              btn.classList.remove('copied');
-              btn.setAttribute('aria-label', 'Copy code');
-            }, 1500);
-          }, function() {});
-        });
-        block.appendChild(btn);
-      });
-    })();
-  </script>
+  <script defer src="{{ '/assets/js/toc.js' | relative_url }}"></script>
   <script defer src="{{ '/assets/js/clipboard.js' | relative_url }}"></script>
+  <script defer src="{{ '/assets/js/code-blocks.js' | relative_url }}"></script>
   <script defer src="{{ '/assets/js/heading-links.js' | relative_url }}"></script>
   <script defer src="{{ '/assets/js/copy-inline.js' | relative_url }}"></script>
+  <script type="module" src="{{ '/assets/js/mermaid.js' | relative_url }}"></script>
   {% endunless %}
+  <script defer src="{{ '/assets/js/theme-toggle.js' | relative_url }}"></script>
   <script defer src="{{ '/assets/js/tooltip.js' | relative_url }}"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/minisearch@7.1.0/dist/umd/index.min.js"></script>
   <script defer src="{{ '/assets/js/search.js' | relative_url }}"></script>
-  <script>
-    (function() {
-      var btn = document.getElementById('theme-toggle');
-      btn.addEventListener('click', function() {
-        var current = document.documentElement.getAttribute('data-theme');
-        var next = current === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', next);
-        localStorage.setItem('theme', next);
-      });
-    })();
-  </script>
-  <script type="module">
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-    document.querySelectorAll('code.language-mermaid').forEach(function(code) {
-      var pre = code.parentElement;
-      var div = document.createElement('div');
-      div.className = 'mermaid';
-      div.textContent = code.textContent;
-      pre.parentElement.replaceChild(div, pre);
-    });
-    var theme = document.documentElement.getAttribute('data-theme') === 'light' ? 'default' : 'dark';
-    mermaid.initialize({ startOnLoad: true, theme: theme });
-  </script>
 </body>
 </html>

@@ -1,0 +1,41 @@
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% comment %} Link previews: jekyll-seo-tag has no image unless front matter sets one, so crawlers fall back to the favicon.
+     Use the generated card (scripts/generate-og-images.mjs) for this page, or the default card. {% endcomment %}
+  {% assign og_slug = page.path | remove: '_cheatsheets/' | remove: '.md' %}
+  {% assign og_path = '/assets/og/' | append: og_slug | append: '.png' %}
+  {% assign og_found = site.static_files | where: 'path', og_path | first %}
+  {% unless og_found %}{% assign og_path = '/assets/og/default.png' %}{% endunless %}
+  {% capture seo_tags %}{% seo %}{% endcapture %}
+  {{ seo_tags | replace: 'content="summary" />', 'content="summary_large_image" />' }}
+  <meta property="og:image" content="{{ og_path | absolute_url }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="{% if page.collection == 'cheatsheets' %}{{ page.title | escape }} cheatsheet{% else %}{{ site.title | escape }}{% endif %}">
+  <meta name="twitter:image" content="{{ og_path | absolute_url }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <script>
+    (function() {
+      var saved = null;
+      try { saved = localStorage.getItem('theme'); } catch (e) {}
+      var mq = window.matchMedia && matchMedia('(prefers-color-scheme: light)');
+      var t = saved || (mq && mq.matches ? 'light' : 'dark');
+      document.documentElement.setAttribute('data-theme', t);
+      // Without a saved choice, keep following the system setting.
+      if (!saved && mq && mq.addEventListener) {
+        mq.addEventListener('change', function(e) {
+          var s2 = null;
+          try { s2 = localStorage.getItem('theme'); } catch (err) {}
+          if (!s2) document.documentElement.setAttribute('data-theme', e.matches ? 'light' : 'dark');
+        });
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>

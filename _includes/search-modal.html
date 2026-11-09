@@ -1,0 +1,11 @@
+  <div id="search-modal" class="search-modal" role="dialog" aria-modal="true" aria-label="Search cheatsheets" data-index="{{ '/search.json' | relative_url }}" hidden>
+    <div class="search-backdrop" data-search-close></div>
+    <div class="search-panel">
+      <div class="search-field">
+        <input id="search-modal-input" type="text" role="combobox" aria-expanded="true" aria-controls="search-results" aria-autocomplete="list" placeholder="Search every cheatsheet" autocomplete="off" autocapitalize="off" spellcheck="false">
+        <kbd>Esc</kbd>
+      </div>
+      <p id="search-status" class="search-status" role="status" aria-live="polite"></p>
+      <ul id="search-results" role="listbox" aria-label="Results"></ul>
+    </div>
+  </div>
