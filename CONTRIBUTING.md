@@ -2,12 +2,25 @@
 
 Thanks for helping out. This page covers how to add a cheatsheet and the conventions the pages follow. To run the site on your machine, see [Running Locally](README.md#running-locally).
 
+## One-time setup
+
+After cloning, turn on the repo's git hook:
+
+```bash
+git config core.hooksPath .githooks
+```
+
+Git does not copy this setting with a clone, so run it once per clone. The hook runs before every commit and refreshes `_data/asset_versions.yml`, which holds a content hash for each CSS and JS file (see [Asset versions](#asset-versions)). Without it, a changed stylesheet or script can be served from a stale browser cache after you deploy.
+
+The hook and the scripts below need [Node.js](https://nodejs.org). The link preview script also needs Google Chrome.
+
 ## Adding a Cheatsheet
 
 1. Create `_cheatsheets/<topic>.md`. Use a lowercase, hyphenated name, since it becomes the URL (`regex.md` is served at `/cheatsheets/regex`).
 2. Start the file with front matter (see below) and leave a blank line after it.
 3. Write the content. Do not add a `# ` heading. The layout renders `<title> Cheatsheet` as the page `h1` and the `subtitle` under it.
 4. Run the site locally and check the page in both the light and the dark theme.
+5. Generate its link preview image and commit it (see [Link preview images](#link-preview-images)).
 
 ```yaml
 ---
@@ -80,6 +93,33 @@ Each cheatsheet needs one image on the homepage card:
 
 - **`logo: "<name>"`** is for a language or tool that has a brand logo. Put `<name>.svg` in `assets/logos/`. Use the official or Devicon SVG, and check that it reads well in both themes. If a logo is dark and disappears on the dark theme, add its class to the `invert` rule in `assets/css/style.css` (see `logo-markdown`).
 - **`icon: "<name>"`** is for everything else. Add a [Lucide](https://lucide.dev) icon as `_includes/icons/<name>.svg`, in the same format as the existing ones (`viewBox="0 0 24 24"`, `stroke="currentColor"`, no fixed size).
+
+### Link preview images
+
+The picture shown when a page link is pasted into Slack, X, and similar apps is a generated card in `assets/og/`, one per cheatsheet plus `default.png` for the homepage. A page with no card of its own falls back to the default one.
+
+Generate the cards after adding a cheatsheet or changing a title, subtitle, category, icon, or logo:
+
+```bash
+node scripts/generate-og-images.mjs
+```
+
+- It renders every card with headless Chrome and writes `assets/og/<name>.png` at 1200 by 630. Commit the changed images.
+- Chrome is expected at `/Applications/Google Chrome.app`. For another location, set `CHROME=/path/to/chrome`.
+- It needs a network connection to load the Inter font. The card layout, colours, and type sizes are in the script.
+- Platforms cache previews, so after a deploy, re-scrape a page with the Facebook Sharing Debugger, the LinkedIn Post Inspector, or X's card preview.
+
+### Asset versions
+
+The layout adds `?v=<hash>` to each local CSS and JS URL (for example `toc.js?v=ad3dc1ca5f`). The hash is the file's content, so the URL changes only when the file does, and browsers never keep a stale copy after a deploy.
+
+GitHub Pages cannot compute the hashes during its build, so they are generated into `_data/asset_versions.yml` and committed. The pre-commit hook from [One-time setup](#one-time-setup) does this for you. To run it by hand:
+
+```bash
+node scripts/hash-assets.mjs
+```
+
+On the local server (`jekyll serve`) the layout uses the build time instead, so your edits show on a normal reload.
 
 ### Commits
 
