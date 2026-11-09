@@ -490,6 +490,12 @@ div.highlighter-rouge:hover .copy-btn,
   letter-spacing: 0.03em;
 }
 
+/* Uppercasing would change the meaning of maths in headers (p becomes P). */
+.page-content th .katex {
+  text-transform: none;
+  letter-spacing: normal;
+}
+
 .page-content td {
   padding: 0.55rem 0.9rem;
   border: 1px solid var(--border);
@@ -676,6 +682,7 @@ div.highlighter-rouge:hover .copy-btn,
 }
 
 /* Logos drawn in dark ink need help on the dark theme (same approach as shababnoor.com) */
+[data-theme="dark"] .card-icon img.logo-github,
 [data-theme="dark"] .card-icon img.logo-markdown,
 [data-theme="dark"] .card-icon img.logo-bash {
   filter: invert(1);

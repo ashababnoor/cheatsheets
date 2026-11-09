@@ -69,16 +69,16 @@ logo: "linux"
 | `sort -r <file>` | Sort in reverse order | `sort -rn scores.txt` |
 | `sort -u <file>` | Sort and remove duplicates | `sort -u emails.txt` |
 | `sort -k N <file>` | Sort by Nth field | `sort -k 2 data.txt` |
-| `uniq` | Remove adjacent duplicate lines | `sort names.txt \| uniq` |
-| `uniq -c` | Count occurrences of each line | `sort access.log \| uniq -c` |
-| `uniq -d` | Show only duplicated lines | `sort list.txt \| uniq -d` |
+| `uniq` | Remove adjacent duplicate lines | `sort names.txt | uniq` |
+| `uniq -c` | Count occurrences of each line | `sort access.log | uniq -c` |
+| `uniq -d` | Show only duplicated lines | `sort list.txt | uniq -d` |
 | `cut -d'X' -fN` | Extract fields by delimiter | `cut -d',' -f1,3 data.csv` |
 | `cut -cN-M` | Extract characters by position | `cut -c1-10 file.txt` |
 | `paste <f1> <f2>` | Merge lines from multiple files | `paste names.txt ages.txt` |
 | `paste -d',' <f1> <f2>` | Merge with custom delimiter | `paste -d',' col1.txt col2.txt` |
-| `tr 'a' 'b'` | Translate/replace characters | `echo "hello" \| tr 'a-z' 'A-Z'` |
-| `tr -d 'X'` | Delete characters | `echo "a1b2c3" \| tr -d '0-9'` |
-| `tr -s ' '` | Squeeze repeated characters | `echo "a  b" \| tr -s ' '` |
+| `tr 'a' 'b'` | Translate/replace characters | `echo "hello" | tr 'a-z' 'A-Z'` |
+| `tr -d 'X'` | Delete characters | `echo "a1b2c3" | tr -d '0-9'` |
+| `tr -s ' '` | Squeeze repeated characters | `echo "a  b" | tr -s ' '` |
 
 ### Vi/Vim Quick Reference
 
@@ -143,13 +143,13 @@ logo: "linux"
 | `grep -c <pattern> <file>` | Count matching lines | `grep -c "404" access.log` |
 | `grep -l <pattern> <dir>/*` | List files containing pattern | `grep -rl "API_KEY" config/` |
 | `grep -v <pattern> <file>` | Invert match (exclude pattern) | `grep -v "^#" config.ini` |
-| `grep -E <regex> <file>` | Extended regex (same as `egrep`) | `grep -E "err(or\|no)" log.txt` |
+| `grep -E <regex> <file>` | Extended regex (same as `egrep`) | `grep -E "err(or|no)" log.txt` |
 | `grep -w <word> <file>` | Match whole words only | `grep -w "main" code.c` |
 | `grep -A N <pattern>` | Show N lines after match | `grep -A 3 "Exception" app.log` |
 | `grep -B N <pattern>` | Show N lines before match | `grep -B 2 "FATAL" app.log` |
 | `which <cmd>` | Show path of a command binary | `which python` |
 | `whereis <cmd>` | Locate binary, source, and man page | `whereis gcc` |
-| `awk '{print $N}'` | Print Nth field (space-delimited) | `ls -l \| awk '{print $5, $9}'` |
+| `awk '{print $N}'` | Print Nth field (space-delimited) | `ls -l | awk '{print $5, $9}'` |
 | `awk -F'X' '{print $N}'` | Print field with custom delimiter | `awk -F':' '{print $1}' /etc/passwd` |
 | `awk '/pattern/'` | Filter lines matching pattern | `awk '/error/' app.log` |
 | `awk '{sum+=$1} END {print sum}'` | Sum values in a column | `awk '{sum+=$1} END {print sum}' nums.txt` |
@@ -158,9 +158,9 @@ logo: "linux"
 | `sed -i 's/old/new/g' <file>` | Edit file in place | `sed -i 's/v1/v2/g' config.yml` |
 | `sed 'Nd' <file>` | Delete line N | `sed '1d' data.csv` |
 | `sed '/pattern/d' <file>` | Delete lines matching pattern | `sed '/^$/d' file.txt` |
-| `xargs <cmd>` | Build commands from stdin | `find . -name "*.log" \| xargs rm` |
-| `xargs -I{} <cmd>` | Use placeholder for each input | `cat urls.txt \| xargs -I{} curl {}` |
-| `xargs -P N <cmd>` | Run N processes in parallel | `find . -name "*.png" \| xargs -P 4 optipng` |
+| `xargs <cmd>` | Build commands from stdin | `find . -name "*.log" | xargs rm` |
+| `xargs -I{} <cmd>` | Use placeholder for each input | `cat urls.txt | xargs -I{} curl {}` |
+| `xargs -P N <cmd>` | Run N processes in parallel | `find . -name "*.png" | xargs -P 4 optipng` |
 
 ## Process Management
 
@@ -168,7 +168,7 @@ logo: "linux"
 |---------|-------------|---------|
 | `ps` | Show current shell processes | `ps` |
 | `ps aux` | Show all running processes | `ps aux` |
-| `ps aux \| grep <name>` | Find a specific process | `ps aux \| grep nginx` |
+| `ps aux | grep <name>` | Find a specific process | `ps aux | grep nginx` |
 | `ps -ef` | Full-format listing of all processes | `ps -ef --forest` |
 | `top` | Real-time process monitor | `top` |
 | `htop` | Interactive process viewer (enhanced) | `htop` |
@@ -210,12 +210,12 @@ logo: "linux"
 | `free -m` | Memory usage in megabytes | `free -m` |
 | `lscpu` | Display CPU architecture info | `lscpu` |
 | `lsblk` | List block devices (disks, partitions) | `lsblk` |
-| `mount` | Show mounted filesystems | `mount \| grep ext4` |
+| `mount` | Show mounted filesystems | `mount | grep ext4` |
 | `mount <dev> <dir>` | Mount a filesystem | `mount /dev/sdb1 /mnt/usb` |
 | `umount <dir>` | Unmount a filesystem | `umount /mnt/usb` |
-| `dmesg` | Print kernel ring buffer messages | `dmesg \| tail -20` |
+| `dmesg` | Print kernel ring buffer messages | `dmesg | tail -20` |
 | `lsof` | List open files | `lsof -i :8080` |
-| `env` | Print environment variables | `env \| grep PATH` |
+| `env` | Print environment variables | `env | grep PATH` |
 | `date` | Display current date and time | `date "+%Y-%m-%d %H:%M"` |
 
 ## Networking
@@ -353,9 +353,9 @@ logo: "linux"
 | `2>>` | Append stderr to file | `cmd 2>> errors.log` |
 | `2>&1` | Redirect stderr to stdout | `cmd > all.log 2>&1` |
 | `&>` | Redirect both stdout and stderr | `cmd &> output.log` |
-| `\|` | Pipe stdout to next command | `cat log.txt \| grep "error"` |
-| `\| tee <file>` | Pipe and write to file simultaneously | `cmd \| tee output.log` |
-| `\| tee -a <file>` | Pipe and append to file | `cmd \| tee -a output.log` |
+| `|` | Pipe stdout to next command | `cat log.txt | grep "error"` |
+| `| tee <file>` | Pipe and write to file simultaneously | `cmd | tee output.log` |
+| `| tee -a <file>` | Pipe and append to file | `cmd | tee -a output.log` |
 | `<<EOF` | Here document (inline input) | `cat <<EOF > file.txt` |
 | `/dev/null` | Discard output | `cmd > /dev/null 2>&1` |
 

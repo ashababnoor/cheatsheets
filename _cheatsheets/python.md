@@ -182,7 +182,7 @@ empty = set()          # not {} — that's an empty dict
 | `discard(x)` | Remove element (no error if missing) | `{1,2}.discard(9)` → `{1,2}` |
 | `pop()` | Remove and return arbitrary element | `{1,2}.pop()` |
 | `clear()` | Remove all elements | `{1,2}.clear()` → `set()` |
-| `union(s2)` | Elements in either | `{1,2} \| {2,3}` → `{1,2,3}` |
+| `union(s2)` | Elements in either | `{1,2} | {2,3}` → `{1,2,3}` |
 | `intersection(s2)` | Elements in both | `{1,2} & {2,3}` → `{2}` |
 | `difference(s2)` | Elements in first not second | `{1,2} - {2,3}` → `{1}` |
 | `symmetric_difference(s2)` | Elements in one but not both | `{1,2} ^ {2,3}` → `{1,3}` |

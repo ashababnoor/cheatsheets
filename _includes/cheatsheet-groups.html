@@ -1,5 +1,9 @@
 {% for cat in site.cheatsheet_categories %}
-  {% assign sheets = site.cheatsheets | where: "category", cat | sort: "order" %}
+  {% comment %} Pages with an `order` come first (lowest first). The rest follow, sorted by title. {% endcomment %}
+  {% assign in_cat = site.cheatsheets | where: "category", cat %}
+  {% assign ordered = in_cat | where_exp: "s", "s.order" | sort: "order" %}
+  {% assign unordered = in_cat | where_exp: "s", "s.order == nil" | sort_natural: "title" %}
+  {% assign sheets = ordered | concat: unordered %}
   {% if sheets.size > 0 %}
   <section class="card-group" data-category="{{ cat | downcase }}">
     <h2 class="group-title">{{ cat }}</h2>

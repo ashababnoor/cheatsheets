@@ -88,7 +88,7 @@ All key bindings use the prefix key `C-a` followed by the command key.
 | Key | Action |
 |-----|--------|
 | `C-a` `S` | Split horizontally |
-| `C-a` `\|` | Split vertically (screen 4.x+) |
+| `C-a` `|` | Split vertically (screen 4.x+) |
 | `C-a` `TAB` | Switch focus to next region |
 | `C-a` `X` | Remove current region |
 | `C-a` `Q` | Remove all regions except the current one |
