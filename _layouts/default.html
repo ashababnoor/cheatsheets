@@ -11,8 +11,19 @@
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   <script>
     (function() {
-      var t = localStorage.getItem('theme') || 'dark';
+      var saved = null;
+      try { saved = localStorage.getItem('theme'); } catch (e) {}
+      var mq = window.matchMedia && matchMedia('(prefers-color-scheme: light)');
+      var t = saved || (mq && mq.matches ? 'light' : 'dark');
       document.documentElement.setAttribute('data-theme', t);
+      // Without a saved choice, keep following the system setting.
+      if (!saved && mq && mq.addEventListener) {
+        mq.addEventListener('change', function(e) {
+          var s2 = null;
+          try { s2 = localStorage.getItem('theme'); } catch (err) {}
+          if (!s2) document.documentElement.setAttribute('data-theme', e.matches ? 'light' : 'dark');
+        });
+      }
     })();
   </script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css">
@@ -31,7 +42,7 @@
         <button type="button" class="search-trigger" data-search-open aria-label="Search cheatsheets" aria-keyshortcuts="/ Control+K Meta+K"><span>Search</span><kbd>/</kbd></button>
         <a href="{{ '/' | relative_url }}">Home</a>
         <a href="https://github.com/ashababnoor/cheatsheets" target="_blank" rel="noopener">GitHub</a>
-        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" data-tip="Toggle theme">
           <svg class="theme-icon theme-icon-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
             <path d="M20.55 14.8A9 9 0 1 1 9.2 3.45A8.5 8.5 0 0 0 20.55 14.8Z"/>
           </svg>
@@ -172,6 +183,7 @@
         btn.type = 'button';
         btn.className = 'copy-btn';
         btn.setAttribute('aria-label', 'Copy code');
+        btn.setAttribute('data-tip', 'Copy code');
         btn.innerHTML = COPY_ICON;
         var timer;
         btn.addEventListener('click', function() {
@@ -191,7 +203,11 @@
       });
     })();
   </script>
+  <script defer src="{{ '/assets/js/clipboard.js' | relative_url }}"></script>
+  <script defer src="{{ '/assets/js/heading-links.js' | relative_url }}"></script>
+  <script defer src="{{ '/assets/js/copy-inline.js' | relative_url }}"></script>
   {% endunless %}
+  <script defer src="{{ '/assets/js/tooltip.js' | relative_url }}"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/minisearch@7.1.0/dist/umd/index.min.js"></script>
   <script defer src="{{ '/assets/js/search.js' | relative_url }}"></script>
   <script>
