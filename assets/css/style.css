@@ -166,8 +166,12 @@ a:hover {
 }
 
 /* Each icon shows the mode a click switches to: a sun in dark mode, a moon in light mode. */
-[data-theme="dark"] .theme-icon-dark { display: none; }
-[data-theme="light"] .theme-icon-light { display: none; }
+[data-theme="dark"] .theme-icon-dark {
+  display: none;
+}
+[data-theme="light"] .theme-icon-light {
+  display: none;
+}
 
 /* ===== Main Content ===== */
 .site-main {
@@ -331,7 +335,9 @@ a:hover {
   transform: translate(-50%, 0);
 }
 
-.copy-toast span { font-weight: 600; }
+.copy-toast span {
+  font-weight: 600;
+}
 
 .copy-toast code {
   min-width: 0;
@@ -362,7 +368,9 @@ a:hover {
   transition: opacity 0.12s;
 }
 
-.tooltip.visible { opacity: 1; }
+.tooltip.visible {
+  opacity: 1;
+}
 
 /* Heading links: a "#" after the heading text that copies the section URL */
 .heading-anchor {
@@ -385,7 +393,9 @@ a:hover {
   text-decoration: none;
 }
 
-.heading-anchor.copied { color: var(--text-secondary); }
+.heading-anchor.copied {
+  color: var(--text-secondary);
+}
 
 .heading-anchor.copied::after {
   content: "Link copied";
@@ -397,7 +407,9 @@ a:hover {
 
 /* No hover on touch screens, so keep the "#" faintly visible there. */
 @media (hover: none) {
-  .heading-anchor { opacity: 0.45; }
+  .heading-anchor {
+    opacity: 0.45;
+  }
 }
 
 /* Code in headings: monospace only, no inline-code box */
@@ -693,7 +705,9 @@ div.highlighter-rouge:hover .copy-btn,
   --search-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.3-4.3'/%3E%3C/svg%3E");
 }
 
-[hidden] { display: none !important; }
+[hidden] {
+  display: none !important;
+}
 
 kbd {
   font-family: var(--font-mono);
@@ -747,9 +761,13 @@ kbd {
   transition: border-color 0.15s;
 }
 
-.search-box:hover { border-color: var(--border-light); }
+.search-box:hover {
+  border-color: var(--border-light);
+}
 
-.search-box span { flex: 1; }
+.search-box span {
+  flex: 1;
+}
 
 /* Overlay */
 .search-modal {
@@ -802,7 +820,9 @@ kbd {
   outline: none;
 }
 
-.search-field input::placeholder { color: var(--text-muted); }
+.search-field input::placeholder {
+  color: var(--text-muted);
+}
 
 .search-status {
   padding: 0.5rem 1rem;
@@ -817,7 +837,9 @@ kbd {
   overflow-y: auto;
 }
 
-#search-results:empty { padding: 0; }
+#search-results:empty {
+  padding: 0;
+}
 
 #search-results li a {
   display: block;
@@ -827,7 +849,9 @@ kbd {
   border-radius: 6px;
 }
 
-#search-results li.active a { background: var(--accent-subtle); }
+#search-results li.active a {
+  background: var(--accent-subtle);
+}
 
 .sr-head {
   display: flex;
@@ -836,7 +860,10 @@ kbd {
   gap: 1rem;
 }
 
-.sr-title { font-weight: 600; font-size: 0.9rem; }
+.sr-title {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
 
 .sr-where {
   flex: none;
@@ -873,7 +900,9 @@ kbd {
   background: var(--border);
 }
 
-.sr-group-current { color: var(--text-primary); }
+.sr-group-current {
+  color: var(--text-primary);
+}
 
 .sr-count {
   order: 1;
@@ -894,13 +923,21 @@ kbd {
   font-weight: 600;
 }
 
-body.search-open { overflow: hidden; }
+body.search-open {
+  overflow: hidden;
+}
 
 @media (max-width: 600px) {
   .search-trigger span,
-  .search-trigger kbd { display: none; }
-  .search-trigger { padding: 0.4rem; }
-  .search-modal { padding-top: 6vh; }
+  .search-trigger kbd {
+    display: none;
+  }
+  .search-trigger {
+    padding: 0.4rem;
+  }
+  .search-modal {
+    padding-top: 6vh;
+  }
 }
 
 /* ===== Card Groups ===== */
@@ -1198,38 +1235,146 @@ body.search-open { overflow: hidden; }
 }
 
 /* ===== Syntax Highlighting (Rouge - GitHub Dark) ===== */
-[data-theme="dark"] .highlight .c, [data-theme="dark"] .highlight .cm, [data-theme="dark"] .highlight .c1, [data-theme="dark"] .highlight .cs { color: #8b949e; }
-[data-theme="dark"] .highlight .k, [data-theme="dark"] .highlight .kd, [data-theme="dark"] .highlight .kn, [data-theme="dark"] .highlight .kp, [data-theme="dark"] .highlight .kr { color: #ff7b72; }
-[data-theme="dark"] .highlight .kt { color: #79c0ff; }
-[data-theme="dark"] .highlight .s, [data-theme="dark"] .highlight .sb, [data-theme="dark"] .highlight .sc, [data-theme="dark"] .highlight .sd, [data-theme="dark"] .highlight .s2, [data-theme="dark"] .highlight .sh, [data-theme="dark"] .highlight .s1 { color: #a5d6ff; }
-[data-theme="dark"] .highlight .si { color: #a5d6ff; }
-[data-theme="dark"] .highlight .nb { color: #ffa657; }
-[data-theme="dark"] .highlight .nf, [data-theme="dark"] .highlight .nx { color: #d2a8ff; }
-[data-theme="dark"] .highlight .nc { color: #ffa657; }
-[data-theme="dark"] .highlight .nn { color: #ffa657; }
-[data-theme="dark"] .highlight .no { color: #79c0ff; }
-[data-theme="dark"] .highlight .o, [data-theme="dark"] .highlight .ow { color: #ff7b72; }
-[data-theme="dark"] .highlight .m, [data-theme="dark"] .highlight .mi, [data-theme="dark"] .highlight .mf, [data-theme="dark"] .highlight .mh, [data-theme="dark"] .highlight .mo { color: #79c0ff; }
-[data-theme="dark"] .highlight .na { color: #79c0ff; }
-[data-theme="dark"] .highlight .nt { color: #7ee787; }
-[data-theme="dark"] .highlight .nv, [data-theme="dark"] .highlight .vi, [data-theme="dark"] .highlight .vg, [data-theme="dark"] .highlight .vs { color: #ffa657; }
+[data-theme="dark"] .highlight .c,
+[data-theme="dark"] .highlight .cm,
+[data-theme="dark"] .highlight .c1,
+[data-theme="dark"] .highlight .cs {
+  color: #8b949e;
+}
+[data-theme="dark"] .highlight .k,
+[data-theme="dark"] .highlight .kd,
+[data-theme="dark"] .highlight .kn,
+[data-theme="dark"] .highlight .kp,
+[data-theme="dark"] .highlight .kr {
+  color: #ff7b72;
+}
+[data-theme="dark"] .highlight .kt {
+  color: #79c0ff;
+}
+[data-theme="dark"] .highlight .s,
+[data-theme="dark"] .highlight .sb,
+[data-theme="dark"] .highlight .sc,
+[data-theme="dark"] .highlight .sd,
+[data-theme="dark"] .highlight .s2,
+[data-theme="dark"] .highlight .sh,
+[data-theme="dark"] .highlight .s1 {
+  color: #a5d6ff;
+}
+[data-theme="dark"] .highlight .si {
+  color: #a5d6ff;
+}
+[data-theme="dark"] .highlight .nb {
+  color: #ffa657;
+}
+[data-theme="dark"] .highlight .nf,
+[data-theme="dark"] .highlight .nx {
+  color: #d2a8ff;
+}
+[data-theme="dark"] .highlight .nc {
+  color: #ffa657;
+}
+[data-theme="dark"] .highlight .nn {
+  color: #ffa657;
+}
+[data-theme="dark"] .highlight .no {
+  color: #79c0ff;
+}
+[data-theme="dark"] .highlight .o,
+[data-theme="dark"] .highlight .ow {
+  color: #ff7b72;
+}
+[data-theme="dark"] .highlight .m,
+[data-theme="dark"] .highlight .mi,
+[data-theme="dark"] .highlight .mf,
+[data-theme="dark"] .highlight .mh,
+[data-theme="dark"] .highlight .mo {
+  color: #79c0ff;
+}
+[data-theme="dark"] .highlight .na {
+  color: #79c0ff;
+}
+[data-theme="dark"] .highlight .nt {
+  color: #7ee787;
+}
+[data-theme="dark"] .highlight .nv,
+[data-theme="dark"] .highlight .vi,
+[data-theme="dark"] .highlight .vg,
+[data-theme="dark"] .highlight .vs {
+  color: #ffa657;
+}
 
 /* ===== Syntax Highlighting (Rouge - GitHub Light) ===== */
-[data-theme="light"] .highlight .c, [data-theme="light"] .highlight .cm, [data-theme="light"] .highlight .c1, [data-theme="light"] .highlight .cs { color: #6e7781; }
-[data-theme="light"] .highlight .k, [data-theme="light"] .highlight .kd, [data-theme="light"] .highlight .kn, [data-theme="light"] .highlight .kp, [data-theme="light"] .highlight .kr { color: #cf222e; }
-[data-theme="light"] .highlight .kt { color: #0550ae; }
-[data-theme="light"] .highlight .s, [data-theme="light"] .highlight .sb, [data-theme="light"] .highlight .sc, [data-theme="light"] .highlight .sd, [data-theme="light"] .highlight .s2, [data-theme="light"] .highlight .sh, [data-theme="light"] .highlight .s1 { color: #0a3069; }
-[data-theme="light"] .highlight .si { color: #0a3069; }
-[data-theme="light"] .highlight .nb { color: #953800; }
-[data-theme="light"] .highlight .nf, [data-theme="light"] .highlight .nx { color: #8250df; }
-[data-theme="light"] .highlight .nc { color: #953800; }
-[data-theme="light"] .highlight .nn { color: #953800; }
-[data-theme="light"] .highlight .no { color: #0550ae; }
-[data-theme="light"] .highlight .o, [data-theme="light"] .highlight .ow { color: #cf222e; }
-[data-theme="light"] .highlight .m, [data-theme="light"] .highlight .mi, [data-theme="light"] .highlight .mf, [data-theme="light"] .highlight .mh, [data-theme="light"] .highlight .mo { color: #0550ae; }
-[data-theme="light"] .highlight .na { color: #0550ae; }
-[data-theme="light"] .highlight .nt { color: #116329; }
-[data-theme="light"] .highlight .nv, [data-theme="light"] .highlight .vi, [data-theme="light"] .highlight .vg, [data-theme="light"] .highlight .vs { color: #953800; }
+[data-theme="light"] .highlight .c,
+[data-theme="light"] .highlight .cm,
+[data-theme="light"] .highlight .c1,
+[data-theme="light"] .highlight .cs {
+  color: #6e7781;
+}
+[data-theme="light"] .highlight .k,
+[data-theme="light"] .highlight .kd,
+[data-theme="light"] .highlight .kn,
+[data-theme="light"] .highlight .kp,
+[data-theme="light"] .highlight .kr {
+  color: #cf222e;
+}
+[data-theme="light"] .highlight .kt {
+  color: #0550ae;
+}
+[data-theme="light"] .highlight .s,
+[data-theme="light"] .highlight .sb,
+[data-theme="light"] .highlight .sc,
+[data-theme="light"] .highlight .sd,
+[data-theme="light"] .highlight .s2,
+[data-theme="light"] .highlight .sh,
+[data-theme="light"] .highlight .s1 {
+  color: #0a3069;
+}
+[data-theme="light"] .highlight .si {
+  color: #0a3069;
+}
+[data-theme="light"] .highlight .nb {
+  color: #953800;
+}
+[data-theme="light"] .highlight .nf,
+[data-theme="light"] .highlight .nx {
+  color: #8250df;
+}
+[data-theme="light"] .highlight .nc {
+  color: #953800;
+}
+[data-theme="light"] .highlight .nn {
+  color: #953800;
+}
+[data-theme="light"] .highlight .no {
+  color: #0550ae;
+}
+[data-theme="light"] .highlight .o,
+[data-theme="light"] .highlight .ow {
+  color: #cf222e;
+}
+[data-theme="light"] .highlight .m,
+[data-theme="light"] .highlight .mi,
+[data-theme="light"] .highlight .mf,
+[data-theme="light"] .highlight .mh,
+[data-theme="light"] .highlight .mo {
+  color: #0550ae;
+}
+[data-theme="light"] .highlight .na {
+  color: #0550ae;
+}
+[data-theme="light"] .highlight .nt {
+  color: #116329;
+}
+[data-theme="light"] .highlight .nv,
+[data-theme="light"] .highlight .vi,
+[data-theme="light"] .highlight .vg,
+[data-theme="light"] .highlight .vs {
+  color: #953800;
+}
 
-.highlight .p { color: var(--text-primary); }
-.highlight .err { color: var(--red); }
+.highlight .p {
+  color: var(--text-primary);
+}
+.highlight .err {
+  color: var(--red);
+}
