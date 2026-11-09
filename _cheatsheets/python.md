@@ -28,8 +28,6 @@ isinstance(42, int)           # True
 isinstance(42, (int, float))  # True — checks multiple types
 ```
 
----
-
 ## Strings
 
 ### F-Strings (Formatted String Literals)
@@ -80,8 +78,6 @@ Line 3"""
 raw = r"No \n escape here"  # backslashes treated literally
 ```
 
----
-
 ## Lists
 
 ### Creation & Slicing
@@ -122,8 +118,6 @@ flat = [x for row in [[1,2],[3,4]] for x in row]  # [1, 2, 3, 4]
 a, b, *rest = [1, 2, 3, 4, 5]   # a=1, b=2, rest=[3,4,5]
 first, *_, last = [1, 2, 3, 4]  # first=1, last=4
 ```
-
----
 
 ## Dictionaries
 
@@ -169,8 +163,6 @@ counts = Counter("banana")  # Counter({'a':3, 'n':2, 'b':1})
 counts.most_common(2)       # [('a',3), ('n',2)]
 ```
 
----
-
 ## Sets
 
 ### Creation
@@ -204,8 +196,6 @@ evens = {x for x in range(10) if x % 2 == 0}  # {0, 2, 4, 6, 8}
 fs = frozenset([1, 2, 3])                     # immutable set — can be used as dict key
 ```
 
----
-
 ## Tuples & Named Tuples
 
 ### Tuples
@@ -233,8 +223,6 @@ class Point(NamedTuple):
     x: float
     y: float
 ```
-
----
 
 ## Control Flow
 
@@ -298,8 +286,6 @@ for x in items:
 else:
     print("not found")  # runs only if loop completed without break
 ```
-
----
 
 ## Functions
 
@@ -368,8 +354,6 @@ if (n := len(items)) > 10:
 
 results = [y for x in data if (y := f(x)) is not None]
 ```
-
----
 
 ## Classes
 
@@ -441,8 +425,6 @@ class MyClass:
 | `__enter__` | Context manager entry | `with obj as x:` |
 | `__exit__` | Context manager exit | end of `with` block |
 
----
-
 ## File I/O
 
 ### `open` / `with`
@@ -483,8 +465,6 @@ p.read_text()                 # read entire file as string
 p.write_text("content")       # write string to file
 list(Path(".").glob("*.py"))  # list matching files
 ```
-
----
 
 ## Error Handling
 
@@ -530,8 +510,6 @@ class AppError(Exception):
 | `RuntimeError` | Generic runtime error |
 | `OSError` | OS-level error (file, network) |
 | `NameError` | Undefined variable |
-
----
 
 ## Common Standard Library
 
@@ -617,8 +595,6 @@ files = list(Path(".").rglob("*.py"))   # recursive glob
 Path("output").mkdir(exist_ok=True)
 ```
 
----
-
 ## Virtual Environments
 
 ### Creating & Activating
@@ -645,8 +621,6 @@ pip install -r requirements.txt   # install from file
 pip freeze > requirements.txt     # export installed packages
 pip list                          # list installed packages
 ```
-
----
 
 ## Useful Built-ins
 

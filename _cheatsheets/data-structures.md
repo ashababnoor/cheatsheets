@@ -44,8 +44,6 @@ Index:   0    1    2    3    4
 - Data size is known or changes infrequently.
 - Cache-friendly iteration is important.
 
----
-
 ## Linked Lists
 
 A linear collection of nodes where each node holds data and a pointer to the next (and optionally previous) node. Order is maintained by links, not physical memory layout.
@@ -94,8 +92,6 @@ Circular: [12] -> [45] -> [32] -> [67] -> [40] -+
 | Extra memory      | None                   | Pointer(s) per node      |
 | Size flexibility  | Fixed (or resize cost) | Grows/shrinks freely     |
 
----
-
 ## Stacks
 
 A linear data structure following the **LIFO** (Last In, First Out) principle. Only the top element is accessible.
@@ -134,8 +130,6 @@ A linear data structure following the **LIFO** (Last In, First Out) principle. O
 - **Balanced parentheses** -- push opening brackets, pop and match on closing brackets.
 - **Function call stack** -- managing return addresses, local variables, and parameters.
 - **Browser back/forward navigation** -- history stored as a stack.
-
----
 
 ## Queues
 
@@ -176,8 +170,6 @@ A linear data structure following the **FIFO** (First In, First Out) principle. 
 - **Rate limiting / buffering** -- managing requests in order.
 - **Message queues** -- asynchronous communication between services.
 
----
-
 ## Hash Tables
 
 A data structure that maps keys to values using a **hash function** to compute an index into an array of buckets.
@@ -216,8 +208,6 @@ A data structure that maps keys to values using a **hash function** to compute a
 - Typical threshold for resizing: 0.7 - 0.75.
 - Higher load factor increases collisions; lower wastes memory.
 - Resizing (rehashing) costs O(n) but happens infrequently (amortized O(1) inserts).
-
----
 
 ## Trees
 
@@ -262,8 +252,6 @@ Binary Search Tree:
 | Post-order   | Left, Right, Root            | Delete a tree, evaluate expressions |
 | Level-order  | Breadth-first (level by level)| BFS, shortest path in unweighted tree |
 
----
-
 ## Heaps
 
 A complete binary tree satisfying the **heap property**: in a min-heap every parent is smaller than or equal to its children; in a max-heap every parent is greater than or equal to its children. Typically stored as an array.
@@ -300,8 +288,6 @@ Parent of i: (i-1)/2           Children of i: 2i+1, 2i+2
 - **Median finding** -- use a max-heap for the lower half and min-heap for the upper half.
 - **Heap sort** -- O(n log n) in-place comparison sort.
 - **Dijkstra's / Prim's algorithms** -- min-heap as the priority queue for graph algorithms.
-
----
 
 ## Graphs
 
@@ -341,8 +327,6 @@ A collection of **vertices** (nodes) connected by **edges** (links). Graphs mode
 | BFS       | Queue          | O(V + E)        | Shortest path (unweighted), level-order        |
 | DFS       | Stack / Recursion | O(V + E)     | Cycle detection, topological sort, pathfinding |
 
----
-
 ## Tries
 
 A tree-like data structure where each node represents a character. Paths from root to marked nodes form stored strings. Also called a **prefix tree**.
@@ -379,8 +363,6 @@ A tree-like data structure where each node represents a character. Paths from ro
 - **Prefix matching** -- efficiently find all strings with a given prefix.
 - **IP routing** -- longest prefix matching in routing tables.
 - **Word games** -- fast dictionary lookups (e.g., Boggle, Scrabble solvers).
-
----
 
 ## Complexity Comparison Table
 

@@ -68,8 +68,6 @@ logo: "css"
 | `::placeholder` | Placeholder text in inputs |
 | `::selection` | User-highlighted text |
 
----
-
 ## Box Model
 
 ```
@@ -100,8 +98,6 @@ logo: "css"
   box-sizing: border-box;
 }
 ```
-
----
 
 ## Display & Positioning
 
@@ -143,8 +139,6 @@ logo: "css"
 | `clear` | `left`, `right`, `both` | Clears floated elements |
 | `overflow` | `visible`, `hidden`, `scroll`, `auto` | Content overflow handling |
 
----
-
 ## Flexbox
 
 ### Container Properties
@@ -179,8 +173,6 @@ flex: 1;         /* flex: 1 1 0%   — equal sizing */
 flex: auto;      /* flex: 1 1 auto — size based on content */
 flex: none;      /* flex: 0 0 auto — inflexible */
 ```
-
----
 
 ## Grid
 
@@ -230,8 +222,6 @@ flex: none;      /* flex: 0 0 auto — inflexible */
 }
 ```
 
----
-
 ## Typography
 
 | Property | Example | Notes |
@@ -253,8 +243,6 @@ flex: none;      /* flex: 0 0 auto — inflexible */
 /* Font shorthand: style weight size/line-height family */
 font: italic 700 1rem/1.5 'Inter', sans-serif;
 ```
-
----
 
 ## Colors & Backgrounds
 
@@ -303,8 +291,6 @@ opacity: 0.5;                      /* Entire element */
 background: rgba(0, 0, 0, 0.5);  /* Background only */
 ```
 
----
-
 ## Units
 
 | Unit | Relative To | Best For |
@@ -321,8 +307,6 @@ background: rgba(0, 0, 0, 0.5);  /* Background only */
 | `fr` | Fraction of grid space | Grid tracks |
 | `dvh` | Dynamic viewport height | Mobile-safe full height |
 | `svh` / `lvh` | Small / large viewport | Mobile viewport variants |
-
----
 
 ## Transitions & Animations
 
@@ -370,8 +354,6 @@ animation: slide-in 0.5s ease-out forwards;
 | `animation-fill-mode` | `none`, `forwards`, `backwards`, `both` |
 | `animation-play-state` | `running`, `paused` |
 
----
-
 ## Media Queries
 
 ### Syntax
@@ -415,8 +397,6 @@ animation: slide-in 0.5s ease-out forwards;
 }
 ```
 
----
-
 ## CSS Variables (Custom Properties)
 
 ```css
@@ -447,8 +427,6 @@ padding: calc(var(--spacing-md) * 2);
 ```
 
 Variables are inherited and scoped. Define on `:root` for global, or on a selector for local scope.
-
----
 
 ## Common Patterns
 

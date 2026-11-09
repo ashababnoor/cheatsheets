@@ -5,6 +5,7 @@ description: "Reference for the Conventional Commits specification — commit ty
 category: "Languages & Code"
 icon: "git-commit-horizontal"
 ---
+
 The [Conventional Commits](https://www.conventionalcommits.org/) specification provides a lightweight convention for structuring commit messages. It integrates with [Semantic Versioning](https://semver.org/) (SemVer) and enables automated changelog generation, consistent team workflows, and predictable release processes.
 
 ## Format
@@ -51,8 +52,6 @@ Refs: #482
 | Body        | No       | Free-form detailed explanation, separated from the description by a blank line.             |
 | Footer(s)   | No       | One or more `token: value` pairs for metadata (issue refs, breaking change notes, etc.).   |
 
----
-
 ## Commit Types
 
 | Type       | Description                                                        | SemVer Impact | Example Message                                          |
@@ -72,8 +71,6 @@ Refs: #482
 - `feat` and `fix` are the only two types **required** by the specification.
 - The remaining types are widely adopted conventions (based on the [Angular convention](https://github.com/angular/angular/blob/main/contributing-docs/commit-message-format.md)).
 - Any type can trigger a MAJOR version bump when paired with a breaking change.
-
----
 
 ## Scope
 
@@ -104,8 +101,6 @@ ci(docker): cache node_modules layer in Dockerfile
 
 - Scopes should be agreed upon by the team and kept consistent.
 - They can be enforced via tooling (see [Tools](#tools) below).
-
----
 
 ## Breaking Changes
 
@@ -138,8 +133,6 @@ Use the standard Authorization: Bearer <token> header instead.
 - Any commit type can include a breaking change, not just `feat` or `fix`.
 - A breaking change always triggers a **MAJOR** version bump (in SemVer).
 
----
-
 ## Multi-line Commit Messages
 
 The **body** and **footer** allow you to provide context beyond the short description.
@@ -167,8 +160,6 @@ BREAKING CHANGE: existing sessions are invalidated on deploy.
 Reviewed-by: Alice <alice@example.com>
 Refs: #1024, #1030
 ```
-
----
 
 ## Real-world Examples
 
@@ -225,8 +216,6 @@ git commit -m "fix(upload): handle zero-byte file uploads gracefully
 Refs: #2847"
 ```
 
----
-
 ## Benefits
 
 - **Automated changelogs** -- Tools can categorize commits by type and generate human-readable changelogs automatically.
@@ -235,8 +224,6 @@ Refs: #2847"
 - **Team alignment** -- Shared conventions reduce bike-shedding over commit message style.
 - **CI/CD integration** -- Automated pipelines can trigger releases, deployments, or notifications based on commit types.
 - **Easier code review** -- Reviewers can quickly gauge the scope and risk of a change from its commit message.
-
----
 
 ## Tools
 
@@ -277,8 +264,6 @@ commitizen init cz-conventional-changelog --save-dev --save-exact
 
 # Now use `git cz` or `cz` instead of `git commit`
 ```
-
----
 
 ## Reference
 

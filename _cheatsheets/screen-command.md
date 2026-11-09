@@ -5,6 +5,7 @@ description: "GNU Screen command cheatsheet — sessions, windows, splitting, de
 category: "Tools & DevOps"
 icon: "monitor"
 ---
+
 ## What is `screen`?
 `screen` lets you run multiple terminal sessions inside one physical terminal. You can detach sessions and reattach later, share sessions between users, create named windows, split the display, use copy/scrollback mode, and log output.
 

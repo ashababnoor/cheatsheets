@@ -131,8 +131,6 @@ template = Prototype({"color": "red", "size": 10})
 obj = template.clone()
 ```
 
----
-
 ## Structural Patterns
 
 Structural patterns deal with object composition — how classes and objects are assembled to form larger structures.
@@ -290,8 +288,6 @@ class SVGRenderer:
 class CanvasRenderer:
     def render_circle(self, c): print("Canvas circle")
 ```
-
----
 
 ## Behavioral Patterns
 
@@ -465,8 +461,6 @@ class ChatRoom:
             if u != sender: u.receive(msg)
 ```
 
----
-
 ## Concurrency Patterns
 
 ### Producer-Consumer
@@ -480,8 +474,6 @@ class ChatRoom:
 **Intent**: Maintain a pool of reusable threads to execute tasks, avoiding the overhead of creating and destroying threads repeatedly.
 
 **When to use**: When you have many short-lived tasks and thread creation cost is significant. The pool pre-creates a fixed number of worker threads that pull tasks from a shared queue. This controls resource usage, prevents thread exhaustion, and provides natural backpressure when the queue is full. Python's `concurrent.futures.ThreadPoolExecutor` is a standard implementation.
-
----
 
 ## Architectural Patterns
 
@@ -508,8 +500,6 @@ Decomposes an application into small, independently deployable services, each ow
 ### Event-Driven Architecture
 
 Components communicate by producing and consuming events through a message broker. Producers don't know about consumers. Enables high decoupling, scalability, and async processing. Common in systems using Kafka, RabbitMQ, or cloud event buses.
-
----
 
 ## Summary Table
 

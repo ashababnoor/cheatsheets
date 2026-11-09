@@ -246,6 +246,4 @@ $$ \bar{X} \sim N\left(\mu, \frac{\sigma^2}{n}\right) \text{ as } n \to \infty $
 
 The sampling distribution of $$ \bar{X} $$ approaches normal regardless of the population distribution, provided $$ n $$ is sufficiently large (typically $$ n \geq 30 $$).
 
----
-
 This cheatsheet covers probability fundamentals, descriptive statistics, common distributions, expected values, confidence intervals, hypothesis testing, and the central limit theorem.

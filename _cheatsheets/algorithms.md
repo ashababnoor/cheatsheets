@@ -5,6 +5,7 @@ description: "Quick reference for common algorithms — sorting, searching, grap
 category: "CS Fundamentals"
 icon: "cog"
 ---
+
 **Notation:**  
 `n` = input size  
 `m` = pattern/secondary input size  
@@ -203,8 +204,6 @@ result    0.12 0.17 0.21 0.26 0.39 0.72 0.78 0.94    buckets joined in order
 
 **When to use:** Uniformly distributed floating-point data over a known range. Average case O(n) when data is evenly distributed.
 
----
-
 ## Searching Algorithms
 
 | Algorithm | Best | Average | Worst | Space | Prerequisite |
@@ -286,8 +285,6 @@ binary search in [16, 32] -> found at index 18
 ```
 
 **When to use:** Unbounded or infinite lists. Also efficient when the target is near the beginning.
-
----
 
 ## Graph Algorithms
 
@@ -447,8 +444,6 @@ S start, G goal, # wall, * shortest path
 17 steps. f(n) = g(n) + h(n), h = Manhattan distance to G
 ```
 
----
-
 ## Dynamic Programming
 
 Dynamic programming (DP) solves problems by breaking them into overlapping subproblems and storing results to avoid redundant computation.
@@ -545,8 +540,6 @@ dp[i][j] = min(dp[i-1][j] + 1,         delete
                dp[i-1][j-1] + cost)    replace, cost = 0 if a[i] == b[j] else 1
 ```
 
----
-
 ## Greedy Algorithms
 
 Greedy algorithms make the locally optimal choice at each step, hoping to find the global optimum. They work when the problem has **optimal substructure** and the **greedy choice property** (a locally optimal choice leads to a globally optimal solution).
@@ -620,8 +613,6 @@ Frequent characters get short codes, and no code is a prefix of another.
 
 **Fractional Knapsack** -- Unlike 0/1 knapsack, items can be divided. Sort by value/weight ratio, greedily take the highest ratio items. Time: O(n log n).
 
----
-
 ## Divide and Conquer
 
 Divide the problem into smaller subproblems, solve each recursively, then combine results. Unlike DP, subproblems typically do not overlap.
@@ -635,8 +626,6 @@ Divide the problem into smaller subproblems, solve each recursively, then combin
 **Closest Pair of Points** -- Find the two closest points in a 2D plane. Divide points by x-coordinate, solve each half, check the strip near the dividing line. Time: O(n log n).
 
 **Karatsuba Multiplication** -- Multiply two n-digit numbers using 3 recursive multiplications instead of 4. T(n) = 3T(n/2) + O(n) = O(n^1.585), faster than the naive O(n^2).
-
----
 
 ## String Algorithms
 
@@ -714,8 +703,6 @@ Words stored: `to`, `tea`, `ted`, `ten`, `in`, `inn`. Double circles mark the en
 ### Longest Common Substring
 
 Find the longest string that is a substring of two given strings. Build a DP table where `dp[i][j] = dp[i-1][j-1] + 1` if characters match, else 0. Track the maximum value. Time: O(mn). Can also be solved with suffix arrays in O(n log n).
-
----
 
 ## Tree Algorithms
 
@@ -832,8 +819,6 @@ i    binary  covers   tree[i]
 prefix_sum(7): tree[7] + tree[6] + tree[4] = 16    (i -= i & -i)
 update(i, delta): i += i & -i until i > 8
 ```
-
----
 
 ## Master Complexity Table
 

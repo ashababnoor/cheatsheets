@@ -36,8 +36,6 @@ graph TD
     style G fill:#1abc9c,color:#fff
 ```
 
----
-
 ## TCP/IP Model (4 Layers)
 
 | TCP/IP Layer | OSI Equivalent | Key Protocols |
@@ -46,8 +44,6 @@ graph TD
 | Transport | 4 - Transport | TCP, UDP, QUIC |
 | Internet | 3 - Network | IP (v4/v6), ICMP, ARP, IPsec |
 | Network Access | 2 - Data Link, 1 - Physical | Ethernet, Wi-Fi, PPP |
-
----
 
 ## Common Protocols
 
@@ -71,8 +67,6 @@ graph TD
 | WebSocket | 80/443 | TCP | Full-duplex communication over HTTP upgrade |
 | MQTT | 1883, 8883 (TLS) | TCP | Lightweight pub/sub messaging (IoT) |
 
----
-
 ## TCP vs UDP
 
 | Feature | TCP | UDP |
@@ -95,8 +89,6 @@ sequenceDiagram
     C->>S: ACK
     Note over C,S: Connection Established
 ```
-
----
 
 ## IP Addressing
 
@@ -126,8 +118,6 @@ sequenceDiagram
 | `::1` | IPv6 loopback |
 | `169.254.0.0/16` | Link-local (APIPA, no DHCP) |
 
----
-
 ## Subnetting
 
 **CIDR Notation**: `192.168.1.0/24` — the `/24` indicates 24 bits for the network, 8 bits for hosts.
@@ -147,8 +137,6 @@ sequenceDiagram
 | /32 | 255.255.255.255 | 1 (host route) | 256 |
 
 > **Formula**: Usable hosts = 2^(32 − prefix) − 2 (subtract network and broadcast addresses).
-
----
 
 ## DNS
 
@@ -191,8 +179,6 @@ sequenceDiagram
 | SRV | Service location (host, port, priority, weight) | `_sip._tcp.example.com → 5060 sip.example.com` |
 | CAA | Certificate authority authorization | `example.com → 0 issue "letsencrypt.org"` |
 
----
-
 ## HTTP
 
 ### Methods
@@ -221,8 +207,6 @@ sequenceDiagram
 | `Access-Control-Allow-Methods` | Response | CORS: allowed HTTP methods |
 | `Access-Control-Allow-Headers` | Response | CORS: allowed request headers |
 
----
-
 ## Common Ports
 
 | Port | Protocol / Service | Transport |
@@ -249,8 +233,6 @@ sequenceDiagram
 
 > **Well-known ports**: 0–1023. **Registered**: 1024–49151. **Dynamic/ephemeral**: 49152–65535.
 
----
-
 ## Network Troubleshooting Commands
 
 | Command | Purpose | Example |
@@ -267,8 +249,6 @@ sequenceDiagram
 | `nmap` | Network scanning and port discovery | `nmap -sV 192.168.1.0/24` |
 | `tcpdump` | Capture and analyze packets | `tcpdump -i eth0 port 80` |
 | `mtr` | Combined ping + traceroute (continuous) | `mtr google.com` |
-
----
 
 ## Key Concepts
 

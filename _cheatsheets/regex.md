@@ -26,8 +26,6 @@ Token syntax with examples, plus ready-made patterns for common tasks. Where fla
 | `[0-9]` | Any digit (same as `\d`) | `[0-9]+` matches `42` |
 | `[a-zA-Z0-9]` | Any alphanumeric character | `[a-zA-Z0-9]+` matches `Test1` |
 
----
-
 ## Quantifiers
 
 | Pattern | Description | Example |
@@ -56,8 +54,6 @@ Greedy:  <.*>   matches  <div>hello</div>
 Lazy:    <.*?>  matches  <div>
 ```
 
----
-
 ## Anchors & Boundaries
 
 | Pattern | Description | Example |
@@ -68,8 +64,6 @@ Lazy:    <.*?>  matches  <div>
 | `\B` | Non-word boundary | `\Bcat\B` matches `concatenate` but not `cat` |
 | `\A` | Start of string (ignores multiline flag) | `\AHello` matches only at absolute start |
 | `\Z` | End of string (ignores multiline flag) | `end\Z` matches only at absolute end |
-
----
 
 ## Groups & Backreferences
 
@@ -96,8 +90,6 @@ area:     555
 num:      1234
 ```
 
----
-
 ## Lookahead & Lookbehind
 
 Lookarounds assert that a pattern exists (or does not exist) before or after the current position **without consuming characters**.
@@ -122,8 +114,6 @@ Lookarounds assert that a pattern exists (or does not exist) before or after the
 foo(?!bar)
 ```
 
----
-
 ## Alternation & OR
 
 The pipe `|` acts as a boolean OR, matching the expression before or after it.
@@ -137,8 +127,6 @@ The pipe `|` acts as a boolean OR, matching the expression before or after it.
 Pattern:  (Mon|Tue|Wed|Thu|Fri|Sat|Sun)day
 Matches:  Monday, Tuesday, ..., Sunday
 ```
-
----
 
 ## Common Flags
 
@@ -165,8 +153,6 @@ re.compile(r"pattern", re.IGNORECASE | re.MULTILINE)
 (?im)^start
 ```
 
----
-
 ## Escaping Special Characters
 
 These characters have special meaning in regex and must be escaped with `\` to match literally:
@@ -189,8 +175,6 @@ These characters have special meaning in regex and must be escaped with `\` to m
 | `^` | `\^` |
 | `$` | `\$` |
 | `/` | `\/` |
-
----
 
 ## Common Patterns
 

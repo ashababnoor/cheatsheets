@@ -74,6 +74,4 @@ order: 1
 - **Divergence**: $$ \nabla \cdot \mathbf{F} = \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z} $$
 - **Curl**: $$ \nabla \times \mathbf{F} = \left( \frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z} \right)\mathbf{i} + \left( \frac{\partial P}{\partial z} - \frac{\partial R}{\partial x} \right)\mathbf{j} + \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right)\mathbf{k} $$
 
----
-
 This calculus cheatsheet covers differentiation, integration, limits, continuity, advanced techniques like Taylor series and vector calculus, and multivariable calculus concepts. It includes common formulas, rules, and techniques along with examples to aid in understanding and application.

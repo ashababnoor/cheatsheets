@@ -31,8 +31,6 @@ Run **ShellCheck** to lint your scripts:
 shellcheck script.sh     # Static analysis for common mistakes
 ```
 
----
-
 ## Variables
 
 ```bash
@@ -60,8 +58,6 @@ echo "${var:+alt}"       # Use alt if var IS set and non-empty
 echo "${var:?error msg}" # Exit with error if var is unset/empty
 ```
 
----
-
 ## String Operations
 
 ```bash
@@ -80,8 +76,6 @@ echo "${str^^}"              # Uppercase: HELLO, WORLD!
 echo "${str,,}"              # Lowercase: hello, world!
 echo "${str^}"               # Capitalize first: Hello, World!
 ```
-
----
 
 ## Arrays
 
@@ -119,8 +113,6 @@ echo "${map[@]}"             # All values
 for val in "${arr[@]}"; do echo "$val"; done
 for key in "${!map[@]}"; do echo "$key=${map[$key]}"; done
 ```
-
----
 
 ## Conditionals
 
@@ -191,8 +183,6 @@ case "$input" in
 esac
 ```
 
----
-
 ## Loops
 
 ```bash
@@ -231,8 +221,6 @@ for i in {1..10}; do
 done
 ```
 
----
-
 ## Functions
 
 ```bash
@@ -264,8 +252,6 @@ process_arr() {
 my_arr=(x y z)
 process_arr "${my_arr[@]}"
 ```
-
----
 
 ## Input / Output
 
@@ -300,8 +286,6 @@ EOF
 grep "pattern" <<< "$var"
 ```
 
----
-
 ## Arithmetic
 
 ```bash
@@ -318,8 +302,6 @@ let "y = 10 / 3"              # Integer division: 3
 # Floating point with bc
 echo "scale=2; 10 / 3" | bc   # 3.33
 ```
-
----
 
 ## Special Variables
 
@@ -338,8 +320,6 @@ echo "scale=2; 10 / 3" | bc   # 3.33
 | `$RANDOM` | Random integer 0-32767 |
 | `$LINENO` | Current line number |
 | `$SECONDS` | Seconds since script started |
-
----
 
 ## Process & Job Control
 
@@ -363,8 +343,6 @@ trap cleanup SIGINT SIGTERM    # Run on Ctrl-C or kill
 
 # Common signals: EXIT, ERR, SIGINT, SIGTERM, SIGHUP
 ```
-
----
 
 ## Useful Patterns
 

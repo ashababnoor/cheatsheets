@@ -45,8 +45,6 @@ const z = 3;  // block-scoped, not reassignable
 !!"hello"        // true (to boolean)
 ```
 
----
-
 ## Strings
 
 ```js
@@ -73,8 +71,6 @@ line2`;                         // multiline
 | `repeat(n)` | Repeat string | `"ha".repeat(3)` → `"hahaha"` |
 | `at(index)` | Char at index (negative OK) | `"abc".at(-1)` → `"c"` |
 | `indexOf(str)` | First index of match | `"hello".indexOf("l")` → `2` |
-
----
 
 ## Arrays
 
@@ -129,8 +125,6 @@ const [first, second, ...rest] = [1, 2, 3, 4, 5];
 const copy = [...original];
 ```
 
----
-
 ## Objects
 
 ### Creation & Access
@@ -173,8 +167,6 @@ const { name, year: y, lang = "EN" } = obj;  // destructuring with rename & defa
 user?.address?.city      // optional chaining — returns undefined if null/undefined
 val ?? "default"         // nullish coalescing — fallback only for null/undefined
 ```
-
----
 
 ## Functions
 
@@ -229,8 +221,6 @@ function counter() {
 }
 ```
 
----
-
 ## Promises & Async
 
 ### Promise Basics
@@ -266,8 +256,6 @@ async function fetchData(url) {
   }
 }
 ```
-
----
 
 ## DOM Manipulation
 
@@ -312,8 +300,6 @@ document.querySelector("ul").addEventListener("click", (e) => {
 });
 ```
 
----
-
 ## ES6+ Features
 
 | Feature | Syntax |
@@ -330,8 +316,6 @@ document.querySelector("ul").addEventListener("click", (e) => {
 | `Map` | `new Map([["k", "v"]])` — any key type, ordered |
 | `Set` | `new Set([1, 2, 3])` — unique values |
 | `Symbol` | `Symbol("desc")` — unique identifier |
-
----
 
 ## Error Handling
 
@@ -369,8 +353,6 @@ throw new ValidationError("Invalid input");
 | `SyntaxError` | Invalid syntax |
 | `TypeError` | Wrong type operation |
 | `URIError` | Malformed URI |
-
----
 
 ## Common Patterns
 
@@ -446,8 +428,6 @@ const groupBy = (arr, fn) =>
     return acc;
   }, {});
 ```
-
----
 
 ## Type Checking
 

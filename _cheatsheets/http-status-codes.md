@@ -5,6 +5,7 @@ description: "Complete HTTP status code reference — 1xx informational, 2xx suc
 category: "Web & Formats"
 icon: "globe"
 ---
+
 Each status code indicates the result of the server's attempt to understand and satisfy a request.
 
 ## Quick Reference: Most Common Status Codes
@@ -23,8 +24,6 @@ Each status code indicates the result of the server's attempt to understand and 
 | 500  | Internal Server Error | Unexpected server failure |
 | 502  | Bad Gateway | Invalid response from upstream server |
 | 503  | Service Unavailable | Server temporarily unable to handle request |
-
----
 
 ## 1xx Informational
 
