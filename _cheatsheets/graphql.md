@@ -96,7 +96,7 @@ input CreatePostInput {
 | Enum | `enum Role { ADMIN USER }` | A fixed set of values |
 | Input | `input NewUser { ... }` | Object used as an argument |
 | Interface | `interface Node { id: ID! }` | Shared fields across types |
-| Union | `union Result = User \| Post` | One of several types |
+| Union | `union Result = User | Post` | One of several types |
 | Custom scalar | `scalar DateTime` | Defined by the server |
 
 ### Nullability and Lists

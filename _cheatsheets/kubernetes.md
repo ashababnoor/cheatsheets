@@ -91,7 +91,7 @@ kubectl describe pod web-1                   # details and events
 |------|---------|
 | `-n <ns>` | Namespace |
 | `-A` | All namespaces |
-| `-o wide\|yaml\|json\|name` | Output format |
+| `-o wide|yaml|json|name` | Output format |
 | `-l key=value` | Label selector |
 | `-w` | Watch for changes |
 | `--dry-run=client -o yaml` | Print what would be created |
