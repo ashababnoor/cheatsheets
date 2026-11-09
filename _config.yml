@@ -27,6 +27,17 @@ cheatsheet_categories:
 # /assets/css/style.css and overwrites our own stylesheet on rebuilds. We ship our own layouts.
 theme: null
 
+# Repo files that should not be published as part of the site.
+# Setting `exclude` replaces Jekyll's defaults, so the Gemfile and vendor entries are repeated here.
+exclude:
+  - README.md
+  - CONTRIBUTING.md
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
 # Build settings
 plugins:
   - jekyll-feed
