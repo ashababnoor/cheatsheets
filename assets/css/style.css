@@ -7,23 +7,23 @@
 
 :root,
 [data-theme="dark"] {
-  --bg-primary: #0d1117;
-  --bg-secondary: #161b22;
-  --bg-tertiary: #21262d;
-  --bg-hover: #1c2128;
-  --border: #30363d;
-  --border-light: #3d444d;
-  --text-primary: #e6edf3;
-  --text-secondary: #9198a1;
-  --text-muted: #656d76;
-  --accent: #58a6ff;
-  --accent-hover: #79b8ff;
-  --accent-subtle: rgba(88, 166, 255, 0.1);
-  --code-bg: #1c2128;
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --bg-tertiary: #2c2c2c;
+  --bg-hover: #262626;
+  --border: rgba(255, 255, 255, 0.12);
+  --border-light: rgba(255, 255, 255, 0.25);
+  --text-primary: rgba(255, 255, 255, 0.87);
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --text-muted: rgba(255, 255, 255, 0.55);
+  --accent: #3b82f6;
+  --accent-hover: #60a5fa;
+  --accent-subtle: rgba(59, 130, 246, 0.12);
+  --code-bg: #1e1e1e;
   --green: #3fb950;
   --yellow: #d29922;
   --red: #f85149;
-  --header-bg: rgba(13, 17, 23, 0.85);
+  --header-bg: rgba(18, 18, 18, 0.85);
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
   --radius: 8px;
@@ -31,23 +31,23 @@
 }
 
 [data-theme="light"] {
-  --bg-primary: #ffffff;
-  --bg-secondary: #f6f8fa;
-  --bg-tertiary: #e8ecf0;
-  --bg-hover: #f0f3f6;
-  --border: #d1d9e0;
-  --border-light: #b8c0c8;
-  --text-primary: #1f2328;
-  --text-secondary: #59636e;
-  --text-muted: #818b98;
-  --accent: #0969da;
-  --accent-hover: #0550ae;
-  --accent-subtle: rgba(9, 105, 218, 0.08);
-  --code-bg: #f0f3f6;
+  --bg-primary: #fafbfc;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #eef1f4;
+  --bg-hover: #f3f5f7;
+  --border: #e1e5e9;
+  --border-light: #c1c9d1;
+  --text-primary: #000000;
+  --text-secondary: #525252;
+  --text-muted: #6b7280;
+  --accent: #2563eb;
+  --accent-hover: #1e40af;
+  --accent-subtle: rgba(37, 99, 235, 0.08);
+  --code-bg: #f3f5f7;
   --green: #1a7f37;
   --yellow: #9a6700;
   --red: #d1242f;
-  --header-bg: rgba(255, 255, 255, 0.85);
+  --header-bg: rgba(250, 251, 252, 0.85);
 }
 
 html {
@@ -148,12 +148,8 @@ a:hover {
   transition: color 0.15s;
 }
 
-[data-theme="dark"] .theme-toggle:hover {
-  color: #f0b429;
-}
-
-[data-theme="light"] .theme-toggle:hover {
-  color: var(--accent);
+.theme-toggle:hover {
+  color: var(--text-primary);
 }
 
 .theme-icon {
@@ -206,6 +202,12 @@ a:hover {
   max-height: calc(100vh - var(--header-height) - 4rem);
   overflow-y: auto;
   font-size: 0.8rem;
+  scrollbar-width: none;
+}
+
+/* The TOC still scrolls; only its scrollbar is hidden. */
+.toc-sidebar::-webkit-scrollbar {
+  display: none;
 }
 
 .toc-header {
@@ -235,7 +237,6 @@ a:hover {
   font-size: 0.8rem;
   line-height: 1.4;
   transition: all 0.15s;
-  border-left: 2px solid transparent;
 }
 
 #toc-nav a:hover {
@@ -246,7 +247,6 @@ a:hover {
 
 #toc-nav a.active {
   color: var(--accent);
-  border-left-color: var(--accent);
   background: var(--accent-subtle);
 }
 
@@ -348,7 +348,7 @@ a:hover {
   padding: 0.15em 0.4em;
   border-radius: 4px;
   border: 1px solid var(--border);
-  color: var(--accent-hover);
+  color: var(--text-primary);
 }
 
 /* ===== Code Blocks ===== */
@@ -569,15 +569,17 @@ div.highlighter-rouge:hover .copy-btn,
 }
 
 .search-box::before {
-  content: "\f002";
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
+  content: "";
   position: absolute;
   left: 0.85rem;
   top: 50%;
+  width: 0.9rem;
+  height: 0.9rem;
   transform: translateY(-50%);
-  color: var(--text-muted);
-  font-size: 0.8rem;
+  background-color: var(--text-muted);
+  /* Lucide "search" icon, drawn as a mask so it follows the theme colour. */
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.3-4.3'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.3-4.3'/%3E%3C/svg%3E") center / contain no-repeat;
   pointer-events: none;
 }
 
