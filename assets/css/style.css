@@ -294,6 +294,55 @@ a:hover {
   color: var(--text-secondary);
 }
 
+/* Inline code in table cells copies on click (see assets/js/copy-inline.js) */
+.page-content td code.copyable {
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.page-content td code.copyable:hover {
+  background: var(--bg-tertiary);
+  border-color: var(--border-light);
+}
+
+.copy-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 1.5rem;
+  z-index: 110;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  max-width: calc(100vw - 2rem);
+  padding: 0.55rem 0.9rem;
+  font-size: 0.8rem;
+  color: var(--bg-primary);
+  background: var(--text-primary);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  transform: translate(-50%, 0.5rem);
+  pointer-events: none;
+  transition: opacity 0.15s, transform 0.15s;
+}
+
+.copy-toast.visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.copy-toast span { font-weight: 600; }
+
+.copy-toast code {
+  min-width: 0;
+  overflow: hidden;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  opacity: 0.75;
+}
+
 /* Heading links: a "#" after the heading text that copies the section URL */
 .heading-anchor {
   margin-left: 0.5rem;
