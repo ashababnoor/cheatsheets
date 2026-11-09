@@ -294,6 +294,42 @@ a:hover {
   color: var(--text-secondary);
 }
 
+/* Heading links: a "#" after the heading text that copies the section URL */
+.heading-anchor {
+  margin-left: 0.5rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 0.15s, color 0.15s;
+}
+
+:is(h2, h3, h4):hover > .heading-anchor,
+.heading-anchor:focus-visible,
+.heading-anchor.copied {
+  opacity: 1;
+}
+
+.heading-anchor:hover {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.heading-anchor.copied { color: var(--text-secondary); }
+
+.heading-anchor.copied::after {
+  content: "Link copied";
+  margin-left: 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+/* No hover on touch screens, so keep the "#" faintly visible there. */
+@media (hover: none) {
+  .heading-anchor { opacity: 0.45; }
+}
+
 /* Code in headings: monospace only, no inline-code box */
 .page-content :is(h1, h2, h3, h4, h5, h6) code {
   font-family: var(--font-mono);
