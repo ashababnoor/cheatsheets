@@ -12,7 +12,10 @@
       {% unless sheet.url contains '/sql/' %}
       <a href="{{ sheet.url | relative_url }}" class="cheatsheet-card" data-title="{{ sheet.title | downcase }}">
         <span class="card-icon">{% if sheet.logo %}<img src="{{ '/assets/logos/' | append: sheet.logo | append: '.svg' | relative_url }}" class="logo-{{ sheet.logo }}" alt="" width="20" height="20" loading="lazy">{% else %}{% include icons/{{ sheet.icon }}.svg %}{% endif %}</span>
-        <span class="card-title">{{ sheet.title }}</span>
+        <span class="card-text">
+          <span class="card-title">{{ sheet.title }}</span>
+          {% if sheet.subtitle %}<span class="card-subtitle">{{ sheet.subtitle | markdownify | strip_html | strip }}</span>{% endif %}
+        </span>
       </a>
       {% endunless %}
       {% endfor %}

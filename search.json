@@ -1,0 +1,24 @@
+---
+layout: null
+---
+[
+{%- assign sep = false -%}
+{%- for c in site.cheatsheets -%}
+{%- assign html = c.content | markdownify | replace: '<h3 ', '<h2 ' | replace: '</h3>', '</h2>' | replace: '<h4 ', '<h2 ' | replace: '</h4>', '</h2>' -%}
+{%- assign parts = html | split: '<h2 ' -%}
+{%- assign intro = parts[0] | strip_html | normalize_whitespace -%}
+{%- if sep %},{% endif %}
+{"title":{{ c.title | jsonify }},"category":{{ c.category | jsonify }},"url":{{ c.url | relative_url | jsonify }},"anchor":"","section":"","text":{{ c.subtitle | append: ' ' | append: c.description | append: ' ' | append: intro | strip_html | normalize_whitespace | truncate: 700 | jsonify }}}
+{%- assign sep = true -%}
+{%- for part in parts offset: 1 -%}
+{%- assign header = part | split: '</h2>' | first -%}
+{%- assign bits = header | split: '"' -%}
+{%- assign slug = bits[1] -%}
+{%- assign pre = 'id="' | append: slug | append: '">' -%}
+{%- assign stitle = header | remove_first: pre | strip_html | strip -%}
+{%- assign body = part | remove_first: header | remove_first: '</h2>' | strip_html | normalize_whitespace | truncate: 1800 -%}
+,
+{"title":{{ c.title | jsonify }},"category":{{ c.category | jsonify }},"url":{{ c.url | relative_url | jsonify }},"anchor":{{ slug | jsonify }},"section":{{ stitle | jsonify }},"text":{{ body | jsonify }}}
+{%- endfor -%}
+{%- endfor %}
+]

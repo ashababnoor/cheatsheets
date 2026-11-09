@@ -6,30 +6,10 @@ layout: default
   <div class="home-hero">
     <h1>Cheatsheets</h1>
     <p class="home-subtitle">{{ site.description }}</p>
-    <div class="search-box">
-      <input type="text" id="search-input" placeholder="Search cheatsheets..." autocomplete="off">
-    </div>
+    <button type="button" class="search-box" data-search-open aria-label="Search cheatsheets">
+      <span>Search every cheatsheet</span><kbd>/</kbd>
+    </button>
   </div>
 
   {% include cheatsheet-groups.html %}
 </div>
-
-<script>
-  (function() {
-    var input = document.getElementById('search-input');
-    var cards = document.querySelectorAll('.cheatsheet-card');
-    var groups = document.querySelectorAll('.card-group');
-    input.addEventListener('input', function() {
-      var q = this.value.toLowerCase();
-      groups.forEach(function(group) {
-        var visible = 0;
-        group.querySelectorAll('.cheatsheet-card').forEach(function(card) {
-          var match = (card.getAttribute('data-title') || '').indexOf(q) !== -1;
-          card.style.display = match ? '' : 'none';
-          if (match) visible++;
-        });
-        group.style.display = visible ? '' : 'none';
-      });
-    });
-  })();
-</script>

@@ -28,6 +28,7 @@
         <span class="logo-text">{{ site.title }}</span>
       </a>
       <nav class="site-nav">
+        <button type="button" class="search-trigger" data-search-open aria-label="Search cheatsheets" aria-keyshortcuts="/ Control+K Meta+K"><span>Search</span><kbd>/</kbd></button>
         <a href="{{ '/' | relative_url }}">Home</a>
         <a href="https://github.com/ashababnoor/cheatsheets" target="_blank" rel="noopener">GitHub</a>
         <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
@@ -62,6 +63,18 @@
       </div>
     {% endif %}
   </main>
+
+  <div id="search-modal" class="search-modal" role="dialog" aria-modal="true" aria-label="Search cheatsheets" data-index="{{ '/search.json' | relative_url }}" hidden>
+    <div class="search-backdrop" data-search-close></div>
+    <div class="search-panel">
+      <div class="search-field">
+        <input id="search-modal-input" type="text" role="combobox" aria-expanded="true" aria-controls="search-results" aria-autocomplete="list" placeholder="Search every cheatsheet" autocomplete="off" autocapitalize="off" spellcheck="false">
+        <kbd>Esc</kbd>
+      </div>
+      <p id="search-status" class="search-status" role="status" aria-live="polite"></p>
+      <ul id="search-results" role="listbox" aria-label="Results"></ul>
+    </div>
+  </div>
 
   <footer class="site-footer">
     <div class="footer-inner">
@@ -179,6 +192,8 @@
     })();
   </script>
   {% endunless %}
+  <script defer src="https://cdn.jsdelivr.net/npm/minisearch@7.1.0/dist/umd/index.min.js"></script>
+  <script defer src="{{ '/assets/js/search.js' | relative_url }}"></script>
   <script>
     (function() {
       var btn = document.getElementById('theme-toggle');
