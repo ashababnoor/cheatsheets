@@ -1,0 +1,4 @@
+#!/bin/sh
+# Keep _data/asset_versions.yml in step with the CSS/JS being committed.
+# Enable once per clone: git config core.hooksPath .githooks
+node scripts/hash-assets.mjs && git add _data/asset_versions.yml

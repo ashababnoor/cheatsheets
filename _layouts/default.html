@@ -1,3 +1,7 @@
+{% comment %} Local CSS/JS URLs get ?v=<content hash> (_data/asset_versions.yml, from scripts/hash-assets.mjs) so they are
+   re-fetched only when they change. Local dev (and any file with no hash) uses the build time, so edits show up on reload without running the script. {% endcomment %}
+{% assign v = site.time | date: '%s' %}
+{% if jekyll.environment == 'production' %}{% assign hashes = site.data.asset_versions %}{% endif %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,16 +39,16 @@
   </footer>
 
   {% unless page.layout == 'home' %}
-  <script defer src="{{ '/assets/js/toc.js' | relative_url }}"></script>
-  <script defer src="{{ '/assets/js/clipboard.js' | relative_url }}"></script>
-  <script defer src="{{ '/assets/js/code-blocks.js' | relative_url }}"></script>
-  <script defer src="{{ '/assets/js/heading-links.js' | relative_url }}"></script>
-  <script defer src="{{ '/assets/js/copy-inline.js' | relative_url }}"></script>
-  <script type="module" src="{{ '/assets/js/mermaid.js' | relative_url }}"></script>
+  <script defer src="{{ '/assets/js/toc.js' | relative_url }}?v={{ hashes['toc.js'] | default: v }}"></script>
+  <script defer src="{{ '/assets/js/clipboard.js' | relative_url }}?v={{ hashes['clipboard.js'] | default: v }}"></script>
+  <script defer src="{{ '/assets/js/code-blocks.js' | relative_url }}?v={{ hashes['code-blocks.js'] | default: v }}"></script>
+  <script defer src="{{ '/assets/js/heading-links.js' | relative_url }}?v={{ hashes['heading-links.js'] | default: v }}"></script>
+  <script defer src="{{ '/assets/js/copy-inline.js' | relative_url }}?v={{ hashes['copy-inline.js'] | default: v }}"></script>
+  <script type="module" src="{{ '/assets/js/mermaid.js' | relative_url }}?v={{ hashes['mermaid.js'] | default: v }}"></script>
   {% endunless %}
-  <script defer src="{{ '/assets/js/theme-toggle.js' | relative_url }}"></script>
-  <script defer src="{{ '/assets/js/tooltip.js' | relative_url }}"></script>
+  <script defer src="{{ '/assets/js/theme-toggle.js' | relative_url }}?v={{ hashes['theme-toggle.js'] | default: v }}"></script>
+  <script defer src="{{ '/assets/js/tooltip.js' | relative_url }}?v={{ hashes['tooltip.js'] | default: v }}"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/minisearch@7.1.0/dist/umd/index.min.js"></script>
-  <script defer src="{{ '/assets/js/search.js' | relative_url }}"></script>
+  <script defer src="{{ '/assets/js/search.js' | relative_url }}?v={{ hashes['search.js'] | default: v }}"></script>
 </body>
 </html>
