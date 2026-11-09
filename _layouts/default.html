@@ -3,7 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  {% seo %}
+  {% comment %} Link previews: jekyll-seo-tag has no image unless front matter sets one, so crawlers fall back to the favicon.
+     Use the generated card (scripts/generate-og-images.mjs) for this page, or the default card. {% endcomment %}
+  {% assign og_slug = page.path | remove: '_cheatsheets/' | remove: '.md' %}
+  {% assign og_path = '/assets/og/' | append: og_slug | append: '.png' %}
+  {% assign og_found = site.static_files | where: 'path', og_path | first %}
+  {% unless og_found %}{% assign og_path = '/assets/og/default.png' %}{% endunless %}
+  {% capture seo_tags %}{% seo %}{% endcapture %}
+  {{ seo_tags | replace: 'content="summary" />', 'content="summary_large_image" />' }}
+  <meta property="og:image" content="{{ og_path | absolute_url }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="{% if page.collection == 'cheatsheets' %}{{ page.title | escape }} cheatsheet{% else %}{{ site.title | escape }}{% endif %}">
+  <meta name="twitter:image" content="{{ og_path | absolute_url }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
