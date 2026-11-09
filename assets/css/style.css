@@ -156,9 +156,20 @@ a:hover {
   color: var(--accent);
 }
 
+.theme-icon {
+  display: block;
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+/* Filled moon body and sun disc read better than outlines at this size. Remove this rule for the plain outline icons. */
+.theme-icon-dark path,
+.theme-icon-light circle {
+  fill: currentColor;
+}
+
+/* Each icon shows the mode a click switches to: a sun in dark mode, a moon in light mode. */
 [data-theme="dark"] .theme-icon-dark { display: none; }
-[data-theme="dark"] .theme-icon-light { display: inline; }
-[data-theme="light"] .theme-icon-dark { display: inline; }
 [data-theme="light"] .theme-icon-light { display: none; }
 
 /* ===== Main Content ===== */
