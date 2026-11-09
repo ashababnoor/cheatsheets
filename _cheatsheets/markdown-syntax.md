@@ -1,13 +1,10 @@
 ---
 title: "Markdown Syntax"
+subtitle: "Standard Markdown and GitHub Flavored extensions: formatting, lists, links, code, tables, and more."
 description: "Markdown syntax reference — headings, lists, links, images, code blocks, tables, and GitHub-flavored extensions."
 category: "Web & Formats"
 logo: "markdown"
 ---
-# Markdown Syntax Cheatsheet
-
-A comprehensive reference for Markdown syntax, covering standard Markdown, common extensions, and GitHub Flavored Markdown (GFM).
-
 
 ## Headings
 

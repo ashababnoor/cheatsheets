@@ -1,13 +1,11 @@
 ---
 title: "Probability & Statistics"
+subtitle: "Probability rules, distributions, descriptive statistics, and inference formulas."
 description: "Probability and statistics reference — distributions, hypothesis testing, Bayes' theorem, and descriptive statistics."
 category: "Math & Science"
 icon: "dices"
 order: 2
 ---
-# Probability & Statistics Cheatsheet
-
-Essential formulas and concepts for probability theory and statistics.
 
 ## Probability Basics
 

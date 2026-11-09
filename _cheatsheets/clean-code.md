@@ -1,13 +1,9 @@
 ---
 title: "Clean Code Practices"
+subtitle: "Naming, functions, comments, error handling, SOLID, and refactoring habits for readable, maintainable code."
 description: "Best practices for writing clean, readable, and maintainable code — naming, functions, formatting, and refactoring principles."
 category: "Languages & Code"
 icon: "code-xml"
----
-# Clean Code Practices Cheatsheet
-
-A comprehensive reference for writing readable, maintainable, and robust code.
-
 ---
 
 ## Naming Conventions

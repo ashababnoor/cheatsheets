@@ -1,5 +1,6 @@
 ---
 title: "Vim"
+subtitle: "Modes, motions, editing, search and replace, registers, buffers, and macros."
 description: "Vim cheatsheet — modes, navigation, editing, search/replace, buffers, and essential commands."
 category: "Tools & DevOps"
 logo: "vim"

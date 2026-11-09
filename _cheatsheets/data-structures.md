@@ -1,13 +1,9 @@
 ---
 title: "Data Structures"
+subtitle: "Arrays, lists, stacks, queues, hash tables, trees, heaps, and graphs, with operations and complexities."
 description: "Quick reference for data structures — arrays, linked lists, trees, graphs, hash tables, stacks, queues, and their operations."
 category: "CS Fundamentals"
 icon: "blocks"
----
-# Data Structures Cheatsheet
-
-A comprehensive reference for common data structures, their operations, time complexities, and use cases.
-
 ---
 
 ## Arrays

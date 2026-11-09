@@ -1,12 +1,10 @@
 ---
 title: "Google Search Syntax"
+subtitle: "Operators for exact match, site and file-type filters, date ranges, and advanced searches."
 description: "Google search operators and advanced syntax — site search, filetype filters, exact match, and boolean operators."
 category: "Search"
 logo: "google"
 ---
-# Google Search Syntax and Operators Cheatsheet
-
-A comprehensive reference for all Google search operators, advanced techniques, and practical examples.
 
 ## Basic Operators
 

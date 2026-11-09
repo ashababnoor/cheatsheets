@@ -1,5 +1,6 @@
 ---
 title: "JavaScript"
+subtitle: "Syntax, strings, arrays, objects, functions, promises, the DOM, and handy patterns."
 description: "JavaScript cheatsheet — syntax, DOM manipulation, ES6+ features, promises, array methods, and common patterns."
 category: "Languages & Code"
 logo: "javascript"

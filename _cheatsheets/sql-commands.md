@@ -1,12 +1,12 @@
 ---
 title: "SQL Commands"
+subtitle: "DDL, DML, queries, joins, transactions, and common patterns like pagination and window functions."
 description: "SQL command reference — SELECT, JOIN, subqueries, aggregations, indexes, and database management."
 category: "Languages & Code"
 icon: "database"
 ---
-# SQL Commands Cheatsheet
 
-This cheatsheet provides a list of useful SQL commands organized by category.
+Standard SQL for defining, querying, and changing data. Where PostgreSQL, MySQL, or SQLite differ, the example is labeled.
 
 ## Data Definition Language (DDL)
 

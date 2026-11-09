@@ -1,5 +1,6 @@
 ---
 title: "Design Patterns"
+subtitle: "Creational, structural, behavioral, concurrency, and architectural patterns, with when-to-use notes and Python examples."
 description: "Overview of common design patterns — creational, structural, and behavioral patterns with use cases and examples."
 category: "CS Fundamentals"
 icon: "landmark"

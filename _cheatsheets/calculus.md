@@ -1,13 +1,11 @@
 ---
 title: "Calculus"
+subtitle: "Derivative and integral rules, limits, series, and multivariable formulas at a glance."
 description: "Calculus cheatsheet — limits, derivatives, integrals, series, and key theorems with formulas."
 category: "Math & Science"
 icon: "sigma"
 order: 1
 ---
-# Calculus Cheatsheet
-
-This cheatsheet provides a list of useful calculus rules and formulas.
 
 ## Basics
 

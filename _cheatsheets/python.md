@@ -1,13 +1,9 @@
 ---
 title: "Python"
+subtitle: "Data types, control flow, functions, classes, file I/O, and the standard library essentials."
 description: "Python cheatsheet — syntax, data types, functions, classes, file I/O, modules, and common standard library usage."
 category: "Languages & Code"
 logo: "python"
----
-# Python Cheatsheet
-
-A comprehensive reference for the Python programming language covering data types, control flow, functions, classes, and essential standard library modules.
-
 ---
 
 ## Data Types

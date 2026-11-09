@@ -45,6 +45,8 @@
     {% else %}
       <div class="page-layout">
         <article class="page-content">
+          <h1>{{ page.title | escape }} Cheatsheet</h1>
+          {% if page.subtitle %}<p>{{ page.subtitle | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>{% endif %}
           {{ content }}
         </article>
         <aside class="toc-sidebar" id="toc-sidebar">

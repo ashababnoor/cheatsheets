@@ -1,12 +1,10 @@
 ---
 title: "Gmail Search Syntax"
+subtitle: "Search operators for sender, subject, labels, attachments, dates, and size, and how to combine them."
 description: "Gmail search operators and syntax — filter by sender, date, attachments, labels, and advanced search combinations."
 category: "Search"
 logo: "gmail"
 ---
-# Gmail Search Syntax Cheatsheet
-
-A comprehensive reference for all Gmail search operators, combining techniques, and practical examples.
 
 ## Sender & Recipient Operators
 

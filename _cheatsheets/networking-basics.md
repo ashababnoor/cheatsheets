@@ -1,13 +1,9 @@
 ---
 title: "Networking Basics"
+subtitle: "The OSI and TCP/IP models, IP addressing, subnetting, DNS, HTTP, ports, and troubleshooting commands."
 description: "Networking fundamentals cheatsheet — OSI model, TCP/IP, DNS, HTTP, ports, subnetting, and common protocols."
 category: "CS Fundamentals"
 icon: "network"
----
-# Networking Basics Cheatsheet
-
-A concise reference for core networking concepts, protocols, addressing, and troubleshooting commands.
-
 ---
 
 ## OSI Model (7 Layers)

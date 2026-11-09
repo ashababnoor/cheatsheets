@@ -1,13 +1,13 @@
 ---
-title: "ML Metrics"
+title: "Machine Learning Metrics"
+subtitle: "Formulas and when to use them for classification, regression, clustering, and ranking metrics."
 description: "ML metrics cheatsheet — accuracy, precision, recall, F1 score, ROC-AUC, and evaluation techniques."
 category: "Math & Science"
 icon: "bot"
 order: 3
 ---
-# Machine Learning Metrics Cheatsheet
 
-A comprehensive reference for evaluation metrics across classification, regression, clustering, ranking, and recommendation systems.
+Each metric comes with its formula and what it tells you. Most classification metrics are built from the confusion matrix, so it comes first.
 
 ## Confusion Matrix
 

@@ -1,14 +1,10 @@
 ---
-title: "Screen Command"
+title: "GNU Screen"
+subtitle: "Sessions, windows, splits, and key bindings for the `screen` terminal multiplexer."
 description: "GNU Screen command cheatsheet — sessions, windows, splitting, detaching, and key bindings."
 category: "Tools & DevOps"
 icon: "monitor"
 ---
-# `screen` — Terminal Multiplexing Cheatsheet
-
-A compact, practical reference for GNU Screen (the `screen` terminal multiplexer).
-
-
 ## What is `screen`?
 `screen` lets you run multiple terminal sessions inside one physical terminal. You can detach sessions and reattach later, share sessions between users, create named windows, split the display, use copy/scrollback mode, and log output.
 

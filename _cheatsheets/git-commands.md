@@ -1,10 +1,10 @@
 ---
 title: "Git Commands"
+subtitle: "Commands for setup, branching, merging, remotes, stashing, and undoing changes."
 description: "Git command reference — branching, merging, rebasing, stashing, remotes, and common workflows."
 category: "Tools & DevOps"
 logo: "git"
 ---
-# Git Commands Cheatsheet
 
 ## Setup & Config
 

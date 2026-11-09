@@ -1,12 +1,12 @@
 ---
 title: "Datetime Format Specifiers"
+subtitle: "Format codes for dates and times in Python, JavaScript, Java, C#, Go, and ISO 8601."
 description: "Reference for datetime format specifiers across languages — strftime codes, ISO 8601, and common date/time patterns."
 category: "Web & Formats"
 icon: "calendar"
 ---
-# Datetime Format Specifiers Cheatsheet
 
-A comprehensive reference for date and time formatting across Python, JavaScript, Java, C#, Go, and the ISO 8601 standard.
+Each language uses different codes for the same date. Specifiers are listed per language, followed by an ISO 8601 reference and common formats side by side.
 
 ## Python (`strftime` / `strptime`)
 

@@ -1,5 +1,6 @@
 ---
 title: "Bash Scripting"
+subtitle: "Variables, conditionals, loops, functions, arrays, and common patterns for writing shell scripts."
 description: "Cheatsheet for Bash scripting — variables, loops, conditionals, functions, and common shell patterns."
 category: "Tools & DevOps"
 logo: "bash"

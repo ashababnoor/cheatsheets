@@ -1,16 +1,11 @@
 ---
 title: "Algorithms"
+subtitle: "Sorting, searching, graph, dynamic programming, string, and tree algorithms with complexities and when to use each."
 description: "Quick reference for common algorithms — sorting, searching, graph traversal, dynamic programming, and complexity analysis."
 category: "CS Fundamentals"
 icon: "cog"
 ---
-# Algorithms Cheatsheet
-
-A comprehensive reference for common algorithms, their complexities, and when to use them.
-
 **Notation:** `n` = input size, `m` = pattern/secondary input size, `V` = vertices, `E` = edges, `k` = range of input values, `d` = number of digits, `W` = knapsack capacity.
-
----
 
 ## Sorting Algorithms
 

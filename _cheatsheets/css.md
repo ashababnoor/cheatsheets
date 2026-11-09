@@ -1,5 +1,6 @@
 ---
 title: "CSS"
+subtitle: "Selectors, the box model, flexbox, grid, typography, animations, and responsive patterns."
 description: "CSS cheatsheet — selectors, flexbox, grid, positioning, animations, and responsive design patterns."
 category: "Web & Formats"
 logo: "css"

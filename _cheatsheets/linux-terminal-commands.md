@@ -1,12 +1,10 @@
 ---
 title: "Linux Terminal Commands"
+subtitle: "Essential commands for files, permissions, processes, networking, and package management."
 description: "Essential Linux terminal commands — file management, permissions, processes, networking, and system administration."
 category: "Tools & DevOps"
 logo: "linux"
 ---
-# Linux Terminal Commands Cheatsheet
-
-A comprehensive reference for essential Linux terminal commands organized by category.
 
 ## File & Directory Operations
 

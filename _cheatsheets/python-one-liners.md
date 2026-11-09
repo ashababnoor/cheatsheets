@@ -1,10 +1,10 @@
 ---
 title: "Python One-Liners"
+subtitle: "Compact, idiomatic Python for strings, lists, dictionaries, math, files, and functional tasks."
 description: "Collection of useful Python one-liners — list comprehensions, file operations, string manipulation, and handy shortcuts."
 category: "Languages & Code"
 logo: "python"
 ---
-# Python One-Liners Cheatsheet
 
 ## Strings
 

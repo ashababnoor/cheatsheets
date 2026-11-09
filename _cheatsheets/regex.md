@@ -1,14 +1,12 @@
 ---
 title: "Regular Expressions"
+subtitle: "Syntax, flags, and ready-to-use patterns for matching text with regular expressions."
 description: "Regex cheatsheet — character classes, quantifiers, anchors, groups, lookaheads, and common patterns."
 category: "Web & Formats"
 icon: "regex"
 ---
-# Regular Expressions (Regex) Cheatsheet
 
-A comprehensive reference for regular expression syntax, flags, and common patterns.
-
----
+Token syntax with examples, plus ready-made patterns for common tasks. Where flavors differ (for example JavaScript vs PCRE), the row says so.
 
 ## Character Classes
 

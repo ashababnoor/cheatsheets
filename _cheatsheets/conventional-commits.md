@@ -1,14 +1,11 @@
 ---
 title: "Conventional Commits"
+subtitle: "The commit message format for readable history and automated changelogs: types, scopes, and breaking changes."
 description: "Reference for the Conventional Commits specification — commit types, scopes, breaking changes, and message formatting."
 category: "Languages & Code"
 icon: "git-commit-horizontal"
 ---
-# Conventional Commits Cheatsheet
-
 The [Conventional Commits](https://www.conventionalcommits.org/) specification provides a lightweight convention for structuring commit messages. It integrates with [Semantic Versioning](https://semver.org/) (SemVer) and enables automated changelog generation, consistent team workflows, and predictable release processes.
-
----
 
 ## Format
 
