@@ -71,15 +71,15 @@ logo: "css"
 ## Box Model
 
 ```
-┌──────────────── margin ────────────────┐
-│ ┌──────────── border ────────────┐     │
-│ │ ┌────────── padding ────────┐  │     │
-│ │ │ ┌──────── content ──────┐ │  │     │
-│ │ │ │  width × height       │ │  │     │
-│ │ │ └───────────────────────┘ │  │     │
-│ │ └───────────────────────────┘  │     │
-│ └────────────────────────────────┘     │
-└────────────────────────────────────────┘
+┌──────────────── margin ──────────────────┐
+│   ┌──────────── border ──────────────┐   │
+│   │  ┌───────── padding ──────────┐  │   │
+│   │  │ ┌─────── content ────────┐ │  │   │
+│   │  │ │     width × height     │ │  │   │
+│   │  │ └────────────────────────┘ │  │   │
+│   │  └────────────────────────────┘  │   │
+│   └──────────────────────────────────┘   │
+└──────────────────────────────────────────┘
 ```
 
 | Property | Example | Notes |
@@ -512,8 +512,18 @@ img {
 
 ```css
 *, *::before, *::after { box-sizing: border-box; }
-body { margin: 0; font-family: system-ui, sans-serif; line-height: 1.5; }
-img, picture, video, canvas, svg { display: block; max-width: 100%; }
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
 input, button, textarea, select { font: inherit; }
 p, h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
 ```
