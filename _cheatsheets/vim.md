@@ -1,8 +1,9 @@
 ---
 title: "Vim"
+subtitle: "Modes, motions, editing, search and replace, registers, buffers, and macros."
 description: "Vim cheatsheet — modes, navigation, editing, search/replace, buffers, and essential commands."
 category: "Tools & DevOps"
-icon: "📟"
+logo: "vim"
 ---
 
 ## Modes
@@ -16,8 +17,6 @@ icon: "📟"
 | **Visual Block** | `Ctrl-v` | `Esc` |
 | **Command-line** | `:`, `/`, `?` | `Esc` or `Enter` (execute) |
 | **Replace** | `R` | `Esc` |
-
----
 
 ## Navigation
 
@@ -73,8 +72,6 @@ icon: "📟"
 | `Ctrl-f` | Scroll full page forward |
 | `Ctrl-b` | Scroll full page backward |
 
----
-
 ## Editing
 
 ### Entering Insert Mode
@@ -113,8 +110,6 @@ icon: "📟"
 | `.` | Repeat last change |
 | `~` | Toggle case of character |
 
----
-
 ## Operators + Motions
 
 Vim follows the grammar: **`operator [count] motion/text-object`**
@@ -145,8 +140,6 @@ Vim follows the grammar: **`operator [count] motion/text-object`**
 | `3dw` | Delete next 3 words |
 | `d2j` | Delete current line and 2 lines below |
 
----
-
 ## Text Objects
 
 Used with operators: `{operator}{a|i}{object}`
@@ -168,8 +161,6 @@ Used with operators: `{operator}{a|i}{object}`
 | `[` or `]` brackets | `i[` — inside brackets | `a[` — includes brackets |
 | `<` or `>` angle | `i<` — inside angle brackets | `a<` — includes angle brackets |
 | Tag (HTML/XML) | `it` — inside tag | `at` — includes tag |
-
----
 
 ## Visual Mode
 
@@ -203,8 +194,6 @@ Used with operators: `{operator}{a|i}{object}`
 | `Ctrl-v` → select → `c` | Change each block line |
 | `Ctrl-v` → select → `r{x}` | Replace every selected character with `x` |
 
----
-
 ## Search & Replace
 
 ### Searching
@@ -229,8 +218,6 @@ Used with operators: `{operator}{a|i}{object}`
 | `:'<,'>s/old/new/g` | Replace all in visual selection |
 
 Supports full regex: `:%s/\v(\w+)/\1_suffix/g`
-
----
 
 ## Registers
 
@@ -257,8 +244,6 @@ Supports full regex: `:%s/\v(\w+)/\1_suffix/g`
 | `:reg` | Show all register contents |
 | `:reg a` | Show contents of register `a` |
 
----
-
 ## Marks
 
 | Command | Action |
@@ -279,8 +264,6 @@ Supports full regex: `:%s/\v(\w+)/\1_suffix/g`
 | `` `^ `` | Position of last insert |
 | `` `[ `` / `` `] `` | Start / end of last yank or change |
 | `` `< `` / `` `> `` | Start / end of last visual selection |
-
----
 
 ## Buffers, Windows & Tabs
 
@@ -320,8 +303,6 @@ Supports full regex: `:%s/\v(\w+)/\1_suffix/g`
 | `:tabclose` | Close current tab |
 | `:tabmove {n}` | Move tab to position `n` |
 
----
-
 ## Macros
 
 | Command | Action |
@@ -332,8 +313,6 @@ Supports full regex: `:%s/\v(\w+)/\1_suffix/g`
 | `@@` | Replay last played macro |
 | `5@a` | Play macro `a` five times |
 | `:5,10normal @a` | Run macro `a` on lines 5–10 |
-
----
 
 ## Command-line
 
@@ -354,9 +333,7 @@ Supports full regex: `:%s/\v(\w+)/\1_suffix/g`
 | `:earlier {n}` | Undo to `n` changes ago (or `1m`, `5s`) |
 | `:later {n}` | Redo forward `n` changes |
 
----
-
-## Configuration (.vimrc)
+## Configuration (`.vimrc`)
 
 ```vim
 set number              " Show line numbers
@@ -377,8 +354,6 @@ set cursorline          " Highlight current line
 syntax on               " Syntax highlighting
 filetype plugin indent on
 ```
-
----
 
 ## Useful Combos
 

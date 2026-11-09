@@ -1,10 +1,10 @@
 ---
 title: "Docker Commands"
+subtitle: "Everyday commands for images, containers, Compose, volumes, and networks."
 description: "Docker command cheatsheet — containers, images, volumes, networks, docker-compose, and common workflows."
 category: "Tools & DevOps"
-icon: "🐳"
+logo: "docker"
 ---
-# Docker Commands Cheatsheet
 
 ## Images
 

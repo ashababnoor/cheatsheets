@@ -57,3 +57,6 @@ Thumbs.db
 .temp/
 foo/**/bar/
 foo*
+
+# Playwright MCP
+.playwright-mcp/

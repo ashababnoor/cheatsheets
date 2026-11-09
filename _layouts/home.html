@@ -11,25 +11,7 @@ layout: default
     </div>
   </div>
 
-  {% assign categories = "Tools & DevOps,Languages & Code,Web & Formats,Search,CS Fundamentals,Math & Science" | split: "," %}
-  {% for cat in categories %}
-    {% assign sheets = site.cheatsheets | where: "category", cat | sort: "order" %}
-    {% if sheets.size > 0 %}
-    <section class="card-group" data-category="{{ cat | downcase }}">
-      <h2 class="group-title">{{ cat }}</h2>
-      <div class="cheatsheet-grid">
-        {% for sheet in sheets %}
-        {% unless sheet.url contains '/sql/' %}
-        <a href="{{ sheet.url | relative_url }}" class="cheatsheet-card" data-title="{{ sheet.title | downcase }}">
-          <span class="card-icon">{{ sheet.icon }}</span>
-          <span class="card-title">{{ sheet.title }}</span>
-        </a>
-        {% endunless %}
-        {% endfor %}
-      </div>
-    </section>
-    {% endif %}
-  {% endfor %}
+  {% include cheatsheet-groups.html %}
 </div>
 
 <script>

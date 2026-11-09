@@ -1,12 +1,10 @@
 ---
 title: "Linux Terminal Commands"
+subtitle: "Essential commands for files, permissions, processes, networking, and package management."
 description: "Essential Linux terminal commands — file management, permissions, processes, networking, and system administration."
 category: "Tools & DevOps"
-icon: "🐧"
+logo: "linux"
 ---
-# Linux Terminal Commands Cheatsheet
-
-A comprehensive reference for essential Linux terminal commands organized by category.
 
 ## File & Directory Operations
 
@@ -304,7 +302,7 @@ A comprehensive reference for essential Linux terminal commands organized by cat
 
 ## Package Management
 
-### Debian/Ubuntu (apt)
+### Debian/Ubuntu (`apt`)
 
 | Command | Description |
 |---------|-------------|
@@ -318,7 +316,7 @@ A comprehensive reference for essential Linux terminal commands organized by cat
 | `apt show <pkg>` | Show package details |
 | `apt list --installed` | List installed packages |
 
-### RHEL/CentOS/Fedora (yum/dnf)
+### RHEL/CentOS/Fedora (`yum`/`dnf`)
 
 | Command | Description |
 |---------|-------------|

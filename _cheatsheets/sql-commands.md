@@ -1,12 +1,12 @@
 ---
 title: "SQL Commands"
+subtitle: "DDL, DML, queries, joins, transactions, and common patterns like pagination and window functions."
 description: "SQL command reference — SELECT, JOIN, subqueries, aggregations, indexes, and database management."
 category: "Languages & Code"
-icon: "🗄️"
+icon: "database"
 ---
-# SQL Commands Cheatsheet
 
-This cheatsheet provides a list of useful SQL commands organized by category.
+Standard SQL for defining, querying, and changing data. Where PostgreSQL, MySQL, or SQLite differ, the example is labeled.
 
 ## Data Definition Language (DDL)
 
@@ -242,7 +242,7 @@ WHERE id NOT IN (
 SELECT
   department,
   COUNT(*) AS total,
-  COUNT(*) FILTER (WHERE salary > 100000) AS high_earners,    -- PostgreSQL
+  COUNT(*) FILTER (WHERE salary > 100000) AS high_earners,              -- PostgreSQL
   SUM(CASE WHEN salary > 100000 THEN 1 ELSE 0 END) AS high_earners_alt  -- All databases
 FROM employees
 GROUP BY department;

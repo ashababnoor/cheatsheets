@@ -7,7 +7,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   <script>
@@ -25,15 +24,20 @@
   <header class="site-header">
     <div class="header-inner">
       <a href="{{ '/' | relative_url }}" class="site-logo">
-        <span class="logo-icon">&gt;_</span>
+        <img src="{{ '/favicon.svg' | relative_url }}" class="logo-icon" alt="" width="28" height="28">
         <span class="logo-text">{{ site.title }}</span>
       </a>
       <nav class="site-nav">
         <a href="{{ '/' | relative_url }}">Home</a>
         <a href="https://github.com/ashababnoor/cheatsheets" target="_blank" rel="noopener">GitHub</a>
         <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-          <i class="fa-solid fa-moon theme-icon-dark"></i>
-          <i class="fa-solid fa-sun theme-icon-light"></i>
+          <svg class="theme-icon theme-icon-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M20.55 14.8A9 9 0 1 1 9.2 3.45A8.5 8.5 0 0 0 20.55 14.8Z"/>
+          </svg>
+          <svg class="theme-icon theme-icon-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+          </svg>
         </button>
       </nav>
     </div>
@@ -43,21 +47,25 @@
     {% if page.layout == 'home' %}
       {{ content }}
     {% else %}
-      <div class="page-layout">
+      <div class="page-layout{% if page.toc == false %} no-toc narrow{% endif %}">
         <article class="page-content">
+          <h1>{{ page.title | escape }}{% if page.collection == 'cheatsheets' %} Cheatsheet{% endif %}</h1>
+          {% if page.subtitle %}<p>{{ page.subtitle | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>{% endif %}
           {{ content }}
         </article>
+        {% unless page.toc == false %}
         <aside class="toc-sidebar" id="toc-sidebar">
           <div class="toc-header">On this page</div>
           <nav id="toc-nav"></nav>
         </aside>
+        {% endunless %}
       </div>
     {% endif %}
   </main>
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <p>&copy; {{ site.time | date: '%Y' }} <a href="https://ashababnoor.github.io" target="_blank" rel="noopener">{{ site.author.name }}</a>. Built with Jekyll.</p>
+      <p>Made with <span class="footer-heart" role="img" aria-label="love">{% include icons/heart.svg %}</span> by <a href="{{ site.url }}" target="_blank" rel="noopener">{{ site.author.name }}</a> &middot; &copy; {{ site.time | date: '%Y' }}</p>
     </div>
   </footer>
 
@@ -102,6 +110,72 @@
       }, { rootMargin: '0px 0px -70% 0px', threshold: 0 });
 
       headings.forEach(function(h) { observer.observe(h); });
+    })();
+  </script>
+  <script>
+    // Code blocks: line numbers on longer programming-language blocks, copy button on all.
+    (function() {
+      var LINE_NUMBER_LANGS = ['python', 'js', 'javascript', 'css', 'sql', 'html', 'bash', 'sh'];
+      var LINE_NUMBER_MIN_LINES = 4;
+      var COPY_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>';
+      var CHECK_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>';
+
+      function copyText(text) {
+        if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+        return new Promise(function(resolve, reject) {
+          var ta = document.createElement('textarea');
+          ta.value = text;
+          ta.setAttribute('readonly', '');
+          ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0';
+          document.body.appendChild(ta);
+          ta.select();
+          try { document.execCommand('copy') ? resolve() : reject(); } catch (e) { reject(e); }
+          document.body.removeChild(ta);
+        });
+      }
+
+      document.querySelectorAll('.page-content div.highlighter-rouge').forEach(function(block) {
+        var match = block.className.match(/language-(\S+)/);
+        var lang = match ? match[1] : '';
+        if (lang === 'mermaid') return;
+        var pre = block.querySelector('pre');
+        var code = pre && pre.querySelector('code');
+        if (!code) return;
+
+        var text = code.textContent.replace(/\n$/, '');
+        var lines = text.split('\n');
+        var contentLines = lines.filter(function(l) { return l.trim() !== ''; }).length;
+
+        if (LINE_NUMBER_LANGS.indexOf(lang) !== -1 && contentLines >= LINE_NUMBER_MIN_LINES) {
+          var gutter = document.createElement('span');
+          gutter.className = 'line-numbers';
+          gutter.setAttribute('aria-hidden', 'true');
+          gutter.textContent = lines.map(function(_, i) { return i + 1; }).join('\n');
+          pre.insertBefore(gutter, code);
+          pre.classList.add('has-line-numbers');
+        }
+
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'copy-btn';
+        btn.setAttribute('aria-label', 'Copy code');
+        btn.innerHTML = COPY_ICON;
+        var timer;
+        btn.addEventListener('click', function() {
+          copyText(text).then(function() {
+            btn.innerHTML = CHECK_ICON;
+            btn.classList.add('copied');
+            btn.setAttribute('aria-label', 'Copied');
+            clearTimeout(timer);
+            timer = setTimeout(function() {
+              btn.innerHTML = COPY_ICON;
+              btn.classList.remove('copied');
+              btn.setAttribute('aria-label', 'Copy code');
+            }, 1500);
+          }, function() {});
+        });
+        block.appendChild(btn);
+      });
     })();
   </script>
   {% endunless %}

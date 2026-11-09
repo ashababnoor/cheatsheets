@@ -1,14 +1,14 @@
 ---
 title: "Datetime Format Specifiers"
+subtitle: "Format codes for dates and times in Python, JavaScript, Java, C#, Go, and ISO 8601."
 description: "Reference for datetime format specifiers across languages — strftime codes, ISO 8601, and common date/time patterns."
 category: "Web & Formats"
-icon: "📅"
+icon: "calendar"
 ---
-# Datetime Format Specifiers Cheatsheet
 
-A comprehensive reference for date and time formatting across Python, JavaScript, Java, C#, Go, and the ISO 8601 standard.
+Each language uses different codes for the same date. Specifiers are listed per language, followed by an ISO 8601 reference and common formats side by side.
 
-## Python (strftime / strptime)
+## Python (`strftime` / `strptime`)
 
 Used with `datetime.strftime()`, `datetime.strptime()`, and the `date` shell command.
 
@@ -48,7 +48,7 @@ These specifiers also work in C, C++ (`strftime`), Ruby (`Time#strftime`), PHP (
 
 ## JavaScript
 
-### Intl.DateTimeFormat / toLocaleDateString Options
+### `Intl.DateTimeFormat` / `toLocaleDateString` Options
 
 ```javascript
 new Intl.DateTimeFormat('en-US', options).format(date)
@@ -103,7 +103,7 @@ date.toLocaleDateString('en-US', options)
 | `X` | 1700000000 | Unix timestamp (seconds) |
 | `x` | 1700000000000 | Unix timestamp (milliseconds) |
 
-## Java (DateTimeFormatter)
+## Java (`DateTimeFormatter`)
 
 | Pattern | Example | Description |
 |---------|---------|-------------|
@@ -133,7 +133,7 @@ date.toLocaleDateString('en-US', options)
 | `D` | 189 | Day of year |
 | `u` | 1 | Day of week (1 = Monday) |
 
-## C# (.NET DateTime Format Strings)
+## C# (.NET `DateTime` Format Strings)
 
 ### Standard Format Strings
 
@@ -178,7 +178,7 @@ date.toLocaleDateString('en-US', options)
 | `zz` | +05 | UTC offset (hours only) |
 | `K` | +05:30 | Time zone info |
 
-## Go (time.Format)
+## Go (`time.Format`)
 
 Go uses a reference layout based on the reference time `Mon Jan 2 15:04:05 MST 2006` (01/02 03:04:05 PM '06 -0700).
 
@@ -246,7 +246,7 @@ Go uses a reference layout based on the reference time `Mon Jan 2 15:04:05 MST 2
 
 How to produce common date/time formats in each language.
 
-### "2024-01-15" (ISO Date)
+### `"2024-01-15"` (ISO Date)
 
 | Language | Code |
 |----------|------|
@@ -256,7 +256,7 @@ How to produce common date/time formats in each language.
 | C# | `dt.ToString("yyyy-MM-dd")` |
 | Go | `t.Format("2006-01-02")` |
 
-### "Jan 15, 2024" (Readable Date)
+### `"Jan 15, 2024"` (Readable Date)
 
 | Language | Code |
 |----------|------|
@@ -267,7 +267,7 @@ How to produce common date/time formats in each language.
 | C# | `dt.ToString("MMM dd, yyyy")` |
 | Go | `t.Format("Jan 02, 2006")` |
 
-### "3:30 PM" (12-Hour Time)
+### `"3:30 PM"` (12-Hour Time)
 
 | Language | Code |
 |----------|------|
@@ -278,7 +278,7 @@ How to produce common date/time formats in each language.
 | C# | `dt.ToString("h:mm tt")` |
 | Go | `t.Format("3:04 PM")` |
 
-### "Monday, January 15" (Full Weekday + Date)
+### `"Monday, January 15"` (Full Weekday + Date)
 
 | Language | Code |
 |----------|------|
@@ -289,7 +289,7 @@ How to produce common date/time formats in each language.
 | C# | `dt.ToString("dddd, MMMM d")` |
 | Go | `t.Format("Monday, January 2")` |
 
-### "2024-01-15T15:30:45Z" (ISO 8601 Full)
+### `"2024-01-15T15:30:45Z"` (ISO 8601 Full)
 
 | Language | Code |
 |----------|------|

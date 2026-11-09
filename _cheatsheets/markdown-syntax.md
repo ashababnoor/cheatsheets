@@ -1,13 +1,10 @@
 ---
 title: "Markdown Syntax"
+subtitle: "Standard Markdown and GitHub Flavored extensions: formatting, lists, links, code, tables, and more."
 description: "Markdown syntax reference — headings, lists, links, images, code blocks, tables, and GitHub-flavored extensions."
 category: "Web & Formats"
-icon: "📄"
+logo: "markdown"
 ---
-# Markdown Syntax Cheatsheet
-
-A comprehensive reference for Markdown syntax, covering standard Markdown, common extensions, and GitHub Flavored Markdown (GFM).
-
 
 ## Headings
 
@@ -33,7 +30,6 @@ Heading 2
 ```
 
 Both produce identical output. The Setext style can be more readable in raw form for top-level headings.
-
 
 ## Text Formatting
 
@@ -100,7 +96,6 @@ Supported by some parsers (not standard Markdown or GFM). HTML fallback:
 <mark>highlighted text</mark>
 ```
 
-
 ## Lists
 
 ### Unordered Lists
@@ -151,7 +146,6 @@ A GFM extension. Use `- [ ]` for unchecked and `- [x]` for checked items.
 - [x] Review the draft
 - [ ] Publish the post
 ```
-
 
 ## Links
 
@@ -210,7 +204,6 @@ Link to any heading in the same document. The anchor is the heading text, lowerc
 [Jump to Bold and Italic](#bold-and-italic)
 ```
 
-
 ## Images
 
 ### Inline Images
@@ -249,7 +242,6 @@ Some extended parsers support a non-standard size suffix:
 ```markdown
 ![Alt text](image.png =300x200)
 ```
-
 
 ## Code
 
@@ -294,7 +286,6 @@ Indent every line by four spaces (or one tab). No syntax highlighting is availab
     }
 ```
 
-
 ## Blockquotes
 
 ### Basic Blockquotes
@@ -329,7 +320,6 @@ Indent every line by four spaces (or one tab). No syntax highlighting is availab
 > ```
 ```
 
-
 ## Tables
 
 ### Basic Table
@@ -349,14 +339,13 @@ Use colons in the separator row to control alignment.
 ```markdown
 | Left-aligned | Center-aligned | Right-aligned |
 |:-------------|:--------------:|--------------:|
-| left         |    center      |         right |
-| text         |    text        |          text |
+| left         |     center     |         right |
+| text         |      text      |          text |
 ```
 
 - `:---` or `---` aligns left (default).
 - `:---:` aligns center.
 - `---:` aligns right.
-
 
 ## Horizontal Rules
 
@@ -371,7 +360,6 @@ ___
 ```
 
 Three or more hyphens, asterisks, or underscores on a line by themselves.
-
 
 ## Line Breaks and Paragraphs
 
@@ -404,7 +392,6 @@ First line.\
 Second line.
 ```
 
-
 ## Escaping Characters
 
 Prefix a special character with a backslash to display it literally.
@@ -417,7 +404,6 @@ Prefix a special character with a backslash to display it literally.
 ```
 
 Characters that can be escaped: `` \ ` * _ { } [ ] ( ) # + - . ! | ~ ``
-
 
 ## HTML in Markdown
 
@@ -439,7 +425,6 @@ if you leave blank lines around it.
   <dd>Definition of the term.</dd>
 </dl>
 ```
-
 
 ## GitHub Flavored Markdown Extras
 
@@ -511,7 +496,6 @@ graph LR
 ```
 ````
 
-
 ## Useful Tips
 
 ### Linking to Headings
@@ -551,7 +535,6 @@ The general pattern is:
 ```markdown
 [![alt text](badge-image-url)](link-url)
 ```
-
 
 ## Reference
 

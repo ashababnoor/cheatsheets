@@ -1,13 +1,9 @@
 ---
 title: "Clean Code Practices"
+subtitle: "Naming, functions, comments, error handling, SOLID, and refactoring habits for readable, maintainable code."
 description: "Best practices for writing clean, readable, and maintainable code — naming, functions, formatting, and refactoring principles."
 category: "Languages & Code"
-icon: "✨"
----
-# Clean Code Practices Cheatsheet
-
-A comprehensive reference for writing readable, maintainable, and robust code.
-
+icon: "code-xml"
 ---
 
 ## Naming Conventions
@@ -87,8 +83,6 @@ let login = true;
 let isLoggedIn = true;
 ```
 
----
-
 ## Functions
 
 ### Single Responsibility
@@ -156,8 +150,6 @@ def is_adult(user):
 
 - If you see the same logic in two places, extract it into a shared function.
 
----
-
 ## Comments
 
 ### When to Comment
@@ -194,8 +186,6 @@ def __init__(self):
 
 - Commented-out code: delete it. Git remembers.
 - Journal comments at the top of files: let the commit log handle history.
-
----
 
 ## Error Handling
 
@@ -254,8 +244,6 @@ raise ValueError("Invalid input")
 raise ValueError(f"Age must be 0-150, got {age}")
 ```
 
----
-
 ## Code Formatting
 
 ### Consistent Indentation
@@ -276,8 +264,6 @@ raise ValueError(f"Age must be 0-150, got {age}")
 - Declare variables close to where they are used.
 - Order methods so that callers appear above callees (step-down rule).
 - Keep related functions in the same file or module.
-
----
 
 ## SOLID Principles
 
@@ -313,8 +299,6 @@ class OrderService:
         self.db = db
 ```
 
----
-
 ## Code Smells
 
 - **Long Methods** -- If a method exceeds 20-30 lines, it likely does too much. Extract smaller functions.
@@ -346,8 +330,6 @@ def process(user):
     do_work(user)
 ```
 
----
-
 ## Refactoring Tips
 
 - **Extract Method** -- Pull a block of code into a well-named function.
@@ -370,8 +352,6 @@ if (user.age >= 18 && user.hasId && !user.isBanned) {
 const isEligible = user.age >= 18 && user.hasId && !user.isBanned;
 if (isEligible) serve(user);
 ```
-
----
 
 ## Testing Practices
 
@@ -417,8 +397,6 @@ def test_withdraw_with_insufficient_funds_raises_error():
 - **Repeatable** -- Same result every time, in any environment.
 - **Self-Validating** -- Pass or fail with no manual inspection.
 - **Timely** -- Written at the same time as (or before) the production code.
-
----
 
 ## General Principles
 

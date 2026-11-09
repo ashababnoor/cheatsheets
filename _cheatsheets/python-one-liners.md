@@ -1,10 +1,10 @@
 ---
 title: "Python One-Liners"
+subtitle: "Compact, idiomatic Python for strings, lists, dictionaries, math, files, and functional tasks."
 description: "Collection of useful Python one-liners — list comprehensions, file operations, string manipulation, and handy shortcuts."
 category: "Languages & Code"
-icon: "🐍"
+logo: "python"
 ---
-# Python One-Liners Cheatsheet
 
 ## Strings
 
@@ -258,7 +258,7 @@ indexed = {i: v for i, v in enumerate(["a", "b", "c"])}
 ```
 Creates a dictionary mapping indices to list values.
 
-### Any / All
+### `any` / `all`
 ```python
 has_neg, all_pos = any(x < 0 for x in nums), all(x > 0 for x in nums)
 ```
@@ -284,7 +284,7 @@ filtered = [y for x in data if (y := f(x)) is not None]
 ```
 Uses `:=` to assign and test a value inside a comprehension.
 
-### Quick Timeit
+### Quick `timeit`
 ```python
 __import__("timeit").timeit(lambda: sum(range(1000)), number=10000)
 ```

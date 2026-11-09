@@ -1,8 +1,9 @@
 ---
 title: "JavaScript"
+subtitle: "Syntax, strings, arrays, objects, functions, promises, the DOM, and handy patterns."
 description: "JavaScript cheatsheet — syntax, DOM manipulation, ES6+ features, promises, array methods, and common patterns."
 category: "Languages & Code"
-icon: "⚡"
+logo: "javascript"
 ---
 
 ## Variables & Types
@@ -44,14 +45,12 @@ const z = 3;  // block-scoped, not reassignable
 !!"hello"        // true (to boolean)
 ```
 
----
-
 ## Strings
 
 ```js
 const str = `Hello, ${name}!`;  // template literal
 const multi = `line1
-line2`;                          // multiline
+line2`;                         // multiline
 ```
 
 ### Common Methods
@@ -73,8 +72,6 @@ line2`;                          // multiline
 | `at(index)` | Char at index (negative OK) | `"abc".at(-1)` → `"c"` |
 | `indexOf(str)` | First index of match | `"hello".indexOf("l")` → `2` |
 
----
-
 ## Arrays
 
 ### Creation
@@ -82,7 +79,7 @@ line2`;                          // multiline
 ```js
 const a = [1, 2, 3];
 const b = Array.from({ length: 5 }, (_, i) => i); // [0,1,2,3,4]
-const c = new Array(3).fill(0);                    // [0,0,0]
+const c = new Array(3).fill(0);                   // [0,0,0]
 ```
 
 ### Mutating Methods
@@ -128,17 +125,17 @@ const [first, second, ...rest] = [1, 2, 3, 4, 5];
 const copy = [...original];
 ```
 
----
-
 ## Objects
 
 ### Creation & Access
 
 ```js
 const obj = { name: "JS", year: 1995 };
-obj.name;          // dot notation
-obj["name"];       // bracket notation
-const key = "name"; const val = obj[key]; // dynamic key
+obj.name;              // dot notation
+obj["name"];           // bracket notation
+
+const key = "name";
+const val = obj[key];  // dynamic key
 ```
 
 ### Shorthand & Computed Properties
@@ -171,29 +168,50 @@ user?.address?.city      // optional chaining — returns undefined if null/unde
 val ?? "default"         // nullish coalescing — fallback only for null/undefined
 ```
 
----
-
 ## Functions
 
 ### Declaration Styles
 
 ```js
-function greet(name) { return `Hi, ${name}`; }         // declaration (hoisted)
-const greet = function(name) { return `Hi, ${name}`; }; // expression
-const greet = (name) => `Hi, ${name}`;                  // arrow (implicit return)
+// Declaration (hoisted)
+function greet(name) {
+  return `Hi, ${name}`;
+}
+
+// Expression
+const greet = function(name) {
+  return `Hi, ${name}`;
+};
+
+// Arrow (implicit return)
+const greet = (name) => `Hi, ${name}`;
 ```
 
 ### Parameters
 
 ```js
-function sum(a, b = 0) { return a + b; }          // default params
-function sum(...nums) { return nums.reduce((a, b) => a + b, 0); } // rest params
+// Default params
+function sum(a, b = 0) {
+  return a + b;
+}
+
+// Rest params
+function sum(...nums) {
+  return nums.reduce((a, b) => a + b, 0);
+}
 ```
 
 ### IIFE & Closures
 
 ```js
-(function() { /* runs immediately */ })();
+(function () {
+  // runs immediately
+})();
+
+// Arrow form
+(() => {
+  // runs immediately
+})();
 ```
 
 ```js
@@ -203,15 +221,18 @@ function counter() {
 }
 ```
 
----
-
 ## Promises & Async
 
 ### Promise Basics
 
 ```js
-const p = new Promise((resolve, reject) => { resolve("done"); });
-p.then(val => console.log(val)).catch(err => console.error(err)).finally(() => {});
+const p = new Promise((resolve, reject) => {
+  resolve("done");
+});
+
+p.then(val => console.log(val))
+  .catch(err => console.error(err))
+  .finally(() => console.log("settled"));
 ```
 
 ### Static Methods
@@ -223,18 +244,18 @@ p.then(val => console.log(val)).catch(err => console.error(err)).finally(() => {
 | `Promise.race(arr)` | Settles with first settled |
 | `Promise.any(arr)` | Resolves with first fulfilled; rejects if all reject |
 
-### Async / Await
+### `async` / `await`
 
 ```js
 async function fetchData(url) {
   try {
     const res = await fetch(url);
     return await res.json();
-  } catch (err) { console.error(err); }
+  } catch (err) {
+    console.error(err);
+  }
 }
 ```
-
----
 
 ## DOM Manipulation
 
@@ -267,7 +288,9 @@ el.setAttribute("data-id", "42");
 ### Events
 
 ```js
-el.addEventListener("click", (e) => { console.log(e.target); });
+el.addEventListener("click", (e) => {
+  console.log(e.target);
+});
 ```
 
 ```js
@@ -276,8 +299,6 @@ document.querySelector("ul").addEventListener("click", (e) => {
   if (e.target.matches("li")) console.log(e.target.textContent);
 });
 ```
-
----
 
 ## ES6+ Features
 
@@ -296,11 +317,9 @@ document.querySelector("ul").addEventListener("click", (e) => {
 | `Set` | `new Set([1, 2, 3])` — unique values |
 | `Symbol` | `Symbol("desc")` — unique identifier |
 
----
-
 ## Error Handling
 
-### try / catch / finally
+### `try` / `catch` / `finally`
 
 ```js
 try {
@@ -316,8 +335,12 @@ try {
 
 ```js
 class ValidationError extends Error {
-  constructor(msg) { super(msg); this.name = "ValidationError"; }
+  constructor(msg) {
+    super(msg);
+    this.name = "ValidationError";
+  }
 }
+
 throw new ValidationError("Invalid input");
 ```
 
@@ -331,20 +354,32 @@ throw new ValidationError("Invalid input");
 | `TypeError` | Wrong type operation |
 | `URIError` | Malformed URI |
 
----
-
 ## Common Patterns
 
 ### Debounce
 
 ```js
-const debounce = (fn, ms) => { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); }; };
+const debounce = (fn, ms) => {
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn(...args), ms);
+  };
+};
 ```
 
 ### Throttle
 
 ```js
-const throttle = (fn, ms) => { let last = 0; return (...a) => { if (Date.now() - last >= ms) { last = Date.now(); fn(...a); } }; };
+const throttle = (fn, ms) => {
+  let last = 0;
+  return (...args) => {
+    if (Date.now() - last >= ms) {
+      last = Date.now();
+      fn(...args);
+    }
+  };
+};
 ```
 
 ### Deep Clone
@@ -356,7 +391,13 @@ const clone = structuredClone(original);
 ### Array Shuffle (Fisher-Yates)
 
 ```js
-const shuffle = (a) => { for (let i = a.length - 1; i > 0; i--) { const j = Math.random() * (i + 1) | 0; [a[i], a[j]] = [a[j], a[i]]; } return a; };
+const shuffle = (arr) => {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];  // swap
+  }
+  return arr;
+};
 ```
 
 ### Unique Array
@@ -374,16 +415,19 @@ const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 ### Generate Range
 
 ```js
-const range = (start, end) => Array.from({ length: end - start + 1 }, (_, i) => start + i);
+const range = (start, end) =>
+  Array.from({ length: end - start + 1 }, (_, i) => start + i);
 ```
 
 ### Group By
 
 ```js
-const groupBy = (arr, fn) => arr.reduce((acc, v) => { (acc[fn(v)] ??= []).push(v); return acc; }, {});
+const groupBy = (arr, fn) =>
+  arr.reduce((acc, v) => {
+    (acc[fn(v)] ??= []).push(v);
+    return acc;
+  }, {});
 ```
-
----
 
 ## Type Checking
 

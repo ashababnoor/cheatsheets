@@ -1,12 +1,12 @@
 ---
 title: "HTTP Status Codes"
+subtitle: "Every standard status code grouped by class (`1xx` to `5xx`), with what each one means."
 description: "Complete HTTP status code reference — 1xx informational, 2xx success, 3xx redirection, 4xx client errors, and 5xx server errors."
 category: "Web & Formats"
-icon: "🌐"
+icon: "globe"
 ---
-# HTTP Status Codes Cheatsheet
 
-A comprehensive reference for all standard HTTP status codes, organized by class. Each status code indicates the result of the server's attempt to understand and satisfy a request.
+Each status code indicates the result of the server's attempt to understand and satisfy a request.
 
 ## Quick Reference: Most Common Status Codes
 
@@ -24,8 +24,6 @@ A comprehensive reference for all standard HTTP status codes, organized by class
 | 500  | Internal Server Error | Unexpected server failure |
 | 502  | Bad Gateway | Invalid response from upstream server |
 | 503  | Service Unavailable | Server temporarily unable to handle request |
-
----
 
 ## 1xx Informational
 

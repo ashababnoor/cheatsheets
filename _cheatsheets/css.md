@@ -1,8 +1,9 @@
 ---
 title: "CSS"
+subtitle: "Selectors, the box model, flexbox, grid, typography, animations, and responsive patterns."
 description: "CSS cheatsheet — selectors, flexbox, grid, positioning, animations, and responsive design patterns."
 category: "Web & Formats"
-icon: "🎨"
+logo: "css"
 ---
 
 ## Selectors
@@ -67,20 +68,18 @@ icon: "🎨"
 | `::placeholder` | Placeholder text in inputs |
 | `::selection` | User-highlighted text |
 
----
-
 ## Box Model
 
 ```
-┌──────────────── margin ────────────────┐
-│ ┌──────────── border ────────────┐     │
-│ │ ┌────────── padding ────────┐  │     │
-│ │ │ ┌──────── content ──────┐ │  │     │
-│ │ │ │  width × height       │ │  │     │
-│ │ │ └───────────────────────┘ │  │     │
-│ │ └───────────────────────────┘  │     │
-│ └────────────────────────────────┘     │
-└────────────────────────────────────────┘
+┌──────────────── margin ──────────────────┐
+│   ┌──────────── border ──────────────┐   │
+│   │  ┌───────── padding ──────────┐  │   │
+│   │  │ ┌─────── content ────────┐ │  │   │
+│   │  │ │     width × height     │ │  │   │
+│   │  │ └────────────────────────┘ │  │   │
+│   │  └────────────────────────────┘  │   │
+│   └──────────────────────────────────┘   │
+└──────────────────────────────────────────┘
 ```
 
 | Property | Example | Notes |
@@ -99,8 +98,6 @@ icon: "🎨"
   box-sizing: border-box;
 }
 ```
-
----
 
 ## Display & Positioning
 
@@ -142,8 +139,6 @@ icon: "🎨"
 | `clear` | `left`, `right`, `both` | Clears floated elements |
 | `overflow` | `visible`, `hidden`, `scroll`, `auto` | Content overflow handling |
 
----
-
 ## Flexbox
 
 ### Container Properties
@@ -178,8 +173,6 @@ flex: 1;         /* flex: 1 1 0%   — equal sizing */
 flex: auto;      /* flex: 1 1 auto — size based on content */
 flex: none;      /* flex: 0 0 auto — inflexible */
 ```
-
----
 
 ## Grid
 
@@ -229,8 +222,6 @@ flex: none;      /* flex: 0 0 auto — inflexible */
 }
 ```
 
----
-
 ## Typography
 
 | Property | Example | Notes |
@@ -252,8 +243,6 @@ flex: none;      /* flex: 0 0 auto — inflexible */
 /* Font shorthand: style weight size/line-height family */
 font: italic 700 1rem/1.5 'Inter', sans-serif;
 ```
-
----
 
 ## Colors & Backgrounds
 
@@ -298,11 +287,9 @@ background: conic-gradient(from 0deg, red, yellow, green, blue, red);
 ### Opacity
 
 ```css
-opacity: 0.5;                  /* Entire element */
-background: rgba(0, 0, 0, 0.5); /* Background only */
+opacity: 0.5;                      /* Entire element */
+background: rgba(0, 0, 0, 0.5);  /* Background only */
 ```
-
----
 
 ## Units
 
@@ -320,8 +307,6 @@ background: rgba(0, 0, 0, 0.5); /* Background only */
 | `fr` | Fraction of grid space | Grid tracks |
 | `dvh` | Dynamic viewport height | Mobile-safe full height |
 | `svh` / `lvh` | Small / large viewport | Mobile viewport variants |
-
----
 
 ## Transitions & Animations
 
@@ -369,8 +354,6 @@ animation: slide-in 0.5s ease-out forwards;
 | `animation-fill-mode` | `none`, `forwards`, `backwards`, `both` |
 | `animation-play-state` | `running`, `paused` |
 
----
-
 ## Media Queries
 
 ### Syntax
@@ -414,8 +397,6 @@ animation: slide-in 0.5s ease-out forwards;
 }
 ```
 
----
-
 ## CSS Variables (Custom Properties)
 
 ```css
@@ -446,8 +427,6 @@ padding: calc(var(--spacing-md) * 2);
 ```
 
 Variables are inherited and scoped. Define on `:root` for global, or on a selector for local scope.
-
----
 
 ## Common Patterns
 
@@ -533,8 +512,18 @@ img {
 
 ```css
 *, *::before, *::after { box-sizing: border-box; }
-body { margin: 0; font-family: system-ui, sans-serif; line-height: 1.5; }
-img, picture, video, canvas, svg { display: block; max-width: 100%; }
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
 input, button, textarea, select { font: inherit; }
 p, h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
 ```

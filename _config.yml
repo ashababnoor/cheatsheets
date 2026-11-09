@@ -2,10 +2,10 @@
 title: Cheatsheets
 description: Concise, easy-to-reference cheatsheets for various programming languages and technologies
 baseurl: /cheatsheets
-url: https://ashababnoor.github.io
+url: https://shababnoor.com
 author:
   name: Ahmed Shabab Noor
-  email: ashababnoor@gmail.com
+  email: hello@shababnoor.com
 
 permalink: /404.md
 
@@ -13,6 +13,30 @@ collections:
   cheatsheets:
     output: true
     permalink: /:path
+
+# Category order on the homepage and the 404 page. A cheatsheet's `category` must match one of these.
+cheatsheet_categories:
+  - Tools & DevOps
+  - Languages & Code
+  - Web & Formats
+  - Search
+  - CS Fundamentals
+  - Math & Science
+
+# The github-pages gem defaults to jekyll-theme-primer, whose style.scss compiles to
+# /assets/css/style.css and overwrites our own stylesheet on rebuilds. We ship our own layouts.
+theme: null
+
+# Repo files that should not be published as part of the site.
+# Setting `exclude` replaces Jekyll's defaults, so the Gemfile and vendor entries are repeated here.
+exclude:
+  - README.md
+  - CONTRIBUTING.md
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
 
 # Build settings
 plugins:

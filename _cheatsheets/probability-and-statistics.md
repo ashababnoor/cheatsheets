@@ -1,13 +1,11 @@
 ---
 title: "Probability & Statistics"
+subtitle: "Probability rules, distributions, descriptive statistics, and inference formulas."
 description: "Probability and statistics reference — distributions, hypothesis testing, Bayes' theorem, and descriptive statistics."
 category: "Math & Science"
-icon: "🎲"
+icon: "dices"
 order: 2
 ---
-# Probability & Statistics Cheatsheet
-
-Essential formulas and concepts for probability theory and statistics.
 
 ## Probability Basics
 
@@ -247,7 +245,5 @@ For a sample of size $$ n $$ drawn from a population with mean $$ \mu $$ and sta
 $$ \bar{X} \sim N\left(\mu, \frac{\sigma^2}{n}\right) \text{ as } n \to \infty $$
 
 The sampling distribution of $$ \bar{X} $$ approaches normal regardless of the population distribution, provided $$ n $$ is sufficiently large (typically $$ n \geq 30 $$).
-
----
 
 This cheatsheet covers probability fundamentals, descriptive statistics, common distributions, expected values, confidence intervals, hypothesis testing, and the central limit theorem.
