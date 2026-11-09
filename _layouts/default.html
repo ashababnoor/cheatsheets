@@ -11,8 +11,19 @@
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   <script>
     (function() {
-      var t = localStorage.getItem('theme') || 'dark';
+      var saved = null;
+      try { saved = localStorage.getItem('theme'); } catch (e) {}
+      var mq = window.matchMedia && matchMedia('(prefers-color-scheme: light)');
+      var t = saved || (mq && mq.matches ? 'light' : 'dark');
       document.documentElement.setAttribute('data-theme', t);
+      // Without a saved choice, keep following the system setting.
+      if (!saved && mq && mq.addEventListener) {
+        mq.addEventListener('change', function(e) {
+          var s2 = null;
+          try { s2 = localStorage.getItem('theme'); } catch (err) {}
+          if (!s2) document.documentElement.setAttribute('data-theme', e.matches ? 'light' : 'dark');
+        });
+      }
     })();
   </script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css">
