@@ -14,6 +14,15 @@ collections:
     output: true
     permalink: /:path
 
+# Category order on the homepage and the 404 page. A cheatsheet's `category` must match one of these.
+cheatsheet_categories:
+  - Tools & DevOps
+  - Languages & Code
+  - Web & Formats
+  - Search
+  - CS Fundamentals
+  - Math & Science
+
 # The github-pages gem defaults to jekyll-theme-primer, whose style.scss compiles to
 # /assets/css/style.css and overwrites our own stylesheet on rebuilds. We ship our own layouts.
 theme: null

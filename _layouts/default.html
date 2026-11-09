@@ -43,16 +43,18 @@
     {% if page.layout == 'home' %}
       {{ content }}
     {% else %}
-      <div class="page-layout">
+      <div class="page-layout{% if page.toc == false %} no-toc narrow{% endif %}">
         <article class="page-content">
-          <h1>{{ page.title | escape }} Cheatsheet</h1>
+          <h1>{{ page.title | escape }}{% if page.collection == 'cheatsheets' %} Cheatsheet{% endif %}</h1>
           {% if page.subtitle %}<p>{{ page.subtitle | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>{% endif %}
           {{ content }}
         </article>
+        {% unless page.toc == false %}
         <aside class="toc-sidebar" id="toc-sidebar">
           <div class="toc-header">On this page</div>
           <nav id="toc-nav"></nav>
         </aside>
+        {% endunless %}
       </div>
     {% endif %}
   </main>
