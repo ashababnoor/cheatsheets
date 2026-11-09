@@ -120,8 +120,8 @@ The pipe `|` acts as a boolean OR, matching the expression before or after it.
 
 | Pattern | Description | Example |
 |---------|-------------|---------|
-| `a\|b` | Matches `a` or `b` | `cat\|dog` matches `cat` or `dog` |
-| `(a\|b)c` | Group alternation | `(re\|un)do` matches `redo` or `undo` |
+| `a|b` | Matches `a` or `b` | `cat|dog` matches `cat` or `dog` |
+| `(a|b)c` | Group alternation | `(re|un)do` matches `redo` or `undo` |
 
 ```
 Pattern:  (Mon|Tue|Wed|Thu|Fri|Sat|Sun)day
