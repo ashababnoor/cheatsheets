@@ -830,7 +830,7 @@ body.search-open { overflow: hidden; }
 
 .cheatsheet-card {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.5rem;
   background: transparent;
   border: 1px solid transparent;
@@ -853,6 +853,7 @@ body.search-open { overflow: hidden; }
   flex-shrink: 0;
   width: 1.25rem;
   height: 1.25rem;
+  margin-top: 0.05rem;
   color: var(--accent);
 }
 
@@ -881,6 +882,25 @@ body.search-open { overflow: hidden; }
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
+}
+
+/* What the page covers, clamped to two lines so the grid stays even. */
+.card-subtitle {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: var(--text-muted);
 }
 
 /* ===== Footer ===== */
